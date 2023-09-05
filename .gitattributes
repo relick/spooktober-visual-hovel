@@ -1,0 +1,4 @@
+*.rpyb filter=lfs diff=lfs merge=lfs -text
+*.png filter=lfs diff=lfs merge=lfs -text
+*.rpyc filter=lfs diff=lfs merge=lfs -text
+*.rpymc filter=lfs diff=lfs merge=lfs -text
