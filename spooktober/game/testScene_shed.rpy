@@ -2,8 +2,13 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define s = Character("Stacey")
+define character.stacey = Character("Stacey")
+default stacey.approval = 0
 
+default menuset = set()
+
+default searched_shed = False
+default found_locker = False
 # The game starts here.
 
 label start:
@@ -18,18 +23,135 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show stacey tired
+    "I'm so tired... and my feet hurt..."
 
-    # These display lines of dialogue.
+    "This tin of beans is so heavy..."
 
-    "I am narrating."
+    "The moon is shining right in my eyes..."
 
-    s "I am Stacey."
+    centered """
+    Even through the canopy of trees, the moon is surprisingly bright.
 
-    s "Once you add a story, pictures, and music, you can release it to the world!"
+    Something large and building-shaped appears, silhouetted in the moonlight in front of you.
+    """
 
-    "WEKK DIMBE" with vpunch
+    show stacey neutral
 
+    stacey "Oh my god! A house! People!" with vpunch
+
+    menu:
+        "We're saved!":
+            jump saved
+        "Careful - we don't know if we can trust them":
+            jump careful
+
+
+
+    stacey "My approval of you is [stacey.approval]"
     # This ends the game.
 
+    return
+
+label saved:
+    stacey "{i}Squealing{/i}"
+    
+    "Stacey wait!"
+
+    "How am I meant to keep up with a hyperactive cheerleader?!"
+
+    centered "You struggle after her."
+
+    centered "It quickly becomes apparent that this lightless building is deserted."
+
+    show stacey sad
+
+    stacey """
+    It's abandoned. 
+    
+    We're doomed. 
+    
+    And what kind of shitty, tiny house is this anyway?
+    """
+
+    jump shed
+
+    return
+
+label careful:
+    stacey "True."
+    stacey "They might be like, weird forest people who marry their uncles."
+
+    centered "You creep forward, making each footstep as silent as possible."
+
+    centered "The light of the moon glimmers off Stacey's hoop earrings, and dances across the chemically treated curls of her hair. "
+
+    show stacey angry
+    stacey "Ugh."
+
+    show stacey
+    stacey "There's obviously nobody here. And this place is a DUMP."
+    
+    jump shed
+
+    return
+
+label shed:
+    scene bg shed
+    
+    centered "What you  have found is a shed."
+
+    centered "It stands in a little clearing full of junk. Rusted oil drums, stacked timber, a collection of sad looking jerrycans."
+
+    "Looks like a toolshed..."
+
+    "Maybe we can find something useful here."
+
+    menu shed_search: 
+        "What should I do?"
+
+        set menuset
+        "Investigate the shed":
+            jump shed_search
+        "Check the oil drums":
+            jump shed_search
+        "All out of options!":
+            return
+
+    return
+
+label investigate_shed:
+    scene bg shed_interior
+    $ searched_shed = True
+
+    "Oh man this shed is TINY"
+    "There's barely room for the workbench in here"
+
+    show stacey disgusted
+    stacey "Ugh look at this dust."
+    stacey "Don't touch any of those tools, you'll get tetanus."  
+
+    menu:
+        "Pick up a rusted saw from the bench.":
+            show stacey annoyed
+            stacey "What did I JUST say?"
+            stacey "You're literally hopeless"
+            $ stacey.approval -= 1
+
+            "Well... this might come in handy."
+            jump outside_shed
+        "Leave the tools alone.":
+            centered "You and Stacey search the shed"
+
+            "Everything here is so old..."
+            "Is there nothing useful at all?"
+            jump outside_shed
+    return
+
+label outside_shed:
+    $ found_locker = True
+    centered "Around the side of the shed are two tall storage lockers."
+
+    stacey "You could fit a whole body in one of those."
+    stacey "What?"
+    stacey "Don't tell me you weren't thinking it too."
     return

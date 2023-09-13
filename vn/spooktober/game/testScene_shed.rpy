@@ -7,6 +7,8 @@ default stacey.approval = 0
 
 default menuset = set()
 
+default searched_shed = False
+default found_locker = False
 # The game starts here.
 
 label start:
@@ -33,7 +35,7 @@ label start:
     Something large and building-shaped appears, silhouetted in the moonlight in front of you.
     """
 
-    show stacey happy
+    show stacey neutral
 
     stacey "Oh my god! A house! People!" with vpunch
 
@@ -83,8 +85,6 @@ label careful:
 
     centered "The light of the moon glimmers off Stacey's hoop earrings, and dances across the chemically treated curls of her hair. "
 
-    "She's like a peroxide angel..."
-
     show stacey angry
     stacey "Ugh."
 
@@ -102,9 +102,7 @@ label shed:
 
     centered "It stands in a little clearing full of junk. Rusted oil drums, stacked timber, a collection of sad looking jerrycans."
 
-    "Looks like a toolshed"
-
-    "And some kind of makeshift work yard..."
+    "Looks like a toolshed..."
 
     "Maybe we can find something useful here."
 
@@ -119,4 +117,41 @@ label shed:
         "All out of options!":
             return
 
+    return
+
+label investigate_shed:
+    scene bg shed_interior
+    $ searched_shed = True
+
+    "Oh man this shed is TINY"
+    "There's barely room for the workbench in here"
+
+    show stacey disgusted
+    stacey "Ugh look at this dust."
+    stacey "Don't touch any of those tools, you'll get tetanus."  
+
+    menu:
+        "Pick up a rusted saw from the bench.":
+            show stacey annoyed
+            stacey "What did I JUST say?"
+            stacey "You're literally hopeless"
+            $ stacey.approval -= 1
+
+            "Well... this might come in handy."
+            jump outside_shed
+        "Leave the tools alone.":
+            centered "You and Stacey search the shed"
+
+            "Everything here is so old..."
+            "Is there nothing useful at all?"
+            jump outside_shed
+    return
+
+label outside_shed:
+    $ found_locker = True
+    centered "Around the side of the shed are two tall storage lockers."
+
+    stacey "You could fit a whole body in one of those."
+    stacey "What?"
+    stacey "Don't tell me you weren't thinking it too."
     return
