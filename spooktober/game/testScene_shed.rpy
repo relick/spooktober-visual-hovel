@@ -2,16 +2,17 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define character.stacey = Character("Stacey")
-default stacey.approval = 0
+#define character.stacey = Character("Stacey")
+#default stacey.approval = 0
 
 default menuset = set()
 
-default searched_shed = False
-default found_locker = False
+#default searched_shed = False
+#default found_locker = False
 # The game starts here.
 
 label start:
+    # jump scene_forestShed.a_runningThroughWoods
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
