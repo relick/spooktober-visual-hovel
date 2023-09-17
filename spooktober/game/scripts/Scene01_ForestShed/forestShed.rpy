@@ -79,46 +79,13 @@ label .b_discoveringShed:
     "Section 2"
     "Beans and Stacey discover the shed"
 
-    jump .c_searchingShed
+    jump forestShed_discoveringShed
 
 # 3 Searching the Shed
 label .c_searchingShed:
     "Section 3"
     "Beans and/or Stacey search the shed"
-    menu:
-        "Search the shed yourself":
-            jump .shed_beansSearch
-        "Watch Stacey search the shed":
-            jump .shed_staceySearch
-
-    # 3a Beans searches the shed herself
-    label .shed_beansSearch:
-        call scene_forestShed.util_updateProactivePassive(1)
-        call scene_forestShed.util_updateKillerDistance(-1)
-        $ beansSearchedShed = True
-        menu: 
-            "Search carefully":
-                call scene_forestShed.util_equipItem("Lantern")
-                call scene_forestShed.util_updateKillerDistance(-1)                
-                
-            "Search quickly":
-                $ stacey.approval -= 1
-        jump scene_forestShed.d_areaSearch
-
-    # 3b Beans watches as Stacey searches the shed
-    label .shed_staceySearch:
-        call scene_forestShed.util_updateProactivePassive(-1)
-        call scene_forestShed.util_updateKillerDistance(-1)
-        stacey "Wait there. Don't touch ANYTHING."
-        menu:
-            "Wait anxiously for Stacey to finish searching":
-                call scene_forestShed.util_updateKillerDistance(-1)
-                call scene_forestShed.util_equipItem("Lantern")
-            "Sit on one of the rusty oil drums while she searches":
-                $ stacey.approval -= 1
-                $ searchedDrums = True
-                call scene_forestShed.util_updateKillerDistance(-2)
-        jump scene_forestShed.d_areaSearch
+    jump forestShed_searchingShed
 
 # 4 Searching the surrounding area
 label .d_areaSearch:
