@@ -1,6 +1,8 @@
 # Audio
 # --------
 # panting (beans/stacey)
+# beans tripping over a tree root
+# crack/thud (dropping the flashlight and it breaks)
 
 # Backgrounds
 # --------
@@ -13,6 +15,7 @@
 # stacey tired
 # stacey excited
 # stacey disappointed
+# stacey angry
 
 label forestShed_runningThroughWoods:
     scene bg forest
@@ -21,9 +24,56 @@ label forestShed_runningThroughWoods:
     "I'm so tired... and my feet hurt..."
     "This tin of beans is so heavy..."
     "It's getting dark so fast..."
+    "Good thing I brought Gerald's flashlight!"
 
     show stacey tired
-    stacey "I'm sure the road was this way..."
+    stacey "I'm sure the road was this way."
+
+    show stacey annoyed
+    stacey "Can't you keep up, Beans?"
+    beans "I'm going as fast as I can!"
+    "How am I meant to keep up with a champion cheerleader?"
+
+    hide stacey 
+
+    # AUDIO: Thud
+    beans "OOF-" with vpunch
+    "That tree root came out of nowhere!"
+
+    # AUDIO: Crack
+    "{i}CRACK{/i}"
+
+    # Some kind of flash indicating the light went out?
+    "Was that... the flashlight?"
+    "Oh no..."
+
+    show stacey angry
+    stacey "Beans! Please tell me you did not just break our ONLY flashlight."
+
+    menu:
+        "I'm sorry...":
+            $ stacey.approval += 1
+            show stacey tired
+            stacey "{i}Sigh{/i}"
+            stacey "Sorry it's just... this is kind of stressful, you know."
+            stacey "I don't want anyone else to wind up dead."
+            stacey "It would look {i}real{/i} bad on my record as class president."
+        "It wasn't my fault, I slipped on a tree root.":
+            show stacey tired
+            stacey "Ugh, Beans..."
+            stacey "You're a major liability. You know that, right?"
+            stacey "Just try not to break anything else, {i}please{/i}."
+        "Can it, Stacey":
+            $ stacey.approval -= 1
+            stacey "Don't tell me to can it!"
+            stacey "First you make us crash, then you break our flashlight-"
+            stacey "UGH! You are making me SO MAD right now!"
+            hide stacey
+            "She's stormed off!"
+            "I'd better follow if I don't want to get even more lost"
+
+    "I'm trying really, {i}really{/i} hard not to trip over anything else..."
+    "But it's getting harder as the daylight is fading"
 
     show stacey excited
     stacey "Wait!" with vpunch
@@ -42,16 +92,13 @@ label forestShed_runningThroughWoods:
         stacey "Maybe they have a telephone! We can call the police!"
         
         beans "Stacey, wait!"
-        "Ugh... how am I meant to keep up with a champion cheerleader?"
-        "I'm going as fast as I can!"
+        "How is she so fast??"
 
         beans "Huff.. huff.."
         scene bg shed
         show stacey disappointed
 
-        stacey "It's obviously abandoned."
-        
-
+        stacey "Ugh. It's obviously abandoned."
         "It looks pretty small for a house, too"
 
         jump scene_forestShed.b_discoveringShed
