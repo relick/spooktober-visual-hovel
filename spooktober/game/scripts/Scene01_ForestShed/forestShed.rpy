@@ -69,10 +69,10 @@ label .util_addItemToBag(item = "Default"):
 
 # 1 Running through the woods
 label .a_runningThroughWoods:
-    "Section 1"
-    "Beans and Stacey running scared through the woods."
+    "PLACEHOLDER: Section 1"
+    "PLACEHOLDER: Beans and Stacey running scared through the woods."
 
-    jump .b_discoveringShed
+    jump forestShed_runningThroughWoods
 
 # 2 Discovering the shed
 label .b_discoveringShed:
