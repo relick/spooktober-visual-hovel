@@ -106,17 +106,17 @@ label forestShed_runningThroughWoods:
     # "Careful - we don't know if we can trust them"
     label .careful:
         stacey "True."
-        stacey "They might be weird forest people who marry their uncles."
+        stacey "They might be those weird forest people who marry their uncles."
 
         "I creep forward, making each footstep as silent as possible."
 
-        "The moonlight is glimmering off Stacey's hoop earrings"
+        "The moonlight is glimmering off Stacey's hoop earrings."
         "The way it dances across the chemically treated curls of her hair.... "
-        "It's almost magical"
+        "It's almost magical."
 
         scene bg shed
         show stacey disgusted
         stacey "Ugh."
-        stacey "This place is like, abandonedville. And it's {i}hella{/i} grody."
+        stacey "This place is abandonedville. And it's {i}hella{/i} grody."
         
         jump scene_forestShed.b_discoveringShed

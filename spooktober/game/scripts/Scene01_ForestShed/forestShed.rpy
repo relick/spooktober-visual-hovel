@@ -29,7 +29,7 @@ label scene_forestShed:
 # Utility labels not associated with a specific point in the narrative
 label .util_updateProactivePassive(delta = 0):
     $ beans.proactivePassive += delta
-    "TODO: Beans' proactivePassive scored is [beans.proactivePassive]"
+    "TODO: Beans' proactivePassive score is [beans.proactivePassive]"
 
     if not stacey.respondedProactivePassive:
         if beans.proactivePassive < passiveThreshold:
@@ -38,7 +38,6 @@ label .util_updateProactivePassive(delta = 0):
         elif beans.proactivePassive > proactiveThreshold:
             $ stacey.respondedProactivePassive = True
             stacey "TODO: You are very proactive."
-
     return
 
 label .util_updateKillerDistance(delta = 0):
@@ -47,7 +46,8 @@ label .util_updateKillerDistance(delta = 0):
 
     if killerDistance <= 0:
         jump .e_killerArrives
-    return
+    else:
+        return
 
 label .util_equipItem(item = "Default"):
     python:
