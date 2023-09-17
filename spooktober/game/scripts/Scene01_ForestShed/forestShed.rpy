@@ -20,6 +20,8 @@ default foundLockers = False
 default searchedDrums = False
 default cutHand = False
 
+default staceyDateAgreed = False
+
 default killerDistance = 3
 
 label scene_forestShed:
@@ -261,6 +263,7 @@ label .e_killerArrives:
 
 label .lockerTalk:
     "TODO: Flirt with Stacey but also try not to die"
+    jump forestShed_lockerTalk
 
 label .runIntoTheWoods:
     if stacey.approval < staceyRunApprovalThreshold:

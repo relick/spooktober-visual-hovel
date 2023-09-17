@@ -67,3 +67,11 @@ label endings_forestShed:
         "For some reason Stacey knows how to disarm a bear trap. You just push down on both vertical springs, apparently."
         "She frees you and you disappear into the forest together, safe - for now."
         return
+
+    label .ending_lockerEscape_romance:
+        "TODO: You escape the locker, with a promise of a date on the cards. Yay!"
+        return
+
+    label .ending_lockerEscape_noRomance:
+        "TODO: You escape the locker, as friends. Yay, I guess?"
+        return

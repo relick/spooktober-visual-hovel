@@ -8,8 +8,9 @@ define e = Character("Stacey")
 
 # The game starts here.
 
-label debug:
-
+label start:
+    jump scene_forestShed.a_runningThroughWoods
+    
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.

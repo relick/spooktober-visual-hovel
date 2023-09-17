@@ -11,7 +11,7 @@ default menuset = set()
 #default found_locker = False
 # The game starts here.
 
-label start:
+label testScene_shed:
     # jump scene_forestShed.a_runningThroughWoods
 
     # Show a background. This uses a placeholder by default, but you can
