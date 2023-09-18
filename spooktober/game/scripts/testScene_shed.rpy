@@ -40,10 +40,15 @@ label testScene_shed:
 
     stacey "Oh my god! A house! People!" with vpunch
 
+    # Make a timed choice with 3 seconds, jumping to 'saved' if they time out
+    show screen timed_choice(3.0, "saved")
+
     menu:
         "We're saved!":
+            hide screen timed_choice
             jump saved
         "Careful - we don't know if we can trust them":
+            hide screen timed_choice
             jump careful
 
 
