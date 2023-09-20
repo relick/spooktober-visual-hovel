@@ -12,7 +12,7 @@ default menuset = set()
 # The game starts here.
 
 label testScene_shed:
-    # jump scene_forestShed.a_runningThroughWoods
+    jump scene_forestShed.a_runningThroughWoods
 
     # Show a background. This uses a placeholder by default, but you can
     # add a file (named either "bg room.png" or "bg room.jpg") to the

@@ -36,9 +36,23 @@ label forestShed_runningThroughWoods:
 
     hide stacey 
 
-    # AUDIO: Thud
-    beans "OOF-" with vpunch
-    "That tree root came out of nowhere!"
+    "I can barely see where I'm putting my feet!"
+    
+    show screen timed_choice(3.0, "Trip over a tree root!")
+    menu:
+        "Trip over a tree root!":
+            hide screen timed_choice
+            call .trip("tree root")
+        "Fall over a log!":
+            hide screen timed_choice
+            call .trip("log")        
+        "Avoid the obstacles!":
+            hide screen timed_choice
+            call .avoid
+        "Stumble on a fallen branch!":
+            hide screen timed_choice
+            call .trip("branch")           
+
 
     # AUDIO: Crack
     "{i}CRACK{/i}"
@@ -58,7 +72,7 @@ label forestShed_runningThroughWoods:
             stacey "Sorry it's just... this is kind of stressful, you know."
             stacey "I don't want anyone else to wind up dead."
             stacey "It would look {i}real{/i} bad on my record as class president."
-        "It wasn't my fault, I slipped on a tree root.":
+        "It wasn't my fault, I can't see where I'm going in this dumb forest.":
             show stacey tired
             stacey "Ugh, Beans..."
             stacey "You're a major liability. You know that, right?"
@@ -72,8 +86,8 @@ label forestShed_runningThroughWoods:
             "She's stormed off!"
             "I'd better follow if I don't want to get even more lost"
 
-    "I'm trying really, {i}really{/i} hard not to trip over anything else..."
-    "But it's getting harder as the daylight is fading"
+    "I'm trying really, {i}really{/i} hard not to run into anything else"
+    "...but it's getting harder as the daylight is fading"
 
     show stacey excited
     stacey "Wait!" with vpunch
@@ -118,5 +132,17 @@ label forestShed_runningThroughWoods:
         show stacey disgusted
         stacey "Ugh."
         stacey "This place is abandonedville. And it's {i}hella{/i} grody."
-        
         jump scene_forestShed.b_discoveringShed
+        
+
+    label .trip(object = "default"):
+        # AUDIO: Thud
+        beans "OOF-" with vpunch
+        "That [object] came out of nowhere!"
+
+    label .avoid:
+        "Sure footed as a mountain goat!"
+        beans "OOF-" with vpunch
+        show beans pain
+        beans "Ohh... should have watched where I was going..."
+        beans "I just ran face first into that tree."

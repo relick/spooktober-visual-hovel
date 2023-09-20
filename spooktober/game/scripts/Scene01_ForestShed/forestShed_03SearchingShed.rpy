@@ -1,11 +1,17 @@
 # Audio
 # --------
+# Striking match (striking a match to light a lantern)
+# Metal clang (sitting on a rusted oil drum and it collapses/falls over)
+# Cloth rip
 
 # Backgrounds
 # --------
 
 # Sprites
 # --------
+# stacey determined
+# stacey happy
+
 
 label forestShed_searchingShed:
     show stacey determined 
@@ -20,15 +26,50 @@ label forestShed_searchingShed:
     # 3a Beans searches the shed herself
     label .beansSearch:
         call scene_forestShed.util_updateProactivePassive(1)
-        call scene_forestShed.util_updateKillerDistance(-1)
         $ beansSearchedShed = True
+
+        "I can show Stacey I'm not totally useless!"
+        
+        scene bg shedInterior
+        show stacey disgusted
+        stacey "Ugh, can you say {i}dank{/i}?"
+
+        show stacey determined
+        stacey "Okay, look around for a flashlight or something."
+        stacey "Careful! You touch any of these tools, it's a one-way trip to tetanus city."
+        "Those tools do look pretty unsafe..."
+        "But maybe we should be quick, who knows how long we've got before that weirdo comes after us?"
         menu: 
             "Search carefully":
+                "{i}You carefully search the shelves, disturbing as little as possible.{/i}"
+                "{i}You spy a bulbous glass shape, hiding under a thick layer of dust, and gently wipe the grime away.{/i}"
+                show stacey happy
+                stacey "A lantern! Great find, Beans."
+                $stacey.approval += 1
+
+                stacey "And it's still got some fuel. There must be matches around here somewhere..."
+                "{i}A careful rummge produeces a book of matches which miraculously, still work.{/i}"
+                # Audio: Match striking? 
+                # VFX: Glow of light to represent lantern lighting?
+                stacey "Let there be light!" # TODO: Not sure this fits the character
                 call scene_forestShed.util_equipItem("Lantern")
                 call scene_forestShed.util_updateKillerDistance(-1)                
                 
             "Search quickly":
+                "Screw being careful - I want to be out of here as quickly as possible."
+                "{i}You begin rummaging haphazardly through the shelves.{/i}"
+                "{i}As you reach across the workbench your sleeve snags on the teeth of rusted bandsaw.{/i}"
+                # Audio: Cloth ripping
+                beans "Ugh!"
+
+                "{i}You rip your arm free a little too vigorously and your hand collides with the shelf above{/i}"
+                "{i}Something glass and dust-covered falls off,  and shatters into piees on the bench.{/i}"
+
+                show stacey annoyed
+                stacey "Well that {i}was{/i} a lantern."
+                
                 $ stacey.approval -= 1
+        call scene_forestShed.util_updateKillerDistance(-1)
         jump scene_forestShed.d_areaSearch
 
     # 3b Beans watches as Stacey searches the shed
