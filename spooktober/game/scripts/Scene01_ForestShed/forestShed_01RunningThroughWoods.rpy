@@ -42,23 +42,23 @@ label forestShed_runningThroughWoods:
     menu:
         "Trip over a tree root!":
             hide screen timed_choice
-            call .trip("tree root")
+            call after_treeroot.trip("tree root")
             jump after_treeroot
         "Fall over a log!":
             hide screen timed_choice
-            call .trip("log")
+            call after_treeroot.trip("log")
             jump after_treeroot
         "Avoid the obstacles!":
             hide screen timed_choice
-            call .avoid
+            call after_treeroot.avoid
             jump after_treeroot
         "Stumble on a fallen branch!":
             hide screen timed_choice
-            call .trip("branch")
+            call after_treeroot.trip("branch")
             jump after_treeroot
 
 label fail_choice_trip_treeroot:
-    call .trip("tree root")
+    call after_treeroot.trip("tree root")
 
 label after_treeroot:
 
