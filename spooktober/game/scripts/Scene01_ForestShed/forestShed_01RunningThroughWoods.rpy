@@ -38,21 +38,29 @@ label forestShed_runningThroughWoods:
 
     "I can barely see where I'm putting my feet!"
     
-    show screen timed_choice(3.0, "Trip over a tree root!")
+    show screen timed_choice(3.0, "fail_choice_trip_treeroot")
     menu:
         "Trip over a tree root!":
             hide screen timed_choice
             call .trip("tree root")
+            jump after_treeroot
         "Fall over a log!":
             hide screen timed_choice
-            call .trip("log")        
+            call .trip("log")
+            jump after_treeroot
         "Avoid the obstacles!":
             hide screen timed_choice
             call .avoid
+            jump after_treeroot
         "Stumble on a fallen branch!":
             hide screen timed_choice
-            call .trip("branch")           
+            call .trip("branch")
+            jump after_treeroot
 
+label fail_choice_trip_treeroot:
+    call .trip("tree root")
+
+label after_treeroot:
 
     # AUDIO: Crack
     "{i}CRACK{/i}"
