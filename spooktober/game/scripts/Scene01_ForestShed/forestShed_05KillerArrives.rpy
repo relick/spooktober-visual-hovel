@@ -65,8 +65,22 @@ label forestShed_killerArrives:
         
     label .hideInOilDrum:
         if searchedDrums:
-            "TODO: You avoid the stinky drum and try to cram yourself into one"
-            "TODO: It's clearly not going to work. You have no choice but to run into the woods."
+            stacey "Don't go near the gnarly drum!"
+            beans "Oh man - it still {i}reeks.{/i}"
+
+            "Okay - time to hide myself in one of these drums."
+            "..."
+            "This looks a lot smaller than I remembered..."
+
+            stacey "Beans I'm not being funny, but like,"
+            show stacey annoyed
+            stacey "There is no WAY I'm going to fit into one of these."
+
+            show beans stressed
+            beans "So where do we go? Into the dark, forboding woods?!"
+
+            show stacey determined
+            stacey "It's our only hope! Come on, Beans!"
             jump scene_forestShed.runIntoTheWoods
         else:
             "TODO: Stacey rushes to hide in a drum, not noticing the rancid smell coming from it"
