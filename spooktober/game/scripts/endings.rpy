@@ -53,7 +53,7 @@ label endings_forestShed:
 
     label .ending_staceyStuckInBearTrap:
         "TODO: You try to free Stacey, but don't manage it."
-        "The killer catches up and frees you both."
+        "The killer catches up and kills you both."
         "Could you have made it if you left her behind?"
         return
 
