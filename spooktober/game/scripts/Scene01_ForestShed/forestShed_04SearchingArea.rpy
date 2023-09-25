@@ -151,7 +151,6 @@ label forestShed_searchingArea:
                         stacey "What use could we possibly have for decaying footwear that's clearly five sizes too big for either of us."
                         return
                 jump forestShed_searchingArea
-                # TODO: Where do we go after the boots?
     
     label .areaSearch_noLantern:
         "The last rays of sunlight have dwindled."
@@ -160,8 +159,7 @@ label forestShed_searchingArea:
             "Search the shed for another lantern" if not beansSearchedShed:
                 jump .searchShed_noLantern
             "Attempt to search the outside of the shed":
-                jump scene_forestShed.searchAroundShed
-
+                jump forestShed_searchingArea.searchAroundShed
             "Continue into the forest":
                 jump scene_forestShed.continueIntoForest
         
@@ -242,5 +240,6 @@ label forestShed_searchingArea:
         stacey "What?"
         stacey "Don't tell me you weren't thinking it too."
         call scene_forestShed.util_updateKillerDistance(-1)
+        jump forestShed_searchingArea
 
     label .continueIntoForest:
