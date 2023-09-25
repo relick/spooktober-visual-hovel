@@ -42,8 +42,23 @@ label forestShed_killerArrives:
             "{i}The two of you squeeze into a locker that's barely big enough for two.{/i}"
             jump .lockerTalk      
         else:
-            "TODO: You fling the locker open to hide, but without a lantern you don't notice it's full of stuff, which comes crashing down on you"
-            "With the killer alerted to your location, you're forced to run into the woods!"
+            if beans.proactivePassive <= 0:
+                "Stacey grabs my arm and pulls me over to the lockers."
+            else:
+                "I grab Stacey's arm and pull her over to the lockers."
+
+            "Man, I hope there's nothing gross in here because I can't see a THING."
+            "{i}CRASH{/i}" with vpunch
+
+            "{i}An enormous pile of rusted junk comes crashing down on you.{/i}"
+            "{i}It makes an enormous racket{/i}"
+
+            beans "Oh nooooooo-"
+            
+            stacey "BEANS!"
+            beans "Do you think he heard that?"
+            stacey "Of course he freakin heard it!"
+            stacey "As if there's any point in hiding now - we've gotta run."
             jump .runIntoTheWoods
 
         
