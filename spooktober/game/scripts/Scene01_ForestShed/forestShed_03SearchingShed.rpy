@@ -30,7 +30,7 @@ label forestShed_searchingShed:
 
         "I can show Stacey I'm not totally useless!"
         
-        scene bg shedInterior
+        scene bg shedinterior
         show stacey disgusted
         stacey "Ugh, can you say {i}dank{/i}?"
 
