@@ -93,60 +93,7 @@ label .d_areaSearch:
     jump forestShed_areaSearch
 
 label .e_killerArrives:
-    "TODO: The killer is upon you, oh no. What do you do?"
-
-    menu:
-        "Hide in the lockers" if foundLockers:
-            jump .hideInLockers
-        "Hide in an empty oil drum":
-            jump .hideInOilDrum
-        "Hide in the shed":
-            jump .hideInTheShed
-        "Run further into the woods":
-            jump .runIntoTheWoods
-    label .hideInLockers:
-        if "Lantern" in beans.equipped:
-            "TODO: You see that one of the lockers is full of stuff"
-            "TODO: You have no choice but to squeeze into a locker with Stacey"
-            if stacey.approval < staceyRunApprovalThreshold:
-                jump endings_forestShed.ending_staceyRuns_lowApproval
-            else:
-                jump .lockerTalk      
-        else:
-            "TODO: You fling the locker open to hide, but without a lantern you don't notice it's full of stuff, which comes crashing down on you"
-            "With the killer alerted to your location, you're forced to run into the woods!"
-            jump .runIntoTheWoods
-
-        
-    label .hideInOilDrum:
-        if searchedDrums:
-            "TODO: You avoid the stinky drum and try to cram yourself into one"
-            "TODO: It's clearly not going to work. You have no choice but to run into the woods."
-            jump scene_forestShed.runIntoTheWoods
-        else:
-            "TODO: Stacey rushes to hide in a drum, not noticing the rancid smell coming from it"
-            "Unfortunately there's a rotting dead raccoon in there"
-            "While she's freaking out the killer is basically on top of you"
-            if stacey.approval < staceyRunApprovalThreshold:
-                jump endings_forestShed.ending_oilDrums_lowApproval
-            else:
-                jump endings_forestShed.ending_oilDrums_mediocre
-
-    label .hideInTheShed:
-        if cutHand:
-            jump endings_forestShed.ending_underTable_cutHand
-        elif "Boots" in beans.backpack:
-            "The boots make your bag too bulky to fit under the table with you"
-            menu:
-                "Throw your bag out of the shed":
-                    "You throw your bag out into the darkness and scramble under the table - not a moment too soon."
-                    jump .underTabletalk
-                "Keep the bag but try and stay hidden":
-                    jump endings_forestShed.ending_underTable_bootsInBag
-        elif stacey.approval < staceyRunApprovalThreshold:
-            jump endings_forestShed.ending_staceyRuns_lowApproval
-        else:
-            jump .underTabletalk
+    jump forestShed_killerArrives
 
 label .lockerTalk:
     "TODO: Flirt with Stacey but also try not to die"

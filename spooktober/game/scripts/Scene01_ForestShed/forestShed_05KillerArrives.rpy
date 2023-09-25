@@ -36,11 +36,11 @@ label forestShed_killerArrives:
             else:
                 "I grab Stacey's arm and pull her over to the lockers."
 
-            "TODO: You have no choice but to squeeze into a locker with Stacey"
-            if stacey.approval < staceyRunApprovalThreshold:
-                jump endings_forestShed.ending_staceyRuns_lowApproval
-            else:
-                jump .lockerTalk      
+            beans "What the- this one's full of junk!"
+            stacey "In here with me!"
+            
+            "{i}The two of you squeeze into a locker that's barely big enough for two.{/i}"
+            jump .lockerTalk      
         else:
             "TODO: You fling the locker open to hide, but without a lantern you don't notice it's full of stuff, which comes crashing down on you"
             "With the killer alerted to your location, you're forced to run into the woods!"
@@ -56,10 +56,7 @@ label forestShed_killerArrives:
             "TODO: Stacey rushes to hide in a drum, not noticing the rancid smell coming from it"
             "Unfortunately there's a rotting dead raccoon in there"
             "While she's freaking out the killer is basically on top of you"
-            if stacey.approval < staceyRunApprovalThreshold:
-                jump endings_forestShed.ending_oilDrums_lowApproval
-            else:
-                jump endings_forestShed.ending_oilDrums_mediocre
+            jump endings_forestShed.ending_oilDrums_mediocre
 
     label .hideInTheShed:
         if cutHand:
@@ -72,7 +69,5 @@ label forestShed_killerArrives:
                     jump .underTabletalk
                 "Keep the bag but try and stay hidden":
                     jump endings_forestShed.ending_underTable_bootsInBag
-        elif stacey.approval < staceyRunApprovalThreshold:
-            jump endings_forestShed.ending_staceyRuns_lowApproval
         else:
             jump .underTabletalk
