@@ -13,6 +13,9 @@ init -1:
     $ config.tag_transform['beans'] = portrait
     define gui.text_font = "LinLibertine_R.ttf"
     define gui.text_size = 33
+    define gui.interface_text_font = "mytype.ttf"
+    define gui.button_text_font = "mytype.ttf"
+    define gui.kind_text_font = "mytype.ttf"
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
