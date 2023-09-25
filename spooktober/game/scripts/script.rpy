@@ -11,6 +11,8 @@ init -1:
 
     $ config.tag_layer['beans'] = 'aboveUI'
     $ config.tag_transform['beans'] = portrait
+    define gui.text_font = "LinLibertine_R.ttf"
+    define gui.text_size = 33
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -20,8 +22,6 @@ define e = Character("Stacey")
 # The game starts here.
 
 label start:
-    show beans kewl
-
     jump scene_forestShed.a_runningThroughWoods
     
     # Show a background. This uses a placeholder by default, but you can
