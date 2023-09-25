@@ -133,8 +133,22 @@ label forestShed_searchingArea:
                         "I don't really know why I did that."
                         call scene_forestShed.util_equipItem("Boots")
                     "Put the boots in your backpack":
+                        "They don't look like my size."
+                        "Hey, might come in handy later though."
+
+                        "{i}You retrieve the boots and add them to your backpack, which is now awkwardly bulky and pretty heavy.{/i}"
+                        stacey "Um. Okay then..."
+     
                         call scene_forestShed.util_addItemToBag("Boots")
+
                     "Leave the boots in the oil drum":
+                        beans "Yeah, I'm not touching those."
+
+                        stacey "Good, because they're {i}so{/i} not your colour."
+                        "Oh Stacey... how stereotypical can she get?"
+
+                        stacey "You know I'm joking, right?"
+                        stacey "What use could we possibly have for decaying footwear that's clearly five sizes too big for either of us."
                         return
     
     label .areaSearch_noLantern:
