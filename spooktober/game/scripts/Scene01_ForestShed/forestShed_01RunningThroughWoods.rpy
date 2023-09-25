@@ -151,6 +151,6 @@ label after_treeroot:
     label .avoid:
         "Sure footed as a mountain goat!"
         beans "OOF-" with vpunch
-        show beans pain
+        show beans shout # pain
         beans "Ohh... should have watched where I was going..."
         beans "I just ran face first into that tree."

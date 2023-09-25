@@ -84,7 +84,7 @@ label forestShed_searchingArea:
             menu:
                 "Open the oil drum yourself":
                     call scene_forestShed.util_updateProactivePassive(1)
-                    show beans worried
+                    show beans sad # worried
                     beans "Oh man, I hope this isn't something gross."
                     beans "I have a nervous stomach you know."
 
@@ -93,7 +93,7 @@ label forestShed_searchingArea:
                     "{i}You and Stacey peer at your spoils.{/i}"
                     jump .findBoots
                 "Ask Stacey to open the oil drum":
-                    show beans apologetic
+                    show beans serious2 # apologetic
                     beans "Um Stacey, could you - uh - get the lid? "
                     
                     show stacey annoyed
