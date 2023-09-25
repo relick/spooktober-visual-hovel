@@ -55,6 +55,7 @@ label forestShed_killerArrives:
 
             beans "Oh nooooooo-"
             
+            show stacey surprised
             stacey "BEANS!"
             beans "Do you think he heard that?"
             stacey "Of course he freakin heard it!"

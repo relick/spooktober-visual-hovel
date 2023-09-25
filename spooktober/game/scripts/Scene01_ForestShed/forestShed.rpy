@@ -90,7 +90,7 @@ label .c_searchingShed:
 
 # 4 Searching the surrounding area
 label .d_areaSearch:
-    jump forestShed_areaSearch
+    jump forestShed_searchingArea
 
 label .e_killerArrives:
     jump forestShed_killerArrives
