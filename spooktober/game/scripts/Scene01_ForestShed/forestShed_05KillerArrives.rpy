@@ -16,7 +16,9 @@ label forestShed_killerArrives:
     "I listen - to the rustling leaves, the hooting of an owl..."
     "...and the heavy thud of approaching footsteps."
 
+    show beans shout
     beans "{i}Oh my god{/i}"
+    hide beans
     stacey "We have to hide!"
 
 
@@ -36,7 +38,9 @@ label forestShed_killerArrives:
             else:
                 "I grab Stacey's arm and pull her over to the lockers."
 
+            show beans serious2
             beans "What the- this one's full of junk!"
+            hide beans
             stacey "In here with me!"
             
             "{i}The two of you squeeze into a locker that's barely big enough for two.{/i}"
@@ -53,11 +57,15 @@ label forestShed_killerArrives:
             "{i}An enormous pile of rusted junk comes crashing down on you.{/i}"
             "{i}It makes an enormous racket{/i}"
 
+            show beans tired
             beans "Oh nooooooo-"
+            hide beans
             
             show stacey surprised
             stacey "BEANS!"
+            show beans sad
             beans "Do you think he heard that?"
+            hide beans
             stacey "Of course he freakin heard it!"
             stacey "As if there's any point in hiding now - we've gotta run."
             jump .runIntoTheWoods
@@ -66,7 +74,9 @@ label forestShed_killerArrives:
     label .hideInOilDrum:
         if searchedDrums:
             stacey "Don't go near the gnarly drum!"
+            show beans sad
             beans "Oh man - it still {i}reeks.{/i}"
+            hide beans
 
             "Okay - time to hide myself in one of these drums."
             "..."
@@ -78,6 +88,7 @@ label forestShed_killerArrives:
 
             show beans stressed
             beans "So where do we go? Into the dark, forboding woods?!"
+            hide beans
 
             show stacey determined
             stacey "It's our only hope! Come on, Beans!"

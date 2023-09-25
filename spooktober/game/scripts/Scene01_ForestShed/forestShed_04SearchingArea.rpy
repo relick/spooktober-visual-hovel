@@ -37,7 +37,9 @@ label forestShed_searchingArea:
         
         # Search locations
         label .searchOilDrums:
+            show beans kewlpewpew
             beans "Let's check out those oil drums."
+            hide beans
             stacey "Sure, I guess."
             scene bg oilDrums
             "{i}The three oil drums are ancient, grimy and coated in rust.{/i}"
@@ -57,20 +59,28 @@ label forestShed_searchingArea:
                     "I can make out its cute little face under the maggots - well, it was cute once."
                     "Those empty eye sockets are staring into my soul..."
 
+                    show beans meanbean
                     beans "Urgh..."
+                    hide beans
                     "{i}You try and put the raccoon corpse out of your mind. It doesn't really work.{/i}"
                     "{i}It's still there, staring at you with its maggot-eaten eyes.{/i}"
 
+                    show beans sad
                     beans "Well, on to the next one."
+                    hide beans
                 "Avoid the rancid drum":
+                    show beans serious2
                     beans "No way am I looking in there."
+                    hide beans
                     $ stacey.approval += 1
 
             "Two drums left."
             stacey "Let's see if there's anything in these bad boys"
             "{i}CLANG{/i}"
             stacey "Empty!"
+            show beans blush3 # idk, is kicking things hot? maybe
             beans "Did you just {i}kick{/i} that?"
+            hide beans
             
             show stacey annoyed
             stacey "Well I'm not gonna touch it with my {i}hands.{/i} Duh."
@@ -87,14 +97,16 @@ label forestShed_searchingArea:
                     show beans sad # worried
                     beans "Oh man, I hope this isn't something gross."
                     beans "I have a nervous stomach you know."
+                    hide beans
 
                     "This lid {i}really{/i} doesn't want to come off, but I'll show it who's boss."
                     "{i}With a rusty screech, the lid of the drum comes free{/i}"
                     "{i}You and Stacey peer at your spoils.{/i}"
                     jump .findBoots
                 "Ask Stacey to open the oil drum":
-                    show beans serious2 # apologetic
+                    show beans blush # apologetic
                     beans "Um Stacey, could you - uh - get the lid? "
+                    hide beans
                     
                     show stacey annoyed
                     stacey "Wow Beans. Do you want me to tie your shoes and cut your food up too?"
@@ -113,7 +125,9 @@ label forestShed_searchingArea:
             label .findBoots:
                 show stacey bored
                 stacey "Wow. Gross old boots. This will save us."
+                show beans kewl
                 beans "Is that sarcasm?"
+                hide beans
                 stacey "{i}Duh.{/i}"
                 
                 show bg boots
@@ -122,7 +136,9 @@ label forestShed_searchingArea:
                 menu:
                     "Put on the boots":
                         $ stacey.approval -= 1
+                        show beans kewl
                         beans "Shame to let them go to waste!"
+                        hide beans
                         "{i}You retrieve the dusty old boots from the drum and put them on.{/i}"
                         
                         show stacey disgusted
@@ -142,7 +158,9 @@ label forestShed_searchingArea:
                         call scene_forestShed.util_addItemToBag("Boots")
 
                     "Leave the boots in the oil drum":
+                        show beans meanbean
                         beans "Yeah, I'm not touching those."
+                        hide beans
 
                         stacey "Good, because they're {i}so{/i} not your colour."
                         "Oh Stacey... how stereotypical can she get?"
@@ -178,7 +196,9 @@ label forestShed_searchingArea:
             "Reminds me of a butcher's shop."
 
             stacey "Okay you search the shelves. I'm gonna look through these drawers."
+            show beans earnest
             beans "Okay!"
+            hide beans
 
             "{i}You start rifling through the shelves above the workbench.{/i}"
             "{i}You squint through your glasses to make out the objects in front of you.{/i}"
@@ -189,7 +209,9 @@ label forestShed_searchingArea:
             show stacey surprised
             stacey "Beans! What was that?"
 
+            show beans shout
             beans "Um, it was just my sleeve-"
+            hide beans
 
             show stacey shocked
             stacey "Your hand! "
@@ -198,7 +220,9 @@ label forestShed_searchingArea:
             "Is that... blood? "
             stacey "You must have caught it on that bandsaw. You need to be more careful!"
             stacey "How bad is it?"
+            show beans stressed
             beans "I dunno... there's a bit of blood..."
+            hide beans
 
             stacey "Ugh, that needs cleaning {i}stat{/i}."
             stacey "I've gotta bandage it until we find actual first aid."
@@ -218,7 +242,9 @@ label forestShed_searchingArea:
                     call scene_forestShed.util_updateKillerDistance(-1)
                     stacey "BEANS! EW!"
                     show stacey angry
+                    show beans blush
                     beans "{i}Oof{/i}"
+                    hide beans
                     "{i}Stacey shoves you away, disgusted.{/i}"
                     stacey "Why would you think that's okay?"
                     stacey "Ew. Not even. Don't even try it."
@@ -228,7 +254,9 @@ label forestShed_searchingArea:
                 "Say nothing":
                     $ stacey.approval -= 1
                     show stacey uncomfortable
+                    show beans blush2
                     beans "..."
+                    hide beans
                     stacey "..."
                     "Well, that was awkward."
     # Search around the shed

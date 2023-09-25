@@ -11,8 +11,9 @@
 
 label forestShed_discoveringShed:
     scene bg shed
-    centered "What you  have found is a shed."
+    centered "What you have found is a shed."
 
+    hide beans
     "This forest clearing is kind of cute,"
     "Shame it's full of junk."
     "Old jerrycans, rotting firewood... and are those oil drums?"

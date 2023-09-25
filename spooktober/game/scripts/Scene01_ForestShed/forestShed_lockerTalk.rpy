@@ -69,7 +69,9 @@ label forestShed_lockerTalk:
         "Stacey runs and dies RIP"
 
     label .lockerTalk_maybeWeCouldHang:
+        show beans blush
         beans "Maybe when we get out of here we could... do other stuff together sometime?"
+        hide beans
         stacey "Oh yeah? Like what?"
 
         menu: 
@@ -262,7 +264,9 @@ label forestShed_lockerTalk:
     label .lockerTalk_goEarly:
         show stacey surprised
         stacey "Beans what-"
+        show beans earnest
         beans "Now! Let's go!"
+        hide beans
 
         if beans.proactivePassive > 0:
             "{i}You throw the locker open and run{/i}"

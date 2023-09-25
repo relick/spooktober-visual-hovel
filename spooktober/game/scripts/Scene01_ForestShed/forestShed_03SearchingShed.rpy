@@ -60,7 +60,9 @@ label forestShed_searchingShed:
                 "{i}You begin rummaging haphazardly through the shelves.{/i}"
                 "{i}As you reach across the workbench your sleeve snags on the teeth of rusted bandsaw.{/i}"
                 # Audio: Cloth ripping
+                show beans stressed
                 beans "Ugh!"
+                hide beans
 
                 "{i}You rip your arm free a little too vigorously and your hand collides with the shelf above{/i}"
                 "{i}Something glass and dust-covered falls off,  and shatters into piees on the bench.{/i}"
@@ -81,14 +83,16 @@ label forestShed_searchingShed:
         stacey "Wait right there. Don't move a muscle, okay?"
         menu:
             "Wait anxiously for Stacey to finish searching":
+                show beans blush
                 beans "I'll just... wait right here then."
                 "Stacey seems to know what she's doing."
+                hide beans
 
                 show stacey happy
                 stacey "Ah ha!"
                 stacey "Still some paraffin left in this lantern"
                 "She strikes a match and the glass lantern sputters to life"
-                # Stcaey smokes, has a lighter 
+                # Stacey smokes, has a lighter 
                 stacey "Is that a good find or what?"
                 call scene_forestShed.util_updateKillerDistance(-1)
                 call scene_forestShed.util_equipItem("Lantern")
@@ -101,10 +105,12 @@ label forestShed_searchingShed:
                 "This drum looks like it's a gazillion years old."
                 "And something smells absolutely rank..."
 
+                show beans shout
                 beans "Woah!" with vpunch
 
                 "{i}CLANG{/i}"
                 "That lid was rusted right through!"
+                hide beans
                 
                 show stacey scared
                 stacey "AAAAH!"
@@ -113,7 +119,9 @@ label forestShed_searchingShed:
                 stacey "What's going on? Are you alright?!"
 
                 # "I came SO close to getting my butt wedged in an old oil drum."
+                show beans sad
                 beans "I tried to sit on that oil drum but it totally just disintegrated!"
+                hide beans
 
                 show stacey angry
                 stacey "Dammit Beans! You scared me so much I dropped the lantern!"
@@ -121,11 +129,16 @@ label forestShed_searchingShed:
 
                 "I look at where she's pointing - inside the oil drum, where that rancid smell is coming from."
 
+                show beans meanbean
                 beans "Is that... a raccoon?"
+                hide beans
 
                 show stacey nauseous
                 stacey "Well it's... half of one."
+
+                show beans meanbean
                 beans "I bet those maggots got the rest."
+                hide beans
 
                 "The smell is so strong..."
 

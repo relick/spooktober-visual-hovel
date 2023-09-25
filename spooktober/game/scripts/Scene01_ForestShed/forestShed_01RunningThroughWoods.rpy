@@ -21,6 +21,7 @@ label forestShed_runningThroughWoods:
     scene bg forest
     # AUDIO: Panting?
 
+    hide beans
     "I'm so tired... and my feet hurt..."
     "This tin of beans is so heavy..."
     "It's getting dark so fast..."
@@ -31,12 +32,15 @@ label forestShed_runningThroughWoods:
 
     show stacey annoyed
     stacey "Can't you keep up, Beans?"
+    show beans stressed
     beans "I'm going as fast as I can!"
     "How am I meant to keep up with a champion cheerleader?"
 
     hide stacey 
 
+    show beans tired
     "I can barely see where I'm putting my feet!"
+    hide beans
     
     show screen timed_choice(3.0, "fail_choice_trip_treeroot")
     menu:
@@ -65,9 +69,11 @@ label after_treeroot:
     # AUDIO: Crack
     "{i}CRACK{/i}"
 
-    # Some kind of flash indicating the light went out?
+    # TODO: Some kind of flash indicating the light went out?
+    show beans shout
     "Was that... the flashlight?"
     "Oh no..."
+    hide beans
 
     show stacey angry
     stacey "Beans! Please tell me you did not just break our ONLY flashlight."
@@ -91,17 +97,23 @@ label after_treeroot:
             stacey "First you make us crash, then you break our flashlight-"
             stacey "UGH! You are making me SO MAD right now!"
             hide stacey
+            show beans sad
             "She's stormed off!"
+            show beans stressed
             "I'd better follow if I don't want to get even more lost"
 
+    show beans serious2
     "I'm trying really, {i}really{/i} hard not to run into anything else"
     "...but it's getting harder as the daylight is fading"
+    hide beans
 
     show stacey excited
     stacey "Wait!" with vpunch
 
     scene bg shedSilhouette
+    show beans shout
     "Is that... a house?"
+    hide beans
 
     menu:
         "We're saved!":
@@ -113,10 +125,14 @@ label after_treeroot:
     label .saved:
         stacey "Maybe they have a telephone! We can call the police!"
         
+        show beans earnest
         beans "Stacey, wait!"
+        show beans sad
         "How is she so fast??"
 
+        show beans tired
         beans "Huff.. huff.."
+        hide beans
         scene bg shed
         show stacey disappointed
 
@@ -145,12 +161,16 @@ label after_treeroot:
 
     label .trip(object = "default"):
         # AUDIO: Thud
+        show beans shout
         beans "OOF-" with vpunch
         "That [object] came out of nowhere!"
+        hide beans
 
     label .avoid:
+        show beans kewl
         "Sure footed as a mountain goat!"
-        beans "OOF-" with vpunch
         show beans shout # pain
+        beans "OOF-" with vpunch
         beans "Ohh... should have watched where I was going..."
         beans "I just ran face first into that tree."
+        hide beans
