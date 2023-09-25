@@ -73,6 +73,8 @@ label forestShed_lockerTalk:
         stacey "Oh yeah? Like what?"
 
         menu: 
+            # TODO: Beans should have an idea of a date
+            # Options should be more obvious in their difference
             "I dunno, what's your idea of a good time?":
                 jump .lockerTalk_iLikeMovies
             "I dunno, what's your idea of a dream date?":
@@ -88,13 +90,14 @@ label forestShed_lockerTalk:
                             "This is so awkward..."
                             "Even though it's dark I can tell she'd avoiding looking at me"
                             jump .lockerTalk_hereComesKiller
-                        "Haha... me too... haha...":
+                        "{i}(lie){/i} Haha... me too... haha...":
                             "This is so awkward..."
                             "Even though it's dark I can tell she'd avoiding looking at me"
                             jump .lockerTalk_hereComesKiller
                         "I'm just kidding Stacey, god. Don't be so conceited.":
                             call .util_updateStaceyApproval(-1)
                             jump .lockerTalk_stuckHereWithYou
+                        # TODO: Add an option where you don't care about the boyfriend
             "Just kidding. I'd rather lick a dead raccoon than spend more time with you.":
                 call .util_updateStaceyApproval(-1)
                 jump .lockerTalk_stuckHereWithYou 

@@ -28,9 +28,9 @@ label forestShed_searchingArea:
         "{i}The lantern throws a reassuring glow around you.{/i}"
         "{i}This should make it easier to search.{/i}"
         menu:
-            "Search the outside of the shed":
+            "Search the outside of the shed" if not foundLockers:
                 jump .searchAroundShed
-            "Search the oil drums":
+            "Search the oil drums" if not searchedDrums:
                 jump .searchOilDrums
             "Continue deeper into the forest":
                 jump scene_forestShed.continueIntoForest
@@ -108,7 +108,7 @@ label forestShed_searchingArea:
                     call scene_forestShed.util_updateProactivePassive(-1)
                     jump .findBoots
                 "Leave the oil drum":
-                    return
+                    jump forestShed_searchingArea
 
             label .findBoots:
                 show stacey bored
@@ -150,6 +150,8 @@ label forestShed_searchingArea:
                         stacey "You know I'm joking, right?"
                         stacey "What use could we possibly have for decaying footwear that's clearly five sizes too big for either of us."
                         return
+                jump forestShed_searchingArea
+                # TODO: Where do we go after the boots?
     
     label .areaSearch_noLantern:
         "The last rays of sunlight have dwindled."
@@ -166,25 +168,79 @@ label forestShed_searchingArea:
         # Search shed without lantern
         label .searchShed_noLantern:
             call scene_forestShed.util_updateKillerDistance(-1)
-            "TODO: You cut your hand on the bandsaw on the workbench"
-            "TODO: Stacey has to bandage it with a headband"
+            if smashedLantern:
+                stacey "Maybe there's another like, backup lantern."
+                stacey "You know. Because you freakazoided out and the last one broke."
+            
+            "It's getting pretty dark to search, but what choice do we have?"
+
+            "Ugh. I bet there's all kinds of horrible things in here."
+            "Those old drills ands saws hanging on the wall..."
+            "It's kind of creepy."
+            "Reminds me of a butcher's shop."
+
+            stacey "Okay you search the shelves. I'm gonna look through these drawers."
+            beans "Okay!"
+
+            "{i}You start rifling through the shelves above the workbench.{/i}"
+            "{i}You squint through your glasses to make out the objects in front of you.{/i}"
+            "{i}As you reach across the bench to the next shelf, your arm encounters resistance-{/i}"
+
+            "{i}RRRRRRRRIP{/i}"
+
+            show stacey surprised
+            stacey "Beans! What was that?"
+
+            beans "Um, it was just my sleeve-"
+
+            show stacey shocked
+            stacey "Your hand! "
+
+            "{i}You become aware of a dull ache from your hand.{/i}"
+            "Is that... blood? "
+            stacey "You must have caught it on that bandsaw. You need to be more careful!"
+            stacey "How bad is it?"
+            beans "I dunno... there's a bit of blood..."
+
+            stacey "Ugh, that needs cleaning {i}stat{/i}."
+            stacey "I've gotta bandage it until we find actual first aid."
+
+            "{i}She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it.{/i}"
+            "{i}It immediately soaks through with a dark bloodstain, but at least you're no longer dripping on the floor.{/i}"
             $ cutHand = True
             
             # Respond to Stacey's help
             menu:
                 "Thank Stacey for her help":
                     $ stacey.approval += 1
-                    "TODO: Stacey is pleased"
+                    show stacey blush
+                    stacey "Yeah, well, don't mention it. "    
                 "Kiss Stacey":
                     $ stacey.approval -= 5
                     call scene_forestShed.util_updateKillerDistance(-1)
-                    "TODO: Stacey is horrified and pushed you away."
+                    stacey "BEANS! EW!"
+                    show stacey angry
+                    beans "{i}Oof{/i}"
+                    "{i}Stacey shoves you away, disgusted.{/i}"
+                    stacey "Why would you think that's okay?"
+                    stacey "Ew. Not even. Don't even try it."
+
+                    stacey "Let's just forget this ever happened, okay?"
+
                 "Say nothing":
                     $ stacey.approval -= 1
-                    "TODO: Stacey is disappointed in you and the silence is awkward."
-
+                    show stacey uncomfortable
+                    beans "..."
+                    stacey "..."
+                    "Well, that was awkward."
     # Search around the shed
     label .searchAroundShed:
-    $ foundLockers = True
-    "TODO: You find two storage lockers, large enough to hide bodies in."
-    call scene_forestShed.util_updateKillerDistance(-1)
+        $ foundLockers = True
+        "{i}Around the side of the shed are two tall storage lockers.{/i}"
+
+        stacey "You could fit a whole body in one of those."
+        stacey "What?"
+        stacey "Don't tell me you weren't thinking it too."
+        call scene_forestShed.util_updateKillerDistance(-1)
+
+    label .continueIntoForest:

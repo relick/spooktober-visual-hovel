@@ -67,7 +67,7 @@ label forestShed_searchingShed:
 
                 show stacey annoyed
                 stacey "Well that {i}was{/i} a lantern."
-                
+                $ smashedLantern = True
                 $ stacey.approval -= 1
         call scene_forestShed.util_updateKillerDistance(-1)
         jump scene_forestShed.d_areaSearch
@@ -88,6 +88,7 @@ label forestShed_searchingShed:
                 stacey "Ah ha!"
                 stacey "Still some paraffin left in this lantern"
                 "She strikes a match and the glass lantern sputters to life"
+                # Stcaey smokes, has a lighter 
                 stacey "Is that a good find or what?"
                 call scene_forestShed.util_updateKillerDistance(-1)
                 call scene_forestShed.util_equipItem("Lantern")
@@ -133,5 +134,6 @@ label forestShed_searchingShed:
 
                 $ stacey.approval -= 1
                 $ searchedDrums = True
+                $ smashedLantern = True
                 call scene_forestShed.util_updateKillerDistance(-2)
         jump scene_forestShed.d_areaSearch
