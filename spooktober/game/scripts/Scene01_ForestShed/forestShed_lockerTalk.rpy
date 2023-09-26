@@ -85,6 +85,7 @@ label forestShed_lockerTalk:
             "We could go to the movies!":
                 jump .lockerTalk_iLikeMovies
             "We could go to a museum!":
+                call .util_updateStaceyApproval(1)
                 jump .lockerTalk_iLikeMuseums
             "I dunno, what's your idea of a good time?":
                 jump .lockerTalk_iLikeMuseums
@@ -116,21 +117,16 @@ label forestShed_lockerTalk:
                 jump .lockerTalk_stuckHereWithYou 
 
     label .lockerTalk_iLikeMovies:
-        stacey "Well... I like movies"
-        show stacey excited
-        stacey "And I really want to see {i}The Brunch Gang!{/i}"
-        menu:
-            "Let's do it!":
-                stacey "Sounds great!"
-                stacey "I wish my boyfriend was that excited to take me to the movies..."
-            "It's a date!":
-                stacey "A date, huh?"
-                stacey "Well, it's got to be better than a date with my loser boyfriend..."
-            "Ugh, that movie looks awful. No thanks.":
-                call .util_updateStaceyApproval(-1)
-                show stacey angry
-                stacey "You sound just like my crappy boyfriend."
-        jump .lockerTalk_staceysLoserBoyfriend
+        show stacey sad
+        stacey "Well... I guess that sounds fun."
+
+        show beans stressed
+        think "She doesn't sound that excited."
+        show beans serious
+        think "Maybe a movie wasn't the right suggestion..."
+
+        beans "Is there something else you'd rather do?"
+        jump .lockerTalk_iLikeMuseums
 
     label .lockerTalk_iLikeMuseums:
         show stacey blush
@@ -142,7 +138,6 @@ label forestShed_lockerTalk:
         stacey "I love those!"
         
         think "Wow, she actually seems really excited!"
-        call .util_updateStaceyApproval(1)
 
         show stacey happy
         stacey "You know, there's a UFO museum that's opened just outside of town"
@@ -234,7 +229,7 @@ label forestShed_lockerTalk:
                 stacey "What if this is the best it gets?"
                 stacey "And I've only got one year left of it."
 
-                menu:
+                menu: 
                     "You've got your whole life ahead of you, Stacey!":
                         stacey "{i}Sigh{/i}"
                         stacey "I know you're right..."
