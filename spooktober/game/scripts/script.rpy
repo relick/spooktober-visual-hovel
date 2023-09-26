@@ -2,7 +2,7 @@
 
 # Absolute magic that makes Beans Just Work(tm)
 init -1 python:
-    config.layers = ['master', 'transient', 'screens', 'overlay', 'aboveUI']
+    config.layers = ['master', 'transient', 'screens', 'overlay']
 
 init -1:
     transform portrait:
@@ -12,8 +12,8 @@ init -1:
     transform other_person:
         align (0.5, 1.0)
 
-    $ config.tag_layer['beans'] = 'aboveUI'
-    $ config.tag_layer['game_over'] = 'aboveUI'
+    $ config.tag_layer['beans'] = 'screens'
+    $ config.tag_zorder['beans'] = 25 # above dialogue, below game over
     $ config.tag_transform['beans'] = portrait
     $ config.tag_transform['stacey'] = other_person
     define gui.text_font = "LinLibertine_R.ttf"
