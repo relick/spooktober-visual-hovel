@@ -1629,9 +1629,12 @@ screen timed_choice(time, timer_jump):
         xmaximum 300
         at alpha_dissolve
 
+transform game_over_centred:
+    align (0.5,0.5)
+
 screen game_over(cgimage):
     zorder 300
-    add ("gameover " + cgimage + ".png")
+    add ("gameover " + cgimage + ".png") at game_over_centred
     on "hide" action Jump('exit')
     button xsize 1.0 ysize 1.0 action Return()
 
