@@ -320,7 +320,7 @@ label forestShed_lockerTalk:
             "Go now!":
                 jump .lockerTalk_goEarly
             "Wait a little longer":
-                jump lockerTalk_waitForTime
+                jump .lockerTalk_waitForTime
 
     label .lockerTalk_goEarly:
         show stacey surprised
