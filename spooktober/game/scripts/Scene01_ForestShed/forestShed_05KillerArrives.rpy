@@ -12,9 +12,9 @@
 label forestShed_killerArrives:
     show stacey scared
     stacey "Beans... can you hear that?"
-    # PETE: "She's frozen in place?"
-    think "She freezes in place."
-    think "I listen - to the rustling leaves, the hooting of an owl..."
+    
+    think "She's frozen in place,"
+    think "I can hear rustling leaves, the hooting of an owl..."
     think "...and the heavy thud of approaching footsteps."
 
     show beans shout
@@ -34,11 +34,10 @@ label forestShed_killerArrives:
             jump .runIntoTheWoods
     label .hideInLockers:
         if "Lantern" in beans.equipped:
-            # PETE: I think these two lines need rewriting as narration
             if beans.proactivePassive <= 0:
-                think "Stacey grabs my arm and pulls me over to the lockers."
+                narrate "Stacey grabs your arm and pulls you over to the lockers."
             else:
-                think "I grab Stacey's arm and pull her over to the lockers."
+                narrate "You grab Stacey's arm and pull her over to the lockers."
 
             show beans serious2
             beans "What the- this one's full of junk!"
@@ -48,11 +47,10 @@ label forestShed_killerArrives:
             narrate "The two of you squeeze into a locker that's barely big enough for two."
             jump .lockerTalk      
         else:
-            # PETE: I think these two lines need rewriting as narration
             if beans.proactivePassive <= 0:
-                think "Stacey grabs my arm and pulls me over to the lockers."
+                narrate "Stacey grabs your arm and pulls you over to the lockers."
             else:
-                think "I grab Stacey's arm and pull her over to the lockers."
+                narrate "You grab Stacey's arm and pull her over to the lockers."
 
             think "Man, I hope there's nothing gross in here because I can't see a THING."
             narrate "CRASH" with vpunch
