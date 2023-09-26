@@ -24,11 +24,9 @@ init -1:
 define e = Character("Stacey")
 
 # The game starts here.
-
 label start:
     jump scene_forestShed.a_runningThroughWoods
 
-    # This ends the game.
-
+# This ends the game.
 label exit:
     return

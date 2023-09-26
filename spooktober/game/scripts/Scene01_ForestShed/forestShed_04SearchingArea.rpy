@@ -130,7 +130,7 @@ label forestShed_searchingArea:
                 hide beans
                 stacey "{i}Duh.{/i}"
                 
-                show bg boots
+                call screen panel("boots") with dissolve
                 "{i}It's true. You have found gross old boots.{/i}"
                 "Leather, steel toecaps... now that's some practical footwear."
                 menu:

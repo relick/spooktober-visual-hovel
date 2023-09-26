@@ -110,7 +110,8 @@ label after_treeroot:
     show stacey excited
     stacey "Wait!" with vpunch
 
-    scene bg shedSilhouette
+    # TODO: shedSillhouette?
+    call screen panel("shed") with dissolve
     show beans shout
     "Is that... a house?"
     hide beans

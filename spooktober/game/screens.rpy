@@ -1631,6 +1631,14 @@ screen timed_choice(time, timer_jump):
 
 screen game_over(cgimage):
     zorder 300
-    add cgimage
+    add ("gameover " + cgimage + ".png")
     on "hide" action Jump('exit')
     button xsize 1.0 ysize 1.0 action Return()
+
+transform panel_smaller:
+    zoom 0.75
+    align (0.5,0.5)
+
+screen panel(panelimage):
+    add ("panel " + panelimage + ".png") at panel_smaller
+    dismiss action [With(Dissolve()),Return()]
