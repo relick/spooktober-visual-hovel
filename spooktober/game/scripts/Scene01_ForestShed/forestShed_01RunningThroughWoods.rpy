@@ -110,8 +110,7 @@ label after_treeroot:
     show stacey excited
     stacey "Wait!" with vpunch
 
-    # TODO: shedSillhouette?
-    call screen panel("shed") with dissolve
+    call screen panel("shedSillhouette") with dissolve
     show beans shout
     "Is that... a house?"
     hide beans
@@ -134,7 +133,8 @@ label after_treeroot:
         show beans tired
         beans "Huff.. huff.."
         hide beans
-        scene bg shed
+        scene bg forest
+        call screen panel("shed") with dissolve
         show stacey disappointed
 
         stacey "Ugh. It's obviously abandoned."
@@ -153,7 +153,8 @@ label after_treeroot:
         "The way it dances across the chemically treated curls of her hair.... "
         "It's almost magical."
 
-        scene bg shed
+        scene bg forest
+        call screen panel("shed") with dissolve
         show stacey disgusted
         stacey "Ugh."
         stacey "This place is abandonedville. And it's {i}hella{/i} grody."

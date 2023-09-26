@@ -24,7 +24,8 @@ label forestShed_searchingArea:
 
     # Searching with a lantern
     label .areaSearch_withLantern:
-        scene bg shed
+        scene bg forest
+        call screen panel("shed") with dissolve
         "{i}The lantern throws a reassuring glow around you.{/i}"
         "{i}This should make it easier to search.{/i}"
         menu:
