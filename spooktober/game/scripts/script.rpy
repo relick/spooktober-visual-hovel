@@ -9,9 +9,13 @@ init -1:
         align (0.04,0.9)
         zoom 0.5
 
+    transform other_person:
+        align (0.5, 1.0)
+
     $ config.tag_layer['beans'] = 'aboveUI'
     $ config.tag_layer['game_over'] = 'aboveUI'
     $ config.tag_transform['beans'] = portrait
+    $ config.tag_transform['stacey'] = other_person
     define gui.text_font = "LinLibertine_R.ttf"
     define gui.text_size = 33
     define gui.interface_text_font = "mytype.ttf"
