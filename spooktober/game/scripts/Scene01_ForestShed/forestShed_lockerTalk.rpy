@@ -4,8 +4,8 @@ label forestShed_lockerTalk:
 
     default relationshipAdvice_menuset = set()
 
-    "You're both crammed into one tiny locker, pressed right up against each other."
-    "It's the perfect time to chat her up, but also not get murdered by being too loud."
+    narrate "You're both crammed into one tiny locker, pressed right up against each other."
+    narrate "It's the perfect time to chat her up, but also not get murdered by being too loud."
 
     menu: 
         "{i}Say nothing{/i}":
@@ -14,7 +14,7 @@ label forestShed_lockerTalk:
         "{i}Press up closer against her{/i}":
             stacey "Um..."
         "What do we do now?":
-            "{i}You whisper as quietly as you can, hoping not to attrack the killer's attention.{/i}"
+            narrate "{i}You whisper as quietly as you can, hoping not to attrack the killer's attention.{/i}"
             jump .lockerTalk_nextSteps
 
     label .util_updateStaceyApproval(delta = 0):
@@ -53,20 +53,20 @@ label forestShed_lockerTalk:
             "Well you're great at this, Stacey!":
                 call .util_updateStaceyApproval(1)
                 show stacey blush
-                "I know storage lockers aren't very romantic but..."
-                "Maybe this could be my chance to impress her...?"
+                think "I know storage lockers aren't very romantic but..."
+                think "Maybe this could be my chance to impress her...?"
                 jump .lockerTalk_maybeWeCouldHang
             "Well {i}one{/i} of us has to be competent if we're going to live.":
                 call .util_updateStaceyApproval(-1)
             "It's teamwork that makes the dream work!":
                 call .util_updateStaceyApproval(1)
-                "{i}Stacey laughs quietly{/i}"
+                narrate "{i}Stacey laughs quietly{/i}"
                 show stacey happy
                 stacey "Yeah we've done alright at this, I guess."
                 jump .lockerTalk_maybeWeCouldHang
     
     label .lockerTalk_staceyBolts_lowApproval:
-        "Stacey runs and dies RIP"
+        narrate "Stacey runs and dies RIP"
 
     label .lockerTalk_maybeWeCouldHang:
         show beans blush
@@ -84,17 +84,17 @@ label forestShed_lockerTalk:
                     show stacey blush
                     jump .lockerTalk_iLikeMovies
                 else:
-                    "{i}Stacey laughs nervously{/i}"
+                    narrate "{i}Stacey laughs nervously{/i}"
                     stacey "Um... a date?"
                     stacey "I have a boyfriend Beans..."
                     menu:
                         "Oh...":
-                            "This is so awkward..."
-                            "Even though it's dark I can tell she'd avoiding looking at me"
+                            think "This is so awkward..."
+                            think "Even though it's dark I can tell she'd avoiding looking at me"
                             jump .lockerTalk_hereComesKiller
                         "{i}(lie){/i} Haha... me too... haha...":
-                            "This is so awkward..."
-                            "Even though it's dark I can tell she'd avoiding looking at me"
+                            think "This is so awkward..."
+                            think "Even though it's dark I can tell she'd avoiding looking at me"
                             jump .lockerTalk_hereComesKiller
                         "I'm just kidding Stacey, god. Don't be so conceited.":
                             call .util_updateStaceyApproval(-1)
@@ -194,12 +194,12 @@ label forestShed_lockerTalk:
             show stacey surprised
             stacey "You?"
             if stacey.approval < staceyRomanceApprovalThreshold:
-                "{i}Stacey laughs.{/i}"
+                narrate "{i}Stacey laughs.{/i}"
                 stacey "You're such a goof, Beans"
                 stacey "Svenjamin isn't {i}that{/i} bad"
                 stacey "Thanks for trying to cheer me up though"
-                "Oof..."
-                "Maybe if she liked me more that would have worked."
+                think "Oof..."
+                think "Maybe if she liked me more that would have worked."
                 jump .lockerTalk_hereComesKiller
             else:
                 show stacey blush
@@ -239,7 +239,7 @@ label forestShed_lockerTalk:
     label .lockerTalk_stuckHereWithYou:
         show stacey angry
         stacey "Ugh. Just my luck to get stuck here with someone like {i}you.{/i}"
-        "I'm starting to think Stacey doesn't like me"
+        think "I'm starting to think Stacey doesn't like me"
         jump .lockerTalk_hereComesKiller
 
     label .lockerTalk_hereComesKiller:
@@ -249,11 +249,11 @@ label forestShed_lockerTalk:
 
         # AUDIO: Killer footsteps audio
 
-        "My heart is beating out of my chest"
+        think "My heart is beating out of my chest"
         
         # AUDIO: Killer footsteps fade out
-        "He's disappeared into the shed..."
-        "Should we risk making a break for it?"
+        think "He's disappeared into the shed..."
+        think "Should we risk making a break for it?"
 
         menu: 
             "Go now!":
@@ -269,19 +269,19 @@ label forestShed_lockerTalk:
         hide beans
 
         if beans.proactivePassive > 0:
-            "{i}You throw the locker open and run{/i}"
-            "{i}Stacey following right behind you{/i}"
+            narrate "{i}You throw the locker open and run{/i}"
+            narrate "{i}Stacey following right behind you{/i}"
         else:
-            "{i}Stacey throws the locker open and runs{/i}"
-            "{i}You follow right behind{/i}"
+            narrate "{i}Stacey throws the locker open and runs{/i}"
+            narrate "{i}You follow right behind{/i}"
 
         stacey "Beans! He's right behind us!"
         jump scene_forestShed.runIntoTheWoods
 
     label .lockerTalk_waitForTime:
-        "TODO: You wait and somewhere in the distance hear the snap of a bear trap's jaws and a scream"
-        "The killer stomps off in that direction"
-        "You and stacey slip out undetected - to freedom!"
+        narrate "TODO: You wait and somewhere in the distance hear the snap of a bear trap's jaws and a scream"
+        narrate "The killer stomps off in that direction"
+        narrate "You and stacey slip out undetected - to freedom!"
         if staceyDateAgreed:
             jump endings_forestShed.ending_lockerEscape_romance
         else:

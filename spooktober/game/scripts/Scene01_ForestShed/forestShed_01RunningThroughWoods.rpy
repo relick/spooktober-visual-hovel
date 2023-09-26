@@ -22,10 +22,10 @@ label forestShed_runningThroughWoods:
     # AUDIO: Panting?
 
     hide beans
-    "I'm so tired... and my feet hurt..."
-    "This tin of beans is so heavy..."
-    "It's getting dark so fast..."
-    "Good thing I brought Gerald's flashlight!"
+    think "I'm so tired... and my feet hurt..."
+    think "This tin of beans is so heavy..."
+    think "It's getting dark so fast..."
+    think "Good thing I brought Gerald's flashlight!"
 
     show stacey tired
     stacey "I'm sure the road was this way."
@@ -34,12 +34,12 @@ label forestShed_runningThroughWoods:
     stacey "Can't you keep up, Beans?"
     show beans stressed
     beans "I'm going as fast as I can!"
-    "How am I meant to keep up with a champion cheerleader?"
+    think "How am I meant to keep up with a champion cheerleader?"
 
     hide stacey 
 
     show beans tired
-    "I can barely see where I'm putting my feet!"
+    think "I can barely see where I'm putting my feet!"
     hide beans
     
     show screen timed_choice(3.0, "fail_choice_trip_treeroot")
@@ -67,12 +67,13 @@ label fail_choice_trip_treeroot:
 label after_treeroot:
 
     # AUDIO: Crack
-    "{i}CRACK{/i}"
+    narrate "{i}CRACK{/i}"
 
     # TODO: Some kind of flash indicating the light went out?
     show beans shout
-    "Was that... the flashlight?"
-    "Oh no..."
+    think "Was that... the flashlight?"
+    # PETE: the 'Oh no...' might be better vocalised
+    think "Oh no..."
     hide beans
 
     show stacey angry
@@ -98,13 +99,13 @@ label after_treeroot:
             stacey "UGH! You are making me SO MAD right now!"
             hide stacey
             show beans sad
-            "She's stormed off!"
+            think "She's stormed off!"
             show beans stressed
-            "I'd better follow if I don't want to get even more lost"
+            think "I'd better follow if I don't want to get even more lost"
 
     show beans serious2
-    "I'm trying really, {i}really{/i} hard not to run into anything else"
-    "...but it's getting harder as the daylight is fading"
+    think "I'm trying really, {i}really{/i} hard not to run into anything else"
+    think "...but it's getting harder as the daylight is fading"
     hide beans
 
     show stacey excited
@@ -112,7 +113,7 @@ label after_treeroot:
 
     call screen panel("shedSillhouette") with dissolve
     show beans shout
-    "Is that... a house?"
+    think "Is that... a house?"
     hide beans
 
     menu:
@@ -128,7 +129,7 @@ label after_treeroot:
         show beans earnest
         beans "Stacey, wait!"
         show beans sad
-        "How is she so fast??"
+        think "How is she so fast??"
 
         show beans tired
         beans "Huff.. huff.."
@@ -138,7 +139,7 @@ label after_treeroot:
         show stacey disappointed
 
         stacey "Ugh. It's obviously abandoned."
-        "It looks pretty small for a house, too"
+        think "It looks pretty small for a house, too"
 
         jump scene_forestShed.b_discoveringShed
 
@@ -147,11 +148,11 @@ label after_treeroot:
         stacey "True."
         stacey "They might be those weird forest people who marry their uncles."
 
-        "I creep forward, making each footstep as silent as possible."
+        think "I creep forward, making each footstep as silent as possible."
 
-        "The moonlight is glimmering off Stacey's hoop earrings."
-        "The way it dances across the chemically treated curls of her hair.... "
-        "It's almost magical."
+        think "The moonlight is glimmering off Stacey's hoop earrings."
+        think "The way it dances across the chemically treated curls of her hair.... "
+        think "It's almost magical."
 
         scene bg forest
         call screen panel("shed") with dissolve
@@ -165,12 +166,12 @@ label after_treeroot:
         # AUDIO: Thud
         show beans shout
         beans "OOF-" with vpunch
-        "That [object] came out of nowhere!"
+        think "That [object] came out of nowhere!"
         hide beans
 
     label .avoid:
         show beans kewl
-        "Sure footed as a mountain goat!"
+        think "Sure footed as a mountain goat!"
         show beans shout # pain
         beans "OOF-" with vpunch
         beans "Ohh... should have watched where I was going..."

@@ -14,9 +14,9 @@ label forestShed_discoveringShed:
     centered "What you have found is a shed."
 
     hide beans
-    "This forest clearing is kind of cute,"
-    "Shame it's full of junk."
-    "Old jerrycans, rotting firewood... and are those oil drums?"
+    think "This forest clearing is kind of cute,"
+    think "Shame it's full of junk."
+    think "Old jerrycans, rotting firewood... and are those oil drums?"
 
     show stacey thoughtful
     stacey "Who puts a toolshed out in the woods?"
