@@ -10,6 +10,7 @@ init -1:
         zoom 0.5
 
     $ config.tag_layer['beans'] = 'aboveUI'
+    $ config.tag_layer['game_over'] = 'aboveUI'
     $ config.tag_transform['beans'] = portrait
     define gui.text_font = "LinLibertine_R.ttf"
     define gui.text_size = 33
@@ -29,4 +30,5 @@ label start:
 
     # This ends the game.
 
+label exit:
     return

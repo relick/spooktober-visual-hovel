@@ -1628,3 +1628,9 @@ screen timed_choice(time, timer_jump):
         yalign 0.9
         xmaximum 300
         at alpha_dissolve
+
+screen game_over(cgimage):
+    zorder 300
+    add cgimage
+    on "hide" action Jump('exit')
+    button xsize 1.0 ysize 1.0 action Return()
