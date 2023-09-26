@@ -20,14 +20,16 @@ label forestShed_lockerTalk:
     label .util_updateStaceyApproval(delta = 0):
         # Update stacey approval
         $ stacey.approval += delta
+        return
         # If below a certain threshold she bolts
-        if stacey.approval < staceyLockerRunApprovalThreshold:
-            jump .lockerTalk_staceyBolts_lowApproval
-        else:
-            return
+        # PLIP: Changed my mind I don't like this
+       
+        # if stacey.approval < staceyLockerRunApprovalThreshold:
+        #     jump .lockerTalk_staceyBolts_lowApproval
+        # else:
+        #     return
         # If above a certain threshold she confesses? maybe
-
-
+       
     label .lockerTalk_pressCloser:
 
     label .lockerTalk_nextSteps:
@@ -65,24 +67,31 @@ label forestShed_lockerTalk:
                 stacey "Yeah we've done alright at this, I guess."
                 jump .lockerTalk_maybeWeCouldHang
     
+    """
     label .lockerTalk_staceyBolts_lowApproval:
         narrate "Stacey runs and dies RIP"
+    """
 
     label .lockerTalk_maybeWeCouldHang:
         show beans blush
-        beans "Maybe when we get out of here we could... do other stuff together sometime?"
+        beans "Maybe when we get out of here we could... hang out sometime?"
         hide beans
-        stacey "Oh yeah? Like what?"
+        stacey "Oh yeah? And do what?"
 
         menu: 
             # TODO: Beans should have an idea of a date
             # Options should be more obvious in their difference
-            "I dunno, what's your idea of a good time?":
+
+            "We could go to the movies!":
                 jump .lockerTalk_iLikeMovies
-            "I dunno, what's your idea of a dream date?":
+            "We could go to a museum!":
+                jump .lockerTalk_iLikeMuseums
+            "I dunno, what's your idea of a good time?":
+                jump .lockerTalk_iLikeMuseums
+            "I'm gonna take you on the date of your dreams, baby.":
                 if stacey.approval >= staceyRomanceApprovalThreshold:
                     show stacey blush
-                    jump .lockerTalk_iLikeMovies
+                    jump .lockerTalk_iLikeMuseums
                 else:
                     narrate "Stacey laughs nervously"
                     stacey "Um... a date?"
@@ -99,7 +108,9 @@ label forestShed_lockerTalk:
                         "I'm just kidding Stacey, god. Don't be so conceited.":
                             call .util_updateStaceyApproval(-1)
                             jump .lockerTalk_stuckHereWithYou
-                        # TODO: Add an option where you don't care about the boyfriend
+                        "Doesn't that just make it more exciting?":
+                            show stacey angry
+                            stacey "No it just makes it more messed up!"
             "Just kidding. I'd rather lick a dead raccoon than spend more time with you.":
                 call .util_updateStaceyApproval(-1)
                 jump .lockerTalk_stuckHereWithYou 
@@ -121,44 +132,93 @@ label forestShed_lockerTalk:
                 stacey "You sound just like my crappy boyfriend."
         jump .lockerTalk_staceysLoserBoyfriend
 
-    label .lockerTalk_staceysLoserBoyfriend:
-        stacey "He never wants to do anything I like"
+    label .lockerTalk_iLikeMuseums:
+        show stacey blush
+        stacey "Okay, you're going to think this is really dumb..."
+        stacey "But you know those like, weird places that spring up by the road?"
+        stacey "\"World's largest ball of String\", \"Museum of slightly small hats\" and whatever"
+        
+        show stacey excited
+        stacey "I love those!"
+        
+        think "Wow, she actually seems really excited!"
+        call .util_updateStaceyApproval(1)
+
+        show stacey happy
+        stacey "You know, there's a UFO museum that's opened just outside of town"
+        stacey "I've been really wanting to go there - what do you say?"
+
         menu:
-            "Why are you going out with him then?":
+            "Let's do it!":
+                stacey "Sounds great!"
+                show stacey excited
+                stacey "Finally, someone who's willing to come to weird museums with me!"
+                stacey "Svenjamin wouldn't be caught dead in a museum."
+            "It's a date!":
+                stacey "A date, huh?"
+                stacey "Well, it's got to be better than the ones Svenjamin took me on..."
+            "You're right, that is dumb.":
+                call .util_updateStaceyApproval(-1)
+                show stacey angry
+                stacey "Ugh... you sound just like Svenjamin."
+
+        jump .lockerTalk_svenjamin
+     
+    label .lockerTalk_svenjamin:
+        show beans serious
+        think "Oh yeah, Svenjamin..."
+        show beans meanbean
+        think "He's the football team quarterback but also a TOTAL ass"
+        show beans serious
+        think "So are they dating, or...?" 
+
+        stacey "{i}Sigh{/i}"
+        stacey "I'm so glad we're not dating anymore..."       
+        show stacey angry
+        stacey "What an ass!"
+
+        menu:
+            "Why did you even go out with him?":
                 stacey "I dunno... he's like, the quarterback, you know?"
                 stacey "And I'm the head cheerleader"
-                stacey "It's just the way things are, you know."
-                jump .lockerTalk_relationshipAdvice
-            "He sounds like a terrible boyfriend":
-                stacey "Yeah... I know"
-                show stacey sad
-                stacey "But what if I can't find anyone better?"
-                jump .lockerTalk_staceyCanDoBetter
-            "Probably because everything {i}you{/i} enjoy sucks":
-                call .util_updateStaceyApproval(-1)
-                jump .lockerTalk_stuckHereWithYou
+                stacey "It just seemed right"
 
-    label .lockerTalk_relationshipAdvice:
-        menu:
-            "You should dump him":
-                stacey "And then what? Go to prom by myself? Like a loser?"
+                show stacey sad
+                stacey "I mean... {i}I{/i} thought we were dating..."
+
+                show stacey angry
+                stacey "Apparently he didn't think we were {i}exclusive{/i} or whatever."
+
                 jump .lockerTalk_staceyCanDoBetter
-            "You can do better, Stacey":
-                stacey "Oh yeah? Like who?"
+            "He sounds like a terrible boyfriend":
+                stacey "Ugh, he was."
+
+                show stacey neutral
+                stacey "He wasn't even really my boyfriend. We just kinda... dated a bit."
+                stacey "You know. Went to the movies and whatever."
+
+                show stacey sad
+                stacey "I liked having someone to do all that stuff with, though."
                 jump .lockerTalk_staceyCanDoBetter
-            "Actually I don't care about your lame issues.":
+            "I don't care about your lame issues, Stacey.":
                 call .util_updateStaceyApproval(-1)
                 jump .lockerTalk_stuckHereWithYou
 
     label .lockerTalk_staceyCanDoBetter:
         menu:
-            set relationshipAdvice_menuset
-            "You're better off single than with someone that makes you unhappy":
+            "You can do way better, Stacey":
+                show stacey happy
                 stacey "You really think so?"
-                jump .lockerTalk_staceyCanDoBetter
+            "Give up on romance. You're basically unlovable.":
+                call .util_updateStaceyApproval(-1)
+                jump .lockerTalk_stuckHereWithYou
+
+
+        menu:
+            set relationshipAdvice_menuset
             "I can think of someone better who's right in front of you":
                 jump .staceyCanDoBetter_rightInFrontOfYou
-            "I dunno, maybe Kevin?":
+            "How about Kevin?":
                 show stacey doubt
                 stacey "Kevin?"
                 stacey "He is extremely cool but... I dunno..."
@@ -166,7 +226,7 @@ label forestShed_lockerTalk:
                 stacey "I'll think about it. Thanks though, Beans."
                 stacey "For listening to me."
                 jump .lockerTalk_hereComesKiller
-            "You're right. He's probably the best you'll ever get.":
+            "Nah. Svenjamin's probably the best you'll ever get.":
                 show stacey sad
                 stacey "That's what I'm worried about"
                 stacey "What if this is like... the peak?"
@@ -247,12 +307,17 @@ label forestShed_lockerTalk:
         stacey "Ssh!" with vpunch
         stacey "He's coming this way"
 
-        # AUDIO: Killer footsteps audio
+        beans "Eeep!"
 
+        # AUDIO: Killer footsteps audio
+        think "I can hear his gross huge boots stomping across the clearing"
         think "My heart is beating out of my chest"
         
         # AUDIO: Killer footsteps fade out
-        think "He's disappeared into the shed..."
+
+        stacey "He's gone into the shed... "
+        stacey "But he's still close"
+
         think "Should we risk making a break for it?"
 
         menu: 

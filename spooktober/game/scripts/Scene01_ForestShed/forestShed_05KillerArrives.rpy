@@ -45,7 +45,7 @@ label forestShed_killerArrives:
             stacey "In here with me!"
             
             narrate "The two of you squeeze into a locker that's barely big enough for two."
-            jump .lockerTalk      
+            jump forestShed_lockerTalk      
         else:
             if beans.proactivePassive <= 0:
                 narrate "Stacey grabs your arm and pulls you over to the lockers."
