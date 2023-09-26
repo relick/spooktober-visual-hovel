@@ -11,7 +11,6 @@
 
 label forestShed_discoveringShed:
     scene bg forest
-    call screen panel("shed") with dissolve
     centered "What you have found is a shed."
 
     hide beans
