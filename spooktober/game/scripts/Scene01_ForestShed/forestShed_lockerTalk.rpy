@@ -285,15 +285,16 @@ label forestShed_lockerTalk:
             jump .staceyCanDoBetter_takeMeout
 
         label .staceyCanDoBetter_takeMeout:
-            stacey "When we get out of here, I'm going to dump Svenjamin"
+            show stacey determined
+            stacey "When we get out of here, I swear I'm never going on a date with Svenjamin again!"
             show stacey blush
-            stacey "And maybe you can take me out for a movie date"
+            stacey "And maybe you can take me to that UFO museum."
             $ staceyDateAgreed = True
             jump .lockerTalk_hereComesKiller
 
     label .lockerTalk_stuckHereWithYou:
         show stacey angry
-        stacey "Ugh. Just my luck to get stuck here with someone like {i}you.{/i}"
+        stacey "Where do you get off on being such an {i}ass{/i}, Beans?"
         think "I'm starting to think Stacey doesn't like me"
         jump .lockerTalk_hereComesKiller
 
