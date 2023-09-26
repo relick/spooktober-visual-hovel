@@ -6,8 +6,8 @@ init -1 python:
 
 init -1:
     transform portrait:
-        align (0.04,0.9)
-        zoom 0.5
+        align (0.07,0.95)
+        zoom 0.4
 
     transform other_person:
         align (0.5, 1.0)

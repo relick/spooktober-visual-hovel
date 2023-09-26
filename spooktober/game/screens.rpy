@@ -218,9 +218,10 @@ style choice_button is button
 style choice_button_text is button_text
 
 style choice_vbox:
-    xalign 0.5
-    ypos 270
-    yanchor 0.5
+    xanchor 0.5
+    yanchor 1.0
+    xpos 0.5
+    ypos 0.77
 
     spacing gui.choice_spacing
 
@@ -1625,7 +1626,7 @@ screen timed_choice(time, timer_jump):
     bar value (timer_countdown * 100):
         range (timer_range * 100)
         xalign 0.5
-        yalign 0.9
+        yalign 0.84
         xmaximum 300
         at alpha_dissolve
 
