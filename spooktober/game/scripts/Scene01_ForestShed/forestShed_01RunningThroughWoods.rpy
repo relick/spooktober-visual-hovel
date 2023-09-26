@@ -21,6 +21,8 @@ label forestShed_runningThroughWoods:
     scene bg forest
     # AUDIO: Panting?
 
+    # PETE: I added beans portraits eveywhere that beans speaks
+    # but we should probably add them for all the thinking sections too
     hide beans
     think "I'm so tired... and my feet hurt..."
     think "This tin of beans is so heavy..."
@@ -67,7 +69,7 @@ label fail_choice_trip_treeroot:
 label after_treeroot:
 
     # AUDIO: Crack
-    narrate "{i}CRACK{/i}"
+    narrate "CRACK"
 
     # TODO: Some kind of flash indicating the light went out?
     show beans shout

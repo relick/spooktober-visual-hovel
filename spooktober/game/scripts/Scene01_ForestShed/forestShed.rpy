@@ -9,7 +9,7 @@ default beans.equipped = []
 default beans.backpack = []
 define character.think = Character(what_prefix="(", what_suffix=")")
 
-define character.narrate = Character(what_color="#79afff")
+define character.narrate = Character(what_color="#79afff", what_prefix="{i}", what_suffix="{/i}")
 
 define character.debug = Character(condition="True") # set to False to disable debug statements
 
@@ -75,22 +75,22 @@ label .util_addItemToBag(item = "Default"):
 
 # 1 Running through the woods
 label .a_runningThroughWoods:
-    narrate "PLACEHOLDER: Section 1"
-    narrate "PLACEHOLDER: Beans and Stacey running scared through the woods."
+    debug "PLACEHOLDER: Section 1"
+    debug "PLACEHOLDER: Beans and Stacey running scared through the woods."
 
     jump forestShed_runningThroughWoods
 
 # 2 Discovering the shed
 label .b_discoveringShed:
-    narrate "Section 2"
-    narrate "Beans and Stacey discover the shed"
+    debug "Section 2"
+    debug "Beans and Stacey discover the shed"
 
     jump forestShed_discoveringShed
 
 # 3 Searching the Shed
 label .c_searchingShed:
-    narrate "Section 3"
-    narrate "Beans and/or Stacey search the shed"
+    debug "Section 3"
+    debug "Beans and/or Stacey search the shed"
     jump forestShed_searchingShed
 
 # 4 Searching the surrounding area
@@ -101,7 +101,7 @@ label .e_killerArrives:
     jump forestShed_killerArrives
 
 label .lockerTalk:
-    narrate "TODO: Flirt with Stacey but also try not to die"
+    debug "TODO: Flirt with Stacey but also try not to die"
     jump forestShed_lockerTalk
 
 label .runIntoTheWoods:

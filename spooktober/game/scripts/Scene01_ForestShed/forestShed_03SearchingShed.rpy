@@ -41,14 +41,14 @@ label forestShed_searchingShed:
         think "But maybe we should be quick, who knows how long we've got before that weirdo comes after us?"
         menu: 
             "Search carefully":
-                narrate "{i}You carefully search the shelves, disturbing as little as possible.{/i}"
-                narrate "{i}You spy a bulbous glass shape, hiding under a thick layer of dust, and gently wipe the grime away.{/i}"
+                narrate "You carefully search the shelves, disturbing as little as possible."
+                narrate "You spy a bulbous glass shape, hiding under a thick layer of dust, and gently wipe the grime away."
                 show stacey happy
                 stacey "A lantern! Great find, Beans."
                 $stacey.approval += 1
 
                 stacey "And it's still got some fuel. There must be matches around here somewhere..."
-                narrate "{i}A careful rummage produces a book of matches which miraculously, still work.{/i}"
+                narrate "A careful rummage produces a book of matches which miraculously, still work."
                 # Audio: Match striking? 
                 # VFX: Glow of light to represent lantern lighting?
                 stacey "Let there be light!" # TODO: Not sure this fits the character
@@ -57,15 +57,15 @@ label forestShed_searchingShed:
                 
             "Search quickly":
                 think "Screw being careful - I want to be out of here as quickly as possible."
-                narrate "{i}You begin rummaging haphazardly through the shelves.{/i}"
-                narrate "{i}As you reach across the workbench your sleeve snags on the teeth of rusted bandsaw.{/i}"
+                narrate "You begin rummaging haphazardly through the shelves."
+                narrate "As you reach across the workbench your sleeve snags on the teeth of rusted bandsaw."
                 # Audio: Cloth ripping
                 show beans stressed
                 beans "Ugh!"
                 hide beans
 
-                narrate "{i}You rip your arm free a little too vigorously and your hand collides with the shelf above{/i}"
-                narrate "{i}Something glass and dust-covered falls off,  and shatters into piees on the bench.{/i}"
+                narrate "You rip your arm free a little too vigorously and your hand collides with the shelf above"
+                narrate "Something glass and dust-covered falls off,  and shatters into piees on the bench."
 
                 show stacey annoyed
                 stacey "Well that {i}was{/i} a lantern."
@@ -108,7 +108,7 @@ label forestShed_searchingShed:
                 show beans shout
                 beans "Woah!" with vpunch
 
-                narrate "{i}CLANG{/i}"
+                narrate "CLANG"
                 think "That lid was rusted right through!"
                 hide beans
                 

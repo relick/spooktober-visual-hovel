@@ -45,7 +45,7 @@ label forestShed_killerArrives:
             hide beans
             stacey "In here with me!"
             
-            narrate "{i}The two of you squeeze into a locker that's barely big enough for two.{/i}"
+            narrate "The two of you squeeze into a locker that's barely big enough for two."
             jump .lockerTalk      
         else:
             # PETE: I think these two lines need rewriting as narration
@@ -55,10 +55,10 @@ label forestShed_killerArrives:
                 think "I grab Stacey's arm and pull her over to the lockers."
 
             think "Man, I hope there's nothing gross in here because I can't see a THING."
-            narrate "{i}CRASH{/i}" with vpunch
+            narrate "CRASH" with vpunch
 
-            narrate "{i}An enormous pile of rusted junk comes crashing down on you.{/i}"
-            narrate "{i}It makes an enormous racket{/i}"
+            narrate "An enormous pile of rusted junk comes crashing down on you."
+            narrate "It makes an enormous racket"
 
             show beans tired
             beans "Oh nooooooo-"
@@ -106,10 +106,10 @@ label forestShed_killerArrives:
         if cutHand:
             jump endings_forestShed.ending_underTable_cutHand
         elif "Boots" in beans.backpack:
-            narrate "{i}The boots make your bag too bulky to fit under the table with you{/i}"
+            narrate "The boots make your bag too bulky to fit under the table with you"
             menu:
                 "Throw your bag out of the shed":
-                    narrate "{i}You throw your bag out into the darkness and scramble under the table - not a moment too soon.{/i}"
+                    narrate "You throw your bag out into the darkness and scramble under the table - not a moment too soon."
                     jump .underTabletalk
                 "Keep the bag but try and stay hidden":
                     jump endings_forestShed.ending_underTable_bootsInBag

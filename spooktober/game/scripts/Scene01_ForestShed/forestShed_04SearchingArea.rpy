@@ -26,8 +26,8 @@ label forestShed_searchingArea:
     label .areaSearch_withLantern:
         scene bg forest
         call screen panel("shed") with dissolve
-        narrate "{i}The lantern throws a reassuring glow around you.{/i}"
-        narrate "{i}This should make it easier to search.{/i}"
+        narrate "The lantern throws a reassuring glow around you."
+        narrate "This should make it easier to search."
         menu:
             "Search the outside of the shed" if not foundLockers:
                 jump .searchAroundShed
@@ -43,15 +43,15 @@ label forestShed_searchingArea:
             hide beans
             stacey "Sure, I guess."
             scene bg oilDrums
-            narrate "{i}The three oil drums are ancient, grimy and coated in rust.{/i}"
+            narrate "The three oil drums are ancient, grimy and coated in rust."
             stacey "Oh man, something smells {i}gnarly{/i}"
             think "Something absolutely rank is in one of those drums..."
 
             menu: 
                 "Open the stinky drum":
-                    narrate "{i}You go to pry open the lid from which the rancid odour seems to emanate.{/i}"
-                    narrate "{i}It's so hideously rusted that it basically falls apart in your hands.{/i}"
-                    narrate "{i}You and Stacey peer into the open container.{/i}"
+                    narrate "You go to pry open the lid from which the rancid odour seems to emanate."
+                    narrate "It's so hideously rusted that it basically falls apart in your hands."
+                    narrate "You and Stacey peer into the open container."
                     show stacey nauseous
                     stacey "Beans that is {i}nasty!{/i}"
                     stacey "Uh-uh. No way. No even. I'm gonna hurl."
@@ -63,8 +63,8 @@ label forestShed_searchingArea:
                     show beans meanbean
                     beans "Urgh..."
                     hide beans
-                    narrate "{i}You try and put the raccoon corpse out of your mind. It doesn't really work.{/i}"
-                    narrate "{i}It's still there, staring at you with its maggot-eaten eyes.{/i}"
+                    narrate "You try and put the raccoon corpse out of your mind. It doesn't really work."
+                    narrate "It's still there, staring at you with its maggot-eaten eyes."
 
                     show beans sad
                     beans "Well, on to the next one."
@@ -77,7 +77,7 @@ label forestShed_searchingArea:
 
             think "Two drums left."
             stacey "Let's see if there's anything in these bad boys"
-            narrate "{i}CLANG{/i}"
+            narrate "CLANG"
             stacey "Empty!"
             show beans blush3 # idk, is kicking things hot? maybe
             beans "Did you just {i}kick{/i} that?"
@@ -85,7 +85,7 @@ label forestShed_searchingArea:
             
             show stacey annoyed
             stacey "Well I'm not gonna touch it with my {i}hands.{/i} Duh."
-            narrate "{i}CLANG-THUNK{/i}"
+            narrate "CLANG-THUNK"
    
             show stacey happy
             stacey "Something in this one! Check it out, Beans."
@@ -101,8 +101,8 @@ label forestShed_searchingArea:
                     hide beans
 
                     think "This lid {i}really{/i} doesn't want to come off, but I'll show it who's boss."
-                    narrate "{i}With a rusty screech, the lid of the drum comes free{/i}"
-                    narrate "{i}You and Stacey peer at your spoils.{/i}"
+                    narrate "With a rusty screech, the lid of the drum comes free"
+                    narrate "You and Stacey peer at your spoils."
                     jump .findBoots
                 "Ask Stacey to open the oil drum":
                     show beans blush # apologetic
@@ -115,7 +115,7 @@ label forestShed_searchingArea:
                     think "Ouch."
                     think "She is stronger than me though... and just like, better at stuff in general."
 
-                    narrate "{i}Stacey deftly prises the lid from the drum.{/i}"
+                    narrate "Stacey deftly prises the lid from the drum."
                     stacey "Alrighty, let's see what we're working with."
 
                     call scene_forestShed.util_updateProactivePassive(-1)
@@ -132,7 +132,7 @@ label forestShed_searchingArea:
                 stacey "{i}Duh.{/i}"
                 
                 call screen panel("boots") with dissolve
-                narrate "{i}It's true. You have found gross old boots.{/i}"
+                narrate "It's true. You have found gross old boots."
                 think "Leather, steel toecaps... now that's some practical footwear."
                 menu:
                     "Put on the boots":
@@ -140,7 +140,7 @@ label forestShed_searchingArea:
                         show beans kewl
                         beans "Shame to let them go to waste!"
                         hide beans
-                        narrate "{i}You retrieve the dusty old boots from the drum and put them on.{/i}"
+                        narrate "You retrieve the dusty old boots from the drum and put them on."
                         
                         show stacey disgusted
                         stacey "BEANS."
@@ -153,7 +153,7 @@ label forestShed_searchingArea:
                         think "They don't look like my size."
                         think "Hey, might come in handy later though."
 
-                        narrate "{i}You retrieve the boots and add them to your backpack, which is now awkwardly bulky and pretty heavy.{/i}"
+                        narrate "You retrieve the boots and add them to your backpack, which is now awkwardly bulky and pretty heavy."
                         stacey "Um. Okay then..."
      
                         call scene_forestShed.util_addItemToBag("Boots")
@@ -201,11 +201,11 @@ label forestShed_searchingArea:
             beans "Okay!"
             hide beans
 
-            narrate "{i}You start rifling through the shelves above the workbench.{/i}"
-            narrate "{i}You squint through your glasses to make out the objects in front of you.{/i}"
-            narrate "{i}As you reach across the bench to the next shelf, your arm encounters resistance-{/i}"
+            narrate "You start rifling through the shelves above the workbench."
+            narrate "You squint through your glasses to make out the objects in front of you."
+            narrate "As you reach across the bench to the next shelf, your arm encounters resistance-"
 
-            narrate "{i}RRRRRRRRIP{/i}"
+            narrate "RRRRRRRRIP"
 
             show stacey surprised
             stacey "Beans! What was that?"
@@ -217,7 +217,7 @@ label forestShed_searchingArea:
             show stacey shocked
             stacey "Your hand! "
 
-            narrate "{i}You become aware of a dull ache from your hand.{/i}"
+            narrate "You become aware of a dull ache from your hand."
             think "Is that... blood? "
             stacey "You must have caught it on that bandsaw. You need to be more careful!"
             stacey "How bad is it?"
@@ -228,8 +228,8 @@ label forestShed_searchingArea:
             stacey "Ugh, that needs cleaning {i}stat{/i}."
             stacey "I've gotta bandage it until we find actual first aid."
 
-            narrate "{i}She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it.{/i}"
-            narrate "{i}It immediately soaks through with a dark bloodstain, but at least you're no longer dripping on the floor.{/i}"
+            narrate "She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it."
+            narrate "It immediately soaks through with a dark bloodstain, but at least you're no longer dripping on the floor."
             $ cutHand = True
             
             # Respond to Stacey's help
@@ -246,7 +246,7 @@ label forestShed_searchingArea:
                     show beans blush
                     beans "{i}Oof{/i}"
                     hide beans
-                    narrate "{i}Stacey shoves you away, disgusted.{/i}"
+                    narrate "Stacey shoves you away, disgusted."
                     stacey "Why would you think that's okay?"
                     stacey "Ew. Not even. Don't even try it."
 
@@ -263,7 +263,7 @@ label forestShed_searchingArea:
     # Search around the shed
     label .searchAroundShed:
         $ foundLockers = True
-        narrate "{i}Around the side of the shed are two tall storage lockers.{/i}"
+        narrate "Around the side of the shed are two tall storage lockers."
 
         stacey "You could fit a whole body in one of those."
         stacey "What?"

@@ -14,7 +14,7 @@ label forestShed_lockerTalk:
         "{i}Press up closer against her{/i}":
             stacey "Um..."
         "What do we do now?":
-            narrate "{i}You whisper as quietly as you can, hoping not to attrack the killer's attention.{/i}"
+            narrate "You whisper as quietly as you can, hoping not to attrack the killer's attention."
             jump .lockerTalk_nextSteps
 
     label .util_updateStaceyApproval(delta = 0):
@@ -60,7 +60,7 @@ label forestShed_lockerTalk:
                 call .util_updateStaceyApproval(-1)
             "It's teamwork that makes the dream work!":
                 call .util_updateStaceyApproval(1)
-                narrate "{i}Stacey laughs quietly{/i}"
+                narrate "Stacey laughs quietly"
                 show stacey happy
                 stacey "Yeah we've done alright at this, I guess."
                 jump .lockerTalk_maybeWeCouldHang
@@ -84,7 +84,7 @@ label forestShed_lockerTalk:
                     show stacey blush
                     jump .lockerTalk_iLikeMovies
                 else:
-                    narrate "{i}Stacey laughs nervously{/i}"
+                    narrate "Stacey laughs nervously"
                     stacey "Um... a date?"
                     stacey "I have a boyfriend Beans..."
                     menu:
@@ -194,7 +194,7 @@ label forestShed_lockerTalk:
             show stacey surprised
             stacey "You?"
             if stacey.approval < staceyRomanceApprovalThreshold:
-                narrate "{i}Stacey laughs.{/i}"
+                narrate "Stacey laughs."
                 stacey "You're such a goof, Beans"
                 stacey "Svenjamin isn't {i}that{/i} bad"
                 stacey "Thanks for trying to cheer me up though"
@@ -269,11 +269,11 @@ label forestShed_lockerTalk:
         hide beans
 
         if beans.proactivePassive > 0:
-            narrate "{i}You throw the locker open and run{/i}"
-            narrate "{i}Stacey following right behind you{/i}"
+            narrate "You throw the locker open and run"
+            narrate "Stacey following right behind you"
         else:
-            narrate "{i}Stacey throws the locker open and runs{/i}"
-            narrate "{i}You follow right behind{/i}"
+            narrate "Stacey throws the locker open and runs"
+            narrate "You follow right behind"
 
         stacey "Beans! He's right behind us!"
         jump scene_forestShed.runIntoTheWoods
