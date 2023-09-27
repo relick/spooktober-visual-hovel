@@ -4,6 +4,24 @@
 init -1 python:
     config.layers = ['master', 'transient', 'screens', 'overlay']
 
+    def mid_beep(event, **kwargs):
+        if event == "show":
+            renpy.music.play("beeps/mid_beep.wav", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+    def high_beep(event, **kwargs):
+        if event == "show":
+            renpy.music.play("beeps/high_beep.wav", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
+    def typewriter_beep(event, **kwargs):
+        if event == "show":
+            renpy.music.play("beeps/typewriter_beep.wav", channel="sound", loop=True)
+        elif event == "slow_done" or event == "end":
+            renpy.music.stop(channel="sound")
+
 init -1:
     transform portrait:
         align (0.07,0.95)
@@ -18,11 +36,6 @@ init -1:
     $ config.tag_transform['stacey'] = other_person
     define gui.dialogue_text_font = "LinLibertine_R.ttf"
     define gui.dialogue_text_size = 33
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Stacey")
 
 # The game starts here.
 label start:
