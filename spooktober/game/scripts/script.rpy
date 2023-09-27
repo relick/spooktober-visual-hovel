@@ -4,23 +4,25 @@
 init -1 python:
     config.layers = ['master', 'transient', 'screens', 'overlay']
 
+    renpy.music.register_channel("bleeps", mixer="sfx")
+
     def mid_beep(event, **kwargs):
         if event == "show":
-            renpy.music.play("beeps/mid_beep.wav", channel="sound", loop=True)
+            renpy.music.play("beeps/mid_beep.wav", channel="bleeps", loop=True)
         elif event == "slow_done" or event == "end":
-            renpy.music.stop(channel="sound")
+            renpy.music.stop(channel="bleeps")
 
     def high_beep(event, **kwargs):
         if event == "show":
-            renpy.music.play("beeps/high_beep.wav", channel="sound", loop=True)
+            renpy.music.play("beeps/high_beep.wav", channel="bleeps", loop=True)
         elif event == "slow_done" or event == "end":
-            renpy.music.stop(channel="sound")
+            renpy.music.stop(channel="bleeps")
 
     def typewriter_beep(event, **kwargs):
         if event == "show":
-            renpy.music.play("beeps/typewriter_beep.wav", channel="sound", loop=True)
+            renpy.music.play("beeps/typewriter_beep.wav", channel="bleeps", loop=True)
         elif event == "slow_done" or event == "end":
-            renpy.music.stop(channel="sound")
+            renpy.music.stop(channel="bleeps")
 
 init -1:
     transform portrait:
