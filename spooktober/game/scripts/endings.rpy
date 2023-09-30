@@ -30,10 +30,30 @@ label endings_forestShed:
         return
 
     label .ending_oilDrums_terribad:
+        narrate "The figure looms over you"
+        narrate "Expressionless eyes leer at you from the mask"
+        narrate "It's impossible to tell whether they take any pleasure in this"
+
+        narrate "This is the end."
 
         # ..squares
         call screen game_over("shark") with squares
         return       
+
+    label .ending_oilDrums_terribad_hands:
+        narrate "The figure looms over you"
+        narrate "Expressionless eyes leer at you from the mask"
+        narrate "It's impossible to tell whether they take any pleasure in this"   
+
+        narrate "Stacey wordlessly takes your hand in hers"
+        narrate "She squeezes it tightly"
+
+        show stacey sad
+        stacey "I... wish I'd known you better, Beans."
+        hide stacey
+
+        narrate "This is the end."
+        return
 
     label .ending_staceyRuns_lowApproval:
         narrate "TODO: Stacey bolts from your hiding place and gets fuckin murdered"

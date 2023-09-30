@@ -238,15 +238,22 @@ label forestShed_killerArrives:
                 "I'm so sorry":
                     show stacey scared
                     stacey "Me too-"
+                    if stacey.approval > 3:
+                        jump endings_forestShed.ending_oilDrums_terribad_hands
+                    else:
+                        jump endings_forestShed.ending_oilDrums_terribad
                 "I love you":
                     show stacey scared
                     stacey "Beans-"
+                    hide stacey
+                    jump endings_forestShed.ending_oilDrums_terribad_hands
                 "I'll see you in hell":
                     show stacey scared
-                    stacey "Fuck you, Beans"
+                    stacey "Fuck you, Beans"           
+                    hide stacey
+                    jump endings_forestShed.ending_oilDrums_terribad
             
-            hide stacey
-            jump endings_forestShed.ending_oilDrums_terribad
+
 
     label .hideInTheShed:
         if cutHand:
