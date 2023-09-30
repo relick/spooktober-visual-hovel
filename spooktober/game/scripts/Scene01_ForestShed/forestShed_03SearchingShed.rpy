@@ -26,7 +26,6 @@ label forestShed_searchingShed:
     # 3a Beans searches the shed herself
     label .beansSearch:
         call scene_forestShed.util_updateProactivePassive(1)
-        $ beansSearchedShed = True
 
         think "I can show Stacey I'm not totally useless!"
         
@@ -41,14 +40,20 @@ label forestShed_searchingShed:
         think "But maybe we should be quick, who knows how long we've got before that weirdo comes after us?"
         menu: 
             "Search carefully":
+                $ beansSearchedShed = True
                 narrate "You carefully search the shelves, disturbing as little as possible."
                 narrate "You spy a bulbous glass shape, hiding under a thick layer of dust, and gently wipe the grime away."
                 show stacey happy
                 stacey "A lantern! Great find, Beans."
-                $stacey.approval += 1
+                $ stacey.approval += 1
 
-                stacey "And it's still got some fuel. There must be matches around here somewhere..."
-                narrate "A careful rummage produces a book of matches which miraculously, still work."
+                stacey "And it's still got some fuel, ace."
+                narrate "Stacey produces a lighter from her pocket."
+                think "Stacey smokes?"
+                stacey "Um. Don't tell my mum about this."
+
+                narrate "The lantern lights easily."
+
                 # Audio: Match striking? 
                 # VFX: Glow of light to represent lantern lighting?
                 stacey "Let there be light!" # TODO: Not sure this fits the character
@@ -98,9 +103,9 @@ label forestShed_searchingShed:
                 hide beans
 
                 show stacey sigh
-                stacey "What are you, my mother?"
+                stacey "What are you, my mom?"
 
-                narrate "the glass lantern sputters to life"
+                narrate "The glass lantern sputters to life"
 
                 show stacey happy
                 stacey "Is that a good find or what?"
@@ -138,7 +143,8 @@ label forestShed_searchingShed:
 
                 # PETE: this line's halfway between think and narrate - should probably be one or the other
                 # maybe something like: think "She's pointing inside the oil drum, which smells rancid..."
-                think "I look at where she's pointing - inside the oil drum, where that rancid smell is coming from."
+                think "She's pointing inside the oil drum."
+                think "It smells absolutely rancid"
 
                 show beans meanbean
                 beans "Is that... a raccoon?"
@@ -159,5 +165,4 @@ label forestShed_searchingShed:
                 $ stacey.approval -= 1
                 $ searchedDrums = True
                 $ smashedLantern = True
-                call scene_forestShed.util_updateKillerDistance(-2)
         jump scene_forestShed.d_areaSearch
