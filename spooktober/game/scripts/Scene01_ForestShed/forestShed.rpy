@@ -13,6 +13,8 @@ define character.narrate = Character(what_color="#79afff", what_prefix="{i}", wh
 
 define character.debug = Character(condition="True") # set to False to disable debug statements
 
+define character.centered = Character(kind=centered, callback=typewriter_beep)
+
 # Constants
 define proactiveThreshold = 3
 define passiveThreshold = -3
