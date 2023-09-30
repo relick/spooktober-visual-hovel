@@ -13,8 +13,10 @@ label forestShed_lockerTalk:
             jump .lockerTalk_nextSteps
         "{i}Press up closer against her{/i}":
             stacey "Um..."
+
+            jump .lockerTalk_pressCloser
         "What do we do now?":
-            narrate "You whisper as quietly as you can, hoping not to attrack the killer's attention."
+            narrate "You whisper as quietly as you can, hoping not to attract the killer's attention."
             jump .lockerTalk_nextSteps
 
     label .util_updateStaceyApproval(delta = 0):
@@ -31,7 +33,9 @@ label forestShed_lockerTalk:
         # If above a certain threshold she confesses? maybe
        
     label .lockerTalk_pressCloser:
-
+        debug "TODO: You press up close to Stacey"
+        debug "She gently pushes you away"
+        jump .lockerTalk_nextSteps
     label .lockerTalk_nextSteps:
         stacey "Okay, here's the plan."
         stacey "We wait until we're sure the coast is clear - and then we run."

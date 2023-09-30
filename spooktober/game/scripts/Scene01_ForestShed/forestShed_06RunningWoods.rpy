@@ -19,7 +19,7 @@ label forestShed_runIntoWoods:
                 jump .beansBearTrap
             "Run around the trap":
                 hide screen timed_choice
-                jump after_treeroot
+                jump .dodgedBearTrap
             "Trip on the trap":
                 hide screen timed_choice
                 jump .beansBearTrap
@@ -138,5 +138,15 @@ label forestShed_runIntoWoods:
 
     label .dodgedBearTrap:
         # If being chased by killer - you get away
-
-        # Otherwise - tree talk
+        if killerDistance <= 0:
+            if "Boots" in beans.equipped:
+                debug "TODO: You stumble on your stupid badly fitting boots"
+                debug "Stacey pulls you up"
+            
+            if staceyDateAgreed:
+                jump endings_forestShed.ending_lockerEscape_romance
+            else:
+                jump endings_forestShed.ending_lockerEscape_noRomance
+        else:
+            jump forestShed_treeTalk
+            # Otherwise - tree talk
