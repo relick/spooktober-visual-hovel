@@ -61,13 +61,35 @@ label forestShed_runIntoWoods:
             jump endings_forestShed.ending_runFromBearTrap_noBoots
 
     label .beansBearTrap:
+        narrate "The trap snaps shut on your leg."
         if "Boots" in beans.equipped:
-            narrate "TODO"
-            narrate "The boots protect your leg from the bear trap."
-            narrate "Stacey knows how to disarm them for some reason. You both get away."
+            narrate "You close your eyes, expecting searing pain-"
+            narrate "But it's... not as bad as you expected?"
+
+            show stacey determined
+            stacey "No way!"
+
+            show stacey laugh
+            stacey "Those stupid boots actually came in handy!"
+
+            think "The boots!"
+            narrate "The metal jaws of the trap are sunk into the thick leather of the old boots you're wearing."
+            narrate "They've still lodged themselves firmly in your leg, and it's not comfortable"
+            narrate "But you'd hate to think what it would look like if you didn't havethe boots to protect you."
+            
+            show stacey determined
+            stacey "Hold still. My dad's a hunter, he told me how to disarm these things."
+            stacey "You've just got to compress the springs like this... and then..."
+            show stacey happy
+            stacey "Voila!"
+            hide stacey
+            narrate "Somehow, Stacey jimmies the trap open and frees you."
+
+            show stacey determined
+            stacey "Now let's get out of here!"
+            hide stacey
             jump endings_forestShed.ending_savedFromBearTrap
         else:
-            narrate "The trap snaps shut on your leg."
             narrate "Your socks and loafers offer no resistance at all."
 
             show beans shout
