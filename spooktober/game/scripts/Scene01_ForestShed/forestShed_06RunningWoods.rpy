@@ -14,16 +14,16 @@ label forestShed_runIntoWoods:
 
         show screen timed_choice(2.0, ".beansBearTrap")
         menu:
-            "Step on the trap":
+            "{i}Step on the trap{/i}":
                 hide screen timed_choice
                 jump .beansBearTrap
-            "Run around the trap":
+            "{i}Run around the trap{/i}":
                 hide screen timed_choice
                 jump .dodgedBearTrap
-            "Trip on the trap":
+            "{i}Trip on the trap{/i}":
                 hide screen timed_choice
                 jump .beansBearTrap
-            "Put your foot on the trap":
+            "{i}Put your foot on the trap{/i}":
                 hide screen timed_choice
                 jump .beansBearTrap
         
@@ -38,16 +38,16 @@ label forestShed_runIntoWoods:
     label .staceyBearTrap:
         narrate "TODO: Stacey steps on a bear trap and falls over, shrieking"
         menu:
-            "Try and free her":
+            "{i}Try and free her{/i}":
                 narrate "TODO: It's useless, the jaws are stuck tight and you're weak and pathetic."
                 menu:
-                    "Keep trying to free her":
+                    "{i}Keep trying to free her{/i}":
                         narrate "You both die"
                         narrate "RIP"
                         jump endings_forestShed.ending_staceyStuckInBearTrap
-                    "Give up and save yourself":
+                    "{i}Give up and save yourself{/i}":
                         jump .runningFromBearTrap
-            "Leave her and run":
+            "{i}Leave her and run{/i}":
                 jump .runningFromBearTrap
     
     label .runningFromBearTrap:
