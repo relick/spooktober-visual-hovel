@@ -172,6 +172,19 @@ label forestShed_killerArrives:
                 beans "Catch me if you can!"
                 jump endings_forestShed.ending_oilDrums_heroic
             label .escape:
+                think "I.."
+
+                show beans meanbean
+                think "I want to live!"
+                hide beans 
+
+                narrate "Pure adrenaline spikes in your veins"
+                narrate "You push Stacey aside, scrambling over the rusted oil drums"
+                narrate "There's no thoughts in  your head, only survival"
+
+                stacey "Beans, what-"
+                hide stacey
+
                 jump endings_forestShed.ending_oilDrums_mediocre
             label .giveUp:
                 jump endings_forestShed.ending_oilDrums_terribad
