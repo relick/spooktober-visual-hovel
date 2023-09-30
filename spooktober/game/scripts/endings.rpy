@@ -70,8 +70,45 @@ label endings_forestShed:
         return
 
     label .ending_underTable_cutHand:
-        narrate "TODO: The killer sees the blood from your saw accident and discovers your hiding place"
-        narrate "RIP"
+        show beans meanbean
+        beans "..."
+        hide beans
+
+        think "I'm holding my breath."
+        narrate "An enormous gloved hand shoots out and grabs you by the ankle."
+
+        show beans shout
+        beans "Aaagh!"
+        hide beans
+
+        narrate "You try and scramble away."
+        narrate "Your hands scrape uselessly against the floorboards."
+
+        think "I can't break free..."
+        menu:
+            "Stacey, run!":
+                stacey "..."
+                narrate "Her eyes are wide, terrified beyond belief."
+                narrate "She already knows it's too late."
+                narrate "..."
+                narrate "Your fates are sealed."
+
+            "Let me go!":
+                narrate "The figure gives no indication that it's heard you."
+                narrate "The expressionless mask doesn't change."
+
+                beans "Please..."
+
+                narrate "You search for a glimpse of humanity in those hollow, empty eyes."
+                narrate "There is nothing."
+                
+                beans "..."
+                narrate "You cling to your hope."
+                narrate "Until that last moment,"
+                narrate "As you struggle weakly against their grip, and the heavy axe blade whistles through the air,"
+                narrate "you cling to it."
+                narrate "But it does not help you."
+        
         # fades to black then fades into image
         call screen game_over("shark") with fade
         return

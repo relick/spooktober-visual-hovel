@@ -196,7 +196,7 @@ label forestShed_searchingArea:
             think "It's kind of creepy."
             think "Reminds me of a butcher's shop."
 
-            stacey "Okay you search the shelves. I'm gonna look through these drawers."
+            stacey "Okay, you search the shelves. I'm gonna look through these drawers."
             show beans earnest
             beans "Okay!"
             hide beans
@@ -217,7 +217,7 @@ label forestShed_searchingArea:
             show stacey shocked
             stacey "Your hand! "
 
-            narrate "You become aware of a dull ache from your hand."
+            narrate "You realise there's a dull ache in your hand."
             think "Is that... blood? "
             stacey "You must have caught it on that bandsaw. You need to be more careful!"
             stacey "How bad is it?"
@@ -238,6 +238,7 @@ label forestShed_searchingArea:
                     $ stacey.approval += 1
                     show stacey blush
                     stacey "Yeah, well, don't mention it. "    
+                    "TODO: Jump where?"
                 "Kiss Stacey":
                     $ stacey.approval -= 5
                     call scene_forestShed.util_updateKillerDistance(-1)
@@ -251,7 +252,7 @@ label forestShed_searchingArea:
                     stacey "Ew. Not even. Don't even try it."
 
                     stacey "Let's just forget this ever happened, okay?"
-
+                    "TODO: Jump where?"
                 "Say nothing":
                     $ stacey.approval -= 1
                     show stacey uncomfortable
@@ -260,6 +261,7 @@ label forestShed_searchingArea:
                     hide beans
                     stacey "..."
                     think "Well, that was awkward."
+                    "TODO: Jump where?"
     # Search around the shed
     label .searchAroundShed:
         $ foundLockers = True

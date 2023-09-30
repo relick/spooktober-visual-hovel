@@ -257,6 +257,20 @@ label forestShed_killerArrives:
 
     label .hideInTheShed:
         if cutHand:
+            narrate "Enormous weatherproof boots stomp slowly into view."
+            narrate "You clamp your hands over your mouth."
+            think "Mustn't... make... a... sound.."
+      
+            narrate "Stacey is trembling beside you."
+            narrate "Your cut hand stings under its makeshift bandage."
+            narrate "Your cut hand."
+            think "{i}Shit.{/i}"
+
+            narrate "The fresh blood spatters on the flood condemn you."
+            narrate "The boots stop in front of them."
+            narrate "Time slows down as the figure bends down,"
+            narrate "Inspecting the fresh droplets of red."
+
             jump endings_forestShed.ending_underTable_cutHand
         elif "Boots" in beans.backpack:
             narrate "The boots make your bag too bulky to fit under the table with you"

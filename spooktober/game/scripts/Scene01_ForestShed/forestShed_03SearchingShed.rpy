@@ -91,10 +91,19 @@ label forestShed_searchingShed:
                 show stacey happy
                 stacey "Ah ha!"
                 stacey "Still some paraffin left in this lantern"
-                narrate "She strikes a match and the glass lantern sputters to life"
-                # Stacey smokes, has a lighter 
+                narrate "She pulls a lighter from her pocket."
+
+                show beans earnest
+                beans "Stacey! You {i}smoke?{/i}"
+                hide beans
+
+                show stacey sigh
+                stacey "What are you, my mother?"
+
+                narrate "the glass lantern sputters to life"
+
+                show stacey happy
                 stacey "Is that a good find or what?"
-                call scene_forestShed.util_updateKillerDistance(-1)
                 call scene_forestShed.util_equipItem("Lantern")
             "Sit on one of the rusty oil drums while she searches":
                 think "Ugh, my feet are killing me... I'll just take a load off on one of these oil drums."
