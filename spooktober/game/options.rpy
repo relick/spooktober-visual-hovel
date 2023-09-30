@@ -128,6 +128,8 @@ default preferences.text_cps = 36
 
 default preferences.afm_time = 15
 
+default preferences.skip_unseen = False
+
 
 ## Save directory ##############################################################
 ##

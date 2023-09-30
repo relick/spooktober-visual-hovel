@@ -254,9 +254,9 @@ screen quick_menu():
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
-            # textbutton _("Save") action ShowMenu('save')
-            # textbutton _("Q.Save") action QuickSave()
-            # textbutton _("Q.Load") action QuickLoad()
+            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Q.Save") action QuickSave()
+            textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
 
 
@@ -329,9 +329,9 @@ screen navigation():
 
             textbutton _("History") action ShowMenu("history")
 
-            # textbutton _("Save") action ShowMenu("save")
+            textbutton _("Save") action ShowMenu("save")
 
-            # textbutton _("Load") action ShowMenu("load")
+            textbutton _("Load") action ShowMenu("load")
 
             textbutton _("Preferences") action ShowMenu("preferences")
 
@@ -602,11 +602,9 @@ style about_label_text:
 
 screen save():
 
-    # Hack out the save screen and replace it with history :))))
-    use history()
-    #tag menu
+    tag menu
 
-    #use file_slots(_("Save"))
+    use file_slots(_("Save"))
 
 
 screen load():
