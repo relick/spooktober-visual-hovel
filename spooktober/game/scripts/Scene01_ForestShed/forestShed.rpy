@@ -75,15 +75,15 @@ label .util_addItemToBag(item = "Default"):
 
 # 1 Running through the woods
 label .a_runningThroughWoods:
-    debug "PLACEHOLDER: Section 1"
-    debug "PLACEHOLDER: Beans and Stacey running scared through the woods."
+ #   debug "PLACEHOLDER: Section 1"
+ #   debug "PLACEHOLDER: Beans and Stacey running scared through the woods."
 
     jump forestShed_runningThroughWoods
 
 # 2 Discovering the shed
 label .b_discoveringShed:
-    debug "Section 2"
-    debug "Beans and Stacey discover the shed"
+ #   debug "Section 2"
+  #  debug "Beans and Stacey discover the shed"
 
     jump forestShed_discoveringShed
 
