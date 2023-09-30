@@ -229,7 +229,9 @@ label forestShed_searchingArea:
             stacey "I've gotta bandage it until we find actual first aid."
 
             narrate "She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it."
-            narrate "It immediately soaks through with a dark bloodstain, but at least you're no longer dripping on the floor."
+            narrate "It immediately soaks through with a dark bloodstain."
+            narrate "At least you're no longer dripping on the floor."
+            think "So much for not leaving a trail..."
             $ cutHand = True
             
             # Respond to Stacey's help
