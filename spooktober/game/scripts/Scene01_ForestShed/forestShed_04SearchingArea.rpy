@@ -138,7 +138,7 @@ label forestShed_searchingArea:
                     stacey "Toxic waste? Really?"
                     show stacey sigh
                     stacey "You really are a dweeb."
-                    
+
                     jump forestShed_searchingArea
 
             label .findBoots:
@@ -193,7 +193,7 @@ label forestShed_searchingArea:
         menu:
             "Search the shed for another lantern" if not beansSearchedShed:
                 jump .searchShed_noLantern
-            "Attempt to search the outside of the shed":
+            "Attempt to search the outside of the shed" if not foundLockers:
                 jump forestShed_searchingArea.searchAroundShed
             "Continue into the forest":
                 jump scene_forestShed.continueIntoForest
