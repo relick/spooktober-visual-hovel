@@ -2,6 +2,23 @@
 
 # Absolute magic that makes Beans Just Work(tm)
 init -1 python:
+    # Add delays on punctuation
+    def replace_text(s):
+        s = s.replace(". ", ".{w=0.5} ")
+        s = s.replace("! ", "!{w=0.5} ")
+        s = s.replace(", ", ",{w=0.25} ")
+        s = s.replace("? ", "?{w=0.5} ")
+        return s
+    config.say_menu_text_filter = replace_text
+
+    # but the above also applies on menus
+    # so delete any erroneous tags that made it through
+    def unreplace_text(s):
+        s = s.replace("{w=0.5}", "")
+        s = s.replace("{w=0.25}", "")
+        return s
+    config.replace_text = unreplace_text
+
     config.layers = ['master', 'transient', 'screens', 'overlay']
 
     renpy.music.register_channel("bleeps", mixer="sfx")
