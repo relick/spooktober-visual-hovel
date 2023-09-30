@@ -85,7 +85,7 @@ label .backstoryIntro:
     centered "It was meant to be the Best Summer Ever"
 
     centered "That was what Gerald promised when he invited you all out here"
-    centered "To his family's cabin in the woods"
+    centered "To his family's {color=#f6ba00}cabin in the woods{/color}"
     centered "That was before he veered off the road with you all in the car"
     centered "That was before the first of your friends turned up dead"
     centered "That was before the mysterious figure began pursuing you"
