@@ -231,7 +231,8 @@ label forestShed_searchingArea:
             narrate "She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it."
             narrate "It immediately soaks through with a dark bloodstain."
             narrate "At least you're no longer dripping on the floor."
-            think "So much for not leaving a trail..."
+            
+            think "So much for not leaving a trail..." # warns the player that the blood trail could have consequences
             $ cutHand = True
             
             # Respond to Stacey's help
