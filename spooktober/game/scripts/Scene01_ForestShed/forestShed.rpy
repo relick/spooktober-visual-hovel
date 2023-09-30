@@ -1,15 +1,15 @@
 # Characters
-define character.stacey = Character("Stacey")
+define character.stacey = Character("Stacey", callback=mid_beep)
 default stacey.approval = 0
 default stacey.respondedProactivePassive = False
 
-define character.beans = Character("Beans")
+define character.beans = Character("Beans", callback=high_beep)
 default beans.proactivePassive = 0
 default beans.equipped = []
 default beans.backpack = []
 define character.think = Character(what_prefix="(", what_suffix=")")
 
-define character.narrate = Character(what_color="#79afff", what_prefix="{i}", what_suffix="{/i}")
+define character.narrate = Character(what_color="#79afff", what_prefix="{i}", what_suffix="{/i}", callback=typewriter_beep)
 
 define character.debug = Character(condition="True") # set to False to disable debug statements
 
