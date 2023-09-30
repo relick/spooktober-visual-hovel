@@ -41,7 +41,7 @@ init -1:
 
 # The game starts here.
 label start:
-    jump scene_forestShed.a_runningThroughWoods
+    jump scene_forestShed.backstoryIntro
 
 # This ends the game.
 label exit:

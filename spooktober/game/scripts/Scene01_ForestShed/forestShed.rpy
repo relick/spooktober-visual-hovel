@@ -73,17 +73,42 @@ label .util_addItemToBag(item = "Default"):
 # Narrative Nodes
 #--------------------------------------------------------
 
+# 0 Introduction
+label .backstoryIntro:
+    centered "It's the summer of 1986"
+    centered "The music is good and the perms are bad"
+    centered "Like {i}real{/i} bad"
+    centered "High School is behind you"
+    centered "College is ahead of you"
+    centered "And in between?"
+    centered "It was meant to be the Best Summer Ever"
+
+    centered "That was what Gerald promised when he invited you all out here"
+    centered "To his family's cabin in the woods"
+    centered "That was before he veered off the road with you all in the car"
+    centered "That was before the first of your friends turned up dead"
+    centered "That was before the mysterious figure began pursuing you"
+
+    centered "Forget college - your only life goal now is survival"
+    centered "Oh yeah..."
+    centered "And this is probably your last chance to try it on with your crush"
+    centered "So, you know,"
+    centered "Priorities and whatever"
+
+    jump .a_runningThroughWoods
+
+
 # 1 Running through the woods
 label .a_runningThroughWoods:
- #   debug "PLACEHOLDER: Section 1"
- #   debug "PLACEHOLDER: Beans and Stacey running scared through the woods."
+#   debug "PLACEHOLDER: Section 1"
+#   debug "PLACEHOLDER: Beans and Stacey running scared through the woods."
 
     jump forestShed_runningThroughWoods
 
 # 2 Discovering the shed
 label .b_discoveringShed:
- #   debug "Section 2"
-  #  debug "Beans and Stacey discover the shed"
+#   debug "Section 2"
+#  debug "Beans and Stacey discover the shed"
 
     jump forestShed_discoveringShed
 
