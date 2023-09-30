@@ -29,7 +29,7 @@ label forestShed_runningThroughWoods:
     think "It's getting dark so fast..."
     think "Good thing I brought Gerald's flashlight!"
 
-    show stacey sigh
+    show stacey tired
     stacey "I'm sure the road was this way."
 
     show stacey annoyed
@@ -48,42 +48,23 @@ label forestShed_runningThroughWoods:
     menu:
         "Trip over a tree root!":
             hide screen timed_choice
-            call .trip("tree root")
+            call after_treeroot.trip("tree root")
             jump after_treeroot
         "Fall over a log!":
             hide screen timed_choice
-            call .trip("log")
+            call after_treeroot.trip("log")
             jump after_treeroot
         "Avoid the obstacles!":
             hide screen timed_choice
-            call .avoid
+            call after_treeroot.avoid
             jump after_treeroot
         "Stumble on a fallen branch!":
             hide screen timed_choice
-            call .trip("branch")
+            call after_treeroot.trip("branch")
             jump after_treeroot
-
-label .trip(object = "default"):
-    # AUDIO: Thud
-    show beans shout
-    beans "OOF-" with vpunch
-    think "That [object] came out of nowhere!"
-    hide beans
-    return
-
-label .avoid:
-    show beans kewl
-    think "Sure footed as a mountain goat!"
-    show beans shout # pain
-    beans "OOF-" with vpunch
-    beans "Ohh... should have watched where I was going..."
-    beans "I just ran face first into that tree."
-    hide beans
-    return
 
 label fail_choice_trip_treeroot:
     call after_treeroot.trip("tree root")
-    jump after_treeroot
 
 label after_treeroot:
 
@@ -103,29 +84,18 @@ label after_treeroot:
     menu:
         "I'm sorry...":
             $ stacey.approval += 1
-            show stacey sigh
+            show stacey tired
             stacey "{i}Sigh{/i}"
             stacey "Sorry it's just... this is kind of stressful, you know."
-
-            show stacey sad
             stacey "I don't want anyone else to wind up dead."
             stacey "It would look {i}real{/i} bad on my record as class president."
         "It wasn't my fault, I can't see where I'm going in this dumb forest.":
-            show stacey sigh
+            show stacey tired
             stacey "Ugh, Beans..."
-
-            show stacey determined
-            stacey "You're a major liability."
-            stacey "You know that, right?"
-            stacey "Just try not to break anything else."
-
-            show stacey sigh
-            stacey  "{i}Please{/i}."
-
-            show stacey determined
+            stacey "You're a major liability. You know that, right?"
+            stacey "Just try not to break anything else, {i}please{/i}."
         "Can it, Stacey":
             $ stacey.approval -= 1
-            show stacey angry
             stacey "Don't tell me to can it!"
             stacey "First you make us crash, then you break our flashlight-"
             stacey "UGH! You are making me SO MAD right now!"
@@ -136,14 +106,8 @@ label after_treeroot:
             think "I'd better follow if I don't want to get even more lost"
 
     show beans serious2
-    think "Come on Beans. No more running into things."
-
-    show beans kewlpewpew
-    think "You got this, Beanie-baby!"
-
-    show beans kewl
-    think "..."
-    think "Can't believe I'm still single."
+    think "I'm trying really, {i}really{/i} hard not to run into anything else"
+    think "...but it's getting harder as the daylight is fading"
     hide beans
 
     show stacey excited
@@ -199,3 +163,20 @@ label after_treeroot:
         stacey "This place is abandonedville. And it's {i}hella{/i} grody."
         jump scene_forestShed.b_discoveringShed
         
+
+    label .trip(object = "default"):
+        # AUDIO: Thud
+        show beans shout
+        beans "OOF-" with vpunch
+        think "That [object] came out of nowhere!"
+        hide beans
+        return
+    
+    label .avoid:
+        show beans kewl
+        think "Sure footed as a mountain goat!"
+        show beans shout # pain
+        beans "OOF-" with vpunch
+        beans "Ohh... should have watched where I was going..."
+        beans "I just ran face first into that tree."
+        hide beans
