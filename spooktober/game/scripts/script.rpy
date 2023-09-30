@@ -4,10 +4,11 @@
 init -1 python:
     # Add delays on punctuation
     def replace_text(s):
-        s = s.replace(". ", ".{w=0.5} ")
-        s = s.replace("! ", "!{w=0.5} ")
-        s = s.replace(", ", ",{w=0.25} ")
-        s = s.replace("? ", "?{w=0.5} ")
+        s = s.replace(". ", ".{w=0.25} ")
+        # but ellipsis is longer
+        s = s.replace("...{w=0.25} ", "...{w=0.5} ")
+        s = s.replace("! ", "!{w=0.25} ")
+        s = s.replace("? ", "?{w=0.25} ")
         return s
     config.say_menu_text_filter = replace_text
 
@@ -55,6 +56,10 @@ init -1:
     $ config.tag_transform['stacey'] = other_person
     define gui.dialogue_text_font = "LinLibertine_R.ttf"
     define gui.dialogue_text_size = 33
+
+transform in_locker:
+    zoom 1.4
+    align (0.5, 1.0)
 
 # The game starts here.
 label start:
