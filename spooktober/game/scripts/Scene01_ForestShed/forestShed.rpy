@@ -95,6 +95,8 @@ label .c_searchingShed:
 
 # 4 Searching the surrounding area
 label .d_areaSearch:
+    think "The last rays of sunlight have dwindled."
+    think "It's getting real hard to see..."    
     jump forestShed_searchingArea
 
 label .e_killerArrives:

@@ -121,6 +121,24 @@ label forestShed_searchingArea:
                     call scene_forestShed.util_updateProactivePassive(-1)
                     jump .findBoots
                 "Leave the oil drum":
+                    think "Oh boy, I really don't want to open that thing up."
+                    show beans blush
+                    beans "Uh... I don't know..."
+                    $ stacey.approval += 1
+                    hide beans
+
+                    show stacey annoyed
+                    stacey "Oh come ON Beans."
+                    stacey "What's it going to do, kill you?"
+
+                    show beans tired
+                    beans "I'm just being cautious! It could be... I dunno, toxic waste."
+                    hide beans
+
+                    stacey "Toxic waste? Really?"
+                    show stacey sigh
+                    stacey "You really are a dweeb."
+                    
                     jump forestShed_searchingArea
 
             label .findBoots:
@@ -172,8 +190,6 @@ label forestShed_searchingArea:
                 jump forestShed_searchingArea
     
     label .areaSearch_noLantern:
-        think "The last rays of sunlight have dwindled."
-        think "It's getting real hard to see..."
         menu:
             "Search the shed for another lantern" if not beansSearchedShed:
                 jump .searchShed_noLantern
@@ -231,7 +247,7 @@ label forestShed_searchingArea:
             narrate "She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it."
             narrate "It immediately soaks through with a dark bloodstain."
             narrate "At least you're no longer dripping on the floor."
-            
+
             think "So much for not leaving a trail..." # warns the player that the blood trail could have consequences
             $ cutHand = True
             
@@ -265,6 +281,11 @@ label forestShed_searchingArea:
                     stacey "..."
                     think "Well, that was awkward."
                     "TODO: Jump where?"
+            
+            show stacey sigh
+            stacey "So much for finding another flashlight."
+
+
     # Search around the shed
     label .searchAroundShed:
         $ foundLockers = True
