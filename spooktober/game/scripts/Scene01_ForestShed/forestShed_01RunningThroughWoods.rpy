@@ -170,7 +170,8 @@ label after_treeroot:
         beans "OOF-" with vpunch
         think "That [object] came out of nowhere!"
         hide beans
-
+        return
+    
     label .avoid:
         show beans kewl
         think "Sure footed as a mountain goat!"

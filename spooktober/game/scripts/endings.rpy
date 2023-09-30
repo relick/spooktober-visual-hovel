@@ -7,22 +7,28 @@ label endings_forestShed:
         call screen game_over("shark") with blinds
         return
     
-    label .ending_oilDrums_lowApproval:
-        narrate "TODO:"
-        narrate """
-        Stacey vaults over the drums, her cheerleader training paying off in her athleticism.
-        You, however, are not a cheerleader. 
+    label .ending_oilDrums_heroic:
+        narrate "Stacey vaults over the drums, her cheerleader training paying off in her athleticism."
+        narrate "You, however, are not a cheerleader." 
 
-        As you desperately try and claw through the rusted metal drums, heaving footsteps - and heavy breathing - arrive behind you. 
-        An enormous hand lifts you off the ground by the back of your shirt. 
-        The air stinks of rotten meat and sweet, metallic blood. 
-        A blade whistles through the air.
+        narrate "As you run, trying to kite the maniac away from her, your lungs burn and your feet stumble."
+        narrate "With a sinking feeling, you realise"
+        narrate "there's only one way this can end."
+        narrate "An enormous hand lifts you off the ground by the back of your shirt." 
+        narrate "The air stinks of rotten meat and sweet, metallic blood." 
+        narrate "A blade whistles through the air."
 
-        This is your time.
-        """   
+        narrate "This is your time."
+        
         # ..squares
         call screen game_over("shark") with squares
         return
+
+    label .ending_oilDrums_terribad:
+
+        # ..squares
+        call screen game_over("shark") with squares
+        return       
 
     label .ending_staceyRuns_lowApproval:
         narrate "TODO: Stacey bolts from your hiding place and gets fuckin murdered"
