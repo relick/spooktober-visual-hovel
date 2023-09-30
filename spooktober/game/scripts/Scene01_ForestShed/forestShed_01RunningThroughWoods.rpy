@@ -25,19 +25,25 @@ label forestShed_runningThroughWoods:
     # but we should probably add them for all the thinking sections too
     hide beans
     think "I'm so tired... and my feet hurt..."
-    think "This tin of beans is so heavy..."
+    #  think "This tin of beans is so heavy..."
     think "It's getting dark so fast..."
-    think "Good thing I brought Gerald's flashlight!"
+    think "Glad I grabbed that flashlight from Gerald's survival kit"
+
+    show beans sad
+    beans "Poor Gerald..."
+    show beans tired
+    beans "I wonder where the others are?"
+    hide beans
 
     show stacey sigh
     stacey "I'm sure the road was this way."
 
     show stacey annoyed
     stacey "Can't you keep up, Beans?"
+
     show beans stressed
     beans "I'm going as fast as I can!"
     think "How am I meant to keep up with a champion cheerleader?"
-
     hide stacey 
 
     show beans tired
@@ -91,10 +97,11 @@ label after_treeroot:
     narrate "CRACK"
 
     # TODO: Some kind of flash indicating the light went out?
-    show beans shout
     think "Was that... the flashlight?"
+    
     # PETE: the 'Oh no...' might be better vocalised
-    think "Oh no..."
+    show beans shout
+    beans "Oh no..."
     hide beans
 
     show stacey angry
@@ -127,8 +134,13 @@ label after_treeroot:
             $ stacey.approval -= 1
             show stacey angry
             stacey "Don't tell me to can it!"
-            stacey "First you make us crash, then you break our flashlight-"
-            stacey "UGH! You are making me SO MAD right now!"
+            stacey "This day is {i}literally{/i} the worst."
+
+            stacey "First the crash, then what happened to Gerald."
+            stacey "THEN you break our flashlight, and NOW you tell me to can it!"
+
+            show stacey angry
+            stacey "Ugh! You are making me so mad right now!"
             hide stacey
             show beans sad
             think "She's stormed off!"
@@ -138,6 +150,8 @@ label after_treeroot:
     show beans serious2
     think "Come on Beans. No more running into things."
 
+    hide stacey
+    
     show beans kewlpewpew
     think "You got this, Beanie-baby!"
 
@@ -196,6 +210,6 @@ label after_treeroot:
         call screen panel("shed") with dissolve
         show stacey disgusted
         stacey "Ugh."
-        stacey "This place is abandonedville. And it's {i}hella{/i} grody."
+        stacey "Man, is this place {i}grody{/i}."
         jump scene_forestShed.b_discoveringShed
         

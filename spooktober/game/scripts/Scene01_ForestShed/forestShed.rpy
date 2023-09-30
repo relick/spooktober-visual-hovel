@@ -59,14 +59,13 @@ label .util_equipItem(item = "Default"):
     python:
         if not item in beans.equipped:
             beans.equipped.append(item)
-    debug "TODO: [item] equipped"
+    narrate "You've equipped the [item]"
     return
 
 label .util_addItemToBag(item = "Default"):
     python:
         if not item in beans.backpack:
             beans.backpack.append(item)
-    debug "TODO: [item] added to backpack"
     return
 
 #--------------------------------------------------------
@@ -100,27 +99,19 @@ label .backstoryIntro:
 
 # 1 Running through the woods
 label .a_runningThroughWoods:
-#   debug "PLACEHOLDER: Section 1"
-#   debug "PLACEHOLDER: Beans and Stacey running scared through the woods."
-
     jump forestShed_runningThroughWoods
 
 # 2 Discovering the shed
 label .b_discoveringShed:
-#   debug "Section 2"
-#  debug "Beans and Stacey discover the shed"
-
     jump forestShed_discoveringShed
 
 # 3 Searching the Shed
 label .c_searchingShed:
-    debug "Section 3"
-    debug "Beans and/or Stacey search the shed"
     jump forestShed_searchingShed
 
 # 4 Searching the surrounding area
 label .d_areaSearch:
-    think "The last rays of sunlight have dwindled."
+    think "The sunlight's basically gone."
     think "It's getting real hard to see..."    
     jump forestShed_searchingArea
 
@@ -128,31 +119,10 @@ label .e_killerArrives:
     jump forestShed_killerArrives
 
 label .lockerTalk:
-    debug "TODO: Flirt with Stacey but also try not to die"
     jump forestShed_lockerTalk
 
 label .runIntoTheWoods:
-    if stacey.approval < staceyRunApprovalThreshold:
-        narrate "TODO: Stacey runs off and leaves you behind"
-    elif "Lantern" in beans.equipped:
-        narrate "TODO: You have to dodge a bear trap"
-        # TODO DEAD END
-    else:
-        if beans.proactivePassive < 0:
-            narrate "Stacey goes first and steps on the bear trap, which you can't see, on account of not having a lantern."
-            jump .staceyBearTrap
-        else:
-            narrate "You go first and step on a bear trap, which you can't see on account of not having a lantern."
-            if "Boots" in beans.equipped:
-                narrate "TODO"
-                narrate "The boots protect your leg from the bear trap."
-                narrate "Stacey knows how to disarm them for some reason. You both get away."
-                jump endings_forestShed.ending_savedFromBearTrap
-            else:
-                narrate "TODO"
-                narrate "The bear trap chews your leg straight up"
-                narrate "You die RIP"
-                jump endings_forestShed.ending_beansStuckInBearTrap
+    jump forestShed_runIntoWoods
 
 label .staceyBearTrap:
     narrate "TODO: Stacey steps on a bear trap and falls over, shrieking"

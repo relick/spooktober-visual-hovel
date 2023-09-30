@@ -30,7 +30,7 @@ label forestShed_searchingShed:
         think "I can show Stacey I'm not totally useless!"
         
         scene bg shedinterior
-        show stacey disgusted
+        show stacey upsetshadow
         stacey "Ugh, can you say {i}dank{/i}?"
 
         show stacey determined
@@ -50,16 +50,21 @@ label forestShed_searchingShed:
                 stacey "And it's still got some fuel, ace."
                 narrate "Stacey produces a lighter from her pocket."
                 think "Stacey smokes?"
+
+                show stacey worried
                 stacey "Um. Don't tell my mum about this."
 
                 narrate "The lantern lights easily."
 
                 # Audio: Match striking? 
                 # VFX: Glow of light to represent lantern lighting?
+                show stacey laugh
                 stacey "Let there be light!" # TODO: Not sure this fits the character
+
+                show stacey happy
                 call scene_forestShed.util_equipItem("Lantern")
                 call scene_forestShed.util_updateKillerDistance(-1)                
-                
+                hide stacey
             "Search quickly":
                 think "Screw being careful - I want to be out of here as quickly as possible."
                 narrate "You begin rummaging haphazardly through the shelves."
@@ -70,7 +75,7 @@ label forestShed_searchingShed:
                 hide beans
 
                 narrate "You rip your arm free a little too vigorously and your hand collides with the shelf above"
-                narrate "Something glass and dust-covered falls off,  and shatters into piees on the bench."
+                narrate "Something glass and dust-covered falls off,  and shatters into pieces on the bench."
 
                 show stacey annoyed
                 stacey "Well that {i}was{/i} a lantern."

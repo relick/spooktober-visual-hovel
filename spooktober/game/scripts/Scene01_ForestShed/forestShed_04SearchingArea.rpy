@@ -34,7 +34,7 @@ label forestShed_searchingArea:
             "Search the oil drums" if not searchedDrums:
                 jump .searchOilDrums
             "Continue deeper into the forest":
-                jump scene_forestShed.continueIntoForest
+                jump .continueIntoForest
         
         # Search locations
         label .searchOilDrums:
@@ -196,7 +196,7 @@ label forestShed_searchingArea:
             "Attempt to search the outside of the shed" if not foundLockers:
                 jump forestShed_searchingArea.searchAroundShed
             "Continue into the forest":
-                jump scene_forestShed.continueIntoForest
+                jump .continueIntoForest
         
         # Search shed without lantern
         label .searchShed_noLantern:
@@ -298,3 +298,15 @@ label forestShed_searchingArea:
         jump forestShed_searchingArea
 
     label .continueIntoForest:
+        show beans serious
+        beans "We should get out of here."
+        beans "You know, before that weirdo catches up to us."
+        hide beans
+
+        # You head into the forest
+        jump forestShed_runIntoWoods
+
+        # You still have to avoid the bear trap
+
+        # If you do - you run deeper into the forest and end up hiding behind a tree while having your romantic talk with Stacey
+
