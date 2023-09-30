@@ -30,7 +30,7 @@ default smashedLantern = False
 
 default staceyDateAgreed = False
 
-default killerDistance = 5 # 3
+default killerDistance = 3
 
 label scene_forestShed:
 
