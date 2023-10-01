@@ -10,7 +10,7 @@ label endings_forestShed:
         narrate "It seems you and Stacey were not meant to be."
         
         # vertical columns
-        call screen game_over("shark") with blinds
+        call screen game_over()
         return
     
     label .ending_oilDrums_heroic:
@@ -28,7 +28,7 @@ label endings_forestShed:
         narrate "This is your time."
         
         # ..squares
-        call screen game_over("shark") with squares
+        call screen you_died()
         return
 
     label .ending_oilDrums_terribad:
@@ -40,7 +40,7 @@ label endings_forestShed:
         narrate "This is the end."
 
         # ..squares
-        call screen game_over("shark") with squares
+        call screen you_died()
         return       
 
     label .ending_oilDrums_terribad_hands:
@@ -58,7 +58,7 @@ label endings_forestShed:
 
         narrate "This is the end."
         # weird pixellation
-        call screen game_over("shark") with pixellate
+        call screen you_died()
         return
 
     label .ending_underTable_bootsInBag:
@@ -66,7 +66,7 @@ label endings_forestShed:
         narrate "TODO: The killer sees your bag and discovers your hiding place"
         narrate "RIP"
         # basically just a direct fade
-        call screen game_over("shark") with dissolve
+        call screen you_died()
         return
 
     label .ending_underTable_cutHand:
@@ -119,8 +119,7 @@ label endings_forestShed:
                 narrate "you cling to it."
                 narrate "But it does not help you."
         
-        # fades to black then fades into image
-        call screen game_over("shark") with fade
+        call screen you_died()
         return
 
     python:
@@ -129,7 +128,7 @@ label endings_forestShed:
             narrate "TODO: You try and run, leaving Stacey in the bear trap"
             narrate "Unfortunately you trip on the stupid old boots you're wearing. The killer catches you anyway."
             narrate "Bad end."
-            call screen game_over("shark") with dissolve
+            call screen you_died()
             return
         """
     label .ending_runFromBearTrap_noBoots:
@@ -137,7 +136,7 @@ label endings_forestShed:
         narrate "You hear her scream, cut off by a wet squelch, and scramble into the woods as fast as you can."
         narrate "You may have made it,"
         narrate "But Stacey did not"
-        call screen game_over("shark") with dissolve
+        call screen game_over()
         return
 
     label .ending_staceyStuckInBearTrap:
@@ -145,7 +144,7 @@ label endings_forestShed:
         narrate "You continue to fumble uselessly with the trap."
         narrate "Your hands are still uselessly trying to pry it apart when the heavy footsteps catch up to you."
         narrate "Could you have made it if you left her behind?"
-        call screen game_over("shark") with dissolve
+        call screen you_died()
         return
 
     label .ending_staceyFreedFromBearTrap:
@@ -179,7 +178,7 @@ label endings_forestShed:
         narrate "Well, not quite alone."
         narrate "As you fade away, you can faintly hear heavy footsteps"
         narrate "Stomping relentlessly towards you in the dark."
-        call screen game_over("shark") with dissolve
+        call screen you_died()
         return
 
     label .ending_beansStuckInBearTrap_noKiller:
@@ -189,7 +188,7 @@ label endings_forestShed:
         narrate "Just as if you were falling asleep."
         narrate "The forest is quiet."
         narrate "And you are still."
-        call screen game_over("shark") with dissolve
+        call screen you_died()
         return
 
     label .ending_savedFromBearTrap:
@@ -207,7 +206,6 @@ label endings_forestShed:
             jump endings_forestShed.ending_lockerEscape_romance
         else:
             jump endings_forestShed.ending_lockerEscape_noRomance
-        call screen game_over("shark") with dissolve
         return
 
     label .ending_lockerEscape_romance:
@@ -239,7 +237,7 @@ label endings_forestShed:
         show stacey laugh
         stacey "Now, I believe someone promised me a date?"
 
-        call screen game_over("shark") with dissolve
+        call screen good_ending("goodEndKiss") with dissolve
         return
 
     label .ending_lockerEscape_noRomance:
@@ -273,7 +271,7 @@ label endings_forestShed:
         narrate "You emerge from the trees, exhausted, battered."
         narrate "But not broken."
 
-        call screen game_over("shark") with dissolve
+        call screen good_ending("goodEnd") with dissolve
         return
 
     label .ending_killerCaughtInWoods:
@@ -288,5 +286,5 @@ label endings_forestShed:
         narrate "The axe whistles through the air towards you."
         narrate "You're not going to make it."
 
-        call screen game_over("shark") with dissolve
+        call screen you_died()
         return
