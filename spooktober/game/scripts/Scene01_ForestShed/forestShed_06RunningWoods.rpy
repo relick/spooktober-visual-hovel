@@ -17,7 +17,7 @@ label forestShed_runIntoWoods:
         beans "A bear trap?!"
         hide beans
 
-        show screen timed_choice(2.0, ".beansBearTrap")
+        show screen timed_choice(2.0, "forestShed_runIntoWoods.beansBearTrap")
         menu:
             "{i}Step on the trap{/i}":
                 hide screen timed_choice
@@ -59,6 +59,8 @@ label forestShed_runIntoWoods:
             jump .beansBearTrap
 
     label .staceyBearTrap:
+        $ crossfade("audio/music/Hallowbean_Stingers.ogg")
+
         narrate "Stacey lets out a blood-curdling scream"
         show stacey shout
         stacey "Get it off! Get it off!!"
@@ -235,6 +237,8 @@ label forestShed_runIntoWoods:
         jump endings_forestShed.ending_runFromBearTrap_noBoots
 
     label .beansBearTrap:
+        $ crossfade("audio/music/Hallowbean_Stingers.ogg")
+
         narrate "The trap snaps shut on your leg."
         if "Boots" in beans.equipped:
             narrate "You close your eyes, expecting searing pain-"

@@ -377,12 +377,18 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
+transform spooktober_image:
+    align(0.0,0.0)
+    zoom(0.06)
+
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
     add gui.main_menu_background
+
+    add "spooktober image.png" at spooktober_image
 
     ## This empty frame darkens the main menu.
     # frame:
@@ -1684,9 +1690,13 @@ screen splatter_youdied():
     zorder 54
     add "gameover/bg youdiedRed.png" at game_over_centred_slow_zoom
 
+screen splatter_static():
+    zorder 51
+    add "gameover/bg static.png" at game_over_centred
+
 screen splatter_gameover():
     zorder 54
-    add "gameover/bg gameoverWhite.png" at game_over_centred_slow_zoom
+    add "gameover/gameOverWhite.png" at game_over_centred_slow_zoom
 
 screen you_died():
     zorder 50 # above beans + dialogue, below other UI
@@ -1701,10 +1711,8 @@ screen you_died():
 screen game_over():
     zorder 50 # above beans + dialogue, below other UI
     add "bg black.png" at game_over_centred
-    timer 0.5 action ShowTransient("splatter_1")
-    timer 1.1 action ShowTransient("splatter_2")
-    timer 1.4 action ShowTransient("splatter_3")
-    timer 2.0 action ShowTransient("splatter_gameover", Dissolve(1.0))
+    timer 0.0 action ShowTransient("splatter_static", Dissolve(0.5))
+    timer 1.1 action ShowTransient("splatter_gameover", Dissolve(1.0))
     on "hide" action MainMenu(confirm=True,save=False)
     button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
 
