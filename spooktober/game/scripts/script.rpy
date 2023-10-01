@@ -63,6 +63,7 @@ transform in_locker:
 
 # The game starts here.
 label start:
+    stop music
     jump scene_forestShed.backstoryIntro
 
 # This ends the game.

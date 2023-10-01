@@ -57,13 +57,13 @@ define build.name = "bury-your-gays"
 
 define config.has_sound = True
 define config.has_music = True
-define config.has_voice = True
+define config.has_voice = False
 
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
 
-# define config.sample_sound = "sample-sound.ogg"
+define config.sample_sound = "audio/beeps/mid_beep.wav"
 # define config.sample_voice = "sample-voice.ogg"
 
 
@@ -71,7 +71,7 @@ define config.has_voice = True
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "audio/music/SweetRedBeans.ogg"
 
 
 ## Transitions #################################################################
