@@ -160,7 +160,7 @@ label forestShed_runIntoWoods:
                 stacey "..."
                 stacey "Now, let's get out of here."
                 jump endings_forestShed.ending_staceyFreedFromBearTrap
-                
+
             "Let's get out of here first.":
                 beans "Let's get out of here first."
                 
@@ -288,7 +288,7 @@ label forestShed_runIntoWoods:
 
                 menu:
                     "Run! Save yourself!":
-                        show beans confess
+                        show beans blush
                         beans "Run..."
                         hide beans
                         stacey "I'm so sorry Beans."
@@ -313,6 +313,9 @@ label forestShed_runIntoWoods:
                         narrate "She gives you hand one last squeeze."
                 # TODO IF TIME
                 # If your approval is high enough maybe she saves you
+                if staceyDateAgreed:
+                    think "Our date..."
+                    think "I'll never get to take her to the UFO museum..."
                 jump endings_forestShed.ending_beansStuckInBearTrap
                 # the killer catches up to you
             else:
