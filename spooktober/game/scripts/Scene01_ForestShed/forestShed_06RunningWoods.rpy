@@ -29,27 +29,158 @@ label forestShed_runIntoWoods:
         
     else:
         if beans.proactivePassive < 0:
-            narrate "Stacey goes first and steps on the bear trap, which you can't see, on account of not having a lantern."
+            narrate "You follow Stacey into the trees."
+
+            think "Oh man... I can't see a thing..."
+            think "One step in front of the other..."
+
+            narrate "{i}SNAP{/i}" with vpunch
+
             jump .staceyBearTrap
         else:
             narrate "You go first and step on a bear trap, which you can't see on account of not having a lantern."
             jump .beansBearTrap
 
     label .staceyBearTrap:
-        narrate "TODO: Stacey steps on a bear trap and falls over, shrieking"
+        narrate "Stacey lets out a blood-curdling scream"
+        show stacey shout
+        stacey "Get it off! Get it off!!"
+        hide stacey
+
+        narrate "You can just make out the large metal jaw clamped firmly onto her leg."
+
+        show beans shout
+        beans "A bear trap?!"
+        hide beans
+
+        stacey "You have to help me, Beans!"
         menu:
             "{i}Try and free her{/i}":
-                narrate "TODO: It's useless, the jaws are stuck tight and you're weak and pathetic."
+                think "Okay Beans, you can do this. No problem."
+                narrate "You try to pry the jaws apart, but they're stuck tight."
+                narrate "Your feeble strength is never going make this work."
+
+                show stacey nauseous
+                stacey "You have to compress the springs."
+                stacey "Please Beans! Before he catches up to us!"
+                hide stacey
+
                 menu:
                     "{i}Keep trying to free her{/i}":
-                        narrate "You both die"
-                        narrate "RIP"
-                        jump endings_forestShed.ending_staceyStuckInBearTrap
+                        narrate "You find the springs you think Stacey is talking about."
+                        think "Okay, just gotta push these down together."
+
+                        jump .pushSprings
                     "{i}Give up and save yourself{/i}":
                         jump .runningFromBearTrap
             "{i}Leave her and run{/i}":
                 jump .runningFromBearTrap
     
+    label .pushSprings:
+        think "One... two.. three"       
+        show screen timed_choice(1.0, "endings_forestShed.ending_staceyStuckInBearTrap")
+        menu:
+            "{i}Push!{/i}":
+                hide screen timed_choice
+                narrate "You push down as hard as you can."
+                narrate "The springs contract, allowing the jaws to come apart"
+                narrate "And Stacey is free!"
+                show stacey laugh
+                stacey "Yes!!"
+                stacey "I could KISS you Beans!"
+                $ stacey.approval += 1
+
+                menu: 
+                    "Go on then.":
+                        show beans kewl
+                        beans "Go on then."
+                        hide beans
+                        if stacey.approval > staceyKissApprovalThreshold:
+                            show stacey smile
+                            stacey "Don't call my bluff, Beans."
+                            jump .smoochByBearTrap
+                        else:
+                            stacey "I said, {i}could{/i}, not {i}would{/i}."
+                            stacey "Now, let's get out of here."
+                            jump endings_forestShed.ending_staceyFreedFromBearTrap
+                    "Aw, it was nothing.":
+                        show beans blush
+                        beans "Aw, it was nothing."
+                        
+                        stacey "It was definitely not nothing. You saved my life!"
+                        show stacey happy
+                        stacey "Thank you, Beans."
+
+                        if stacey.approval > staceyKissApprovalThreshold:
+                            show stacey blush
+                            stacey "I really meant it, though."
+                            jump .smoochByBearTrap
+                        else:
+                            show stacey determined
+                            stacey "Now, let's get out of here."
+                            jump endings_forestShed.ending_staceyFreedFromBearTrap
+                    "Ew, no thanks.":
+                        show beans meanbean
+                        beans "Ew, no thanks."
+                        hide beans
+                        show stacey sigh
+                        stacey "It was a figure of speech, Beans."
+                        show stacey determined
+                        stacey "Now, let's get out of here."
+                        jump endings_forestShed.ending_staceyFreedFromBearTrap
+                
+            "{i}Pull!{/i}":
+                hide screen timed_choice
+                jump endings_forestShed.ending_staceyStuckInBearTrap
+            "{i}Panic!{/i}":
+                hide screen timed_choice
+                jump endings_forestShed.ending_staceyStuckInBearTrap
+            "{i}Pass out!{/i}":
+                hide screen timed_choice
+                jump endings_forestShed.ending_staceyStuckInBearTrap
+
+        jump endings_forestShed.ending_staceyStuckInBearTrap
+
+    label .smoochByBearTrap:
+        stacey "Can I kiss you?"
+        show beans blush
+        menu:
+            "Yes":
+                beans "Y-yes."
+                hide stacey
+                hide beans
+                narrate "Stacey leans in, her blonde hair brushing your cheek"
+                narrate "She smells like drugstore perfume and hairspray"
+                narrate "You lips meet."
+                narrate "She tastes like strawberry lip gloss."
+                narrate "It's a perfect moment."
+                show beans confess
+                show stacey blush
+                beans "..."
+                stacey "..."
+                stacey "Now, let's get out of here."
+                jump endings_forestShed.ending_staceyFreedFromBearTrap
+                
+            "Let's get out of here first.":
+                beans "Let's get out of here first."
+                
+                stacey "Oh... of course."
+                hide stacey
+                narrate "She looks disappointed..."
+                narrate "But now is not the time for kissing!"
+                jump endings_forestShed.ending_staceyFreedFromBearTrap
+            "No way.":
+                show beans serious
+                beans "No way."
+                hide beans
+
+                show stacey sad
+                stacey "But-"
+                show stacey determined
+                stacey "Nevermind. I guess I just... misread something."
+                stacey "Let's just get out of here."
+                jump endings_forestShed.ending_staceyFreedFromBearTrap
+
     label .runningFromBearTrap:
         if "Boots" in beans.equipped:
             narrate "You trip and fall on account of the stupid old boots"

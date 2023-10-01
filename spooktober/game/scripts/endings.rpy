@@ -148,6 +148,11 @@ label endings_forestShed:
         call screen game_over("shark") with dissolve
         return
 
+    label .ending_staceyFreedFromBearTrap:
+        narrate "TODO: You free Stacey and you get away."
+        call screen game_over("shark") with dissolve
+        return
+
     label .ending_beansStuckInBearTrap:
         hide stacey
         narrate "And just like that, Stacey disappears into the forest."
