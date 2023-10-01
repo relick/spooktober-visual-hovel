@@ -13,7 +13,7 @@ label forestShed_killerArrives:
     show stacey scared
     stacey "Beans... can you hear that?"
     
-    think "She's frozen in place,"
+    think "She's frozen in place"
     think "I can hear rustling leaves, the hooting of an owl..."
     think "...and the heavy thud of approaching footsteps."
 

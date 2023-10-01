@@ -82,8 +82,8 @@ label .avoid:
     think "Sure footed as a mountain goat!"
     show beans shout # pain
     beans "OOF-" with vpunch
-    beans "Ohh... should have watched where I was going..."
-    beans "I just ran face first into that tree."
+    beans "Ohh... "
+    beans "I was so busy avoiding the branches I just ran face first into that tree."
     hide beans
     return
 
@@ -221,8 +221,10 @@ label after_treeroot:
         narrate "You creep forward, making each footstep as silent as possible."
 
         narrate "The moonlight is glimmering off Stacey's hoop earrings."
+        show beans blush
         think "The way it dances across the chemically treated curls of her hair.... "
         think "It's almost magical."
+        hide beans
 
         scene bg forest
         call screen panel("shed") with dissolve
