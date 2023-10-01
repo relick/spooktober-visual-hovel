@@ -418,6 +418,7 @@ label forestShed_runIntoWoods:
 
         # If being chased by killer - you get away
         if killerDistance <= 0:
+            $ crossfade("audio/music/SweetRedBeans.ogg")
             if staceyDateAgreed:
                 jump endings_forestShed.ending_lockerEscape_romance
             else:
