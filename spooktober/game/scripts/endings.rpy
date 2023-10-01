@@ -53,6 +53,8 @@ label endings_forestShed:
         hide stacey
 
         narrate "This is the end."
+        # weird pixellation
+        call screen game_over("shark") with pixellate
         return
 
     label .ending_staceyRuns_lowApproval:
