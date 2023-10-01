@@ -243,8 +243,6 @@ label forestShed_killerArrives:
             
             hide beans
 
-
-
             menu:
                 "I'm so sorry":
                     show beans blush
@@ -275,8 +273,6 @@ label forestShed_killerArrives:
                     hide stacey
                     jump endings_forestShed.ending_oilDrums_terribad
             
-
-
     label .hideInTheShed:
         think "The shed is tiny"
         if cutHand:
@@ -297,16 +293,4 @@ label forestShed_killerArrives:
             jump endings_forestShed.ending_underTable_cutHand
         else:
             jump forestShed_underTableTalk
-        python:
-            """
-        elif "Boots" in beans.backpack:
-            narrate "The enormous boots make your bag bulky"
-            narrate "It's far too conspicious, sticking out from under the table"
-            menu:
-                "{i}Throw your bag out of the shed{/i}":
-                    narrate "You throw your bag out into the darkness and scramble under the table - not a moment too soon."
-                    jump forestShed_underTableTalk
-                "{i}Keep the bag but try and stay hidden{/i}":
-                    narrate "You try and "
-                    jump endings_forestShed.ending_underTable_bootsInBag
-            """       
+
