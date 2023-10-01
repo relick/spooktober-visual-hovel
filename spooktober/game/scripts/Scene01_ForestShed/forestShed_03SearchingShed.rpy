@@ -69,7 +69,7 @@ label forestShed_searchingShed:
             "Search quickly":
                 think "Screw being careful - I want to be out of here as quickly as possible."
                 narrate "You begin rummaging haphazardly through the shelves."
-                narrate "As you reach across the workbench your sleeve snags on the teeth of rusted bandsaw."
+                narrate "As you reach across the workbench your sleeve snags on the teeth of rusted rotary saw."
                 # Audio: Cloth ripping
                 show beans stressed
                 beans "Ugh!"

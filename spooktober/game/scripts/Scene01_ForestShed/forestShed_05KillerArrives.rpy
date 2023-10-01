@@ -10,6 +10,8 @@
 # stacey scared
 
 label forestShed_killerArrives:
+    hide stacey
+    narrate "Suddenly, Stacey stops and goes completely rigid."
     show stacey scared
     stacey "Beans... can you hear that?"
     
@@ -19,6 +21,8 @@ label forestShed_killerArrives:
 
     show beans shout
     beans "{i}Oh my god{/i}"
+    beans "It's that weird guy!"
+    beans "He killed Gerald and now he's after us!"
     hide beans
     stacey "We have to hide!"
 

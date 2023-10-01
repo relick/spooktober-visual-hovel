@@ -200,7 +200,6 @@ label forestShed_searchingArea:
         
         # Search shed without lantern
         label .searchShed_noLantern:
-            call scene_forestShed.util_updateKillerDistance(-1)
             if smashedLantern:
                 stacey "Maybe there's another like, backup lantern."
                 stacey "You know. Because you freakazoided out and the last one broke."
@@ -235,7 +234,7 @@ label forestShed_searchingArea:
 
             narrate "You realise there's a dull ache in your hand."
             think "Is that... blood?"
-            stacey "You must have caught it on that bandsaw. You need to be more careful!"
+            stacey "You must have caught it on that chopsaw. You need to be more careful!"
             stacey "How bad is it?"
             show beans stressed
             beans "I dunno... there's a bit of blood..."
@@ -281,6 +280,7 @@ label forestShed_searchingArea:
             
             show stacey sigh
             stacey "So much for finding another flashlight."
+            call scene_forestShed.util_updateKillerDistance(-1)
             jump forestShed_searchingArea
 
     # Search around the shed
