@@ -146,7 +146,7 @@ label forestShed_searchingShed:
                 beans "I tried to sit on that oil drum but it totally just disintegrated!"
                 hide beans
 
-                show stacey angry
+                show stacey annoyed # note: was angry
                 stacey "Dammit Beans! You scared me so much I dropped the lantern!"
                 stacey "And - oh god, what is {i}that{/i}?"
 
