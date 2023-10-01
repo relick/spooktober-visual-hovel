@@ -44,6 +44,8 @@ label endings_forestShed:
         return       
 
     label .ending_oilDrums_terribad_hands:
+        $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
         # You both die
         narrate "The figure looms over you"
         narrate "Expressionless eyes leer at you from the mask"
@@ -70,6 +72,8 @@ label endings_forestShed:
         return
 
     label .ending_underTable_cutHand:
+        $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
         # You both die
         show beans meanbean
         beans "..."
@@ -132,6 +136,8 @@ label endings_forestShed:
             return
         """
     label .ending_runFromBearTrap_noBoots:
+        $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
         # You live, Stacey dies
         narrate "You hear her scream, cut off by a wet squelch, and scramble into the woods as fast as you can."
         narrate "You may have made it,"
@@ -140,6 +146,8 @@ label endings_forestShed:
         return
 
     label .ending_staceyStuckInBearTrap:
+        $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
         # You both die
         narrate "You continue to fumble uselessly with the trap."
         narrate "Your hands are still uselessly trying to pry it apart when the heavy footsteps catch up to you."
@@ -171,6 +179,8 @@ label endings_forestShed:
         return
 
     label .ending_beansStuckInBearTrap:
+        $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
         # You die, Stacey lives
         hide stacey
         narrate "And just like that, Stacey disappears into the forest."
@@ -182,6 +192,8 @@ label endings_forestShed:
         return
 
     label .ending_beansStuckInBearTrap_noKiller:
+        $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
         # You die, Stacey lives
         hide stacey
         narrate "Stacey holds your hand as you begin to drift away."
@@ -192,6 +204,11 @@ label endings_forestShed:
         return
 
     label .ending_savedFromBearTrap:
+        if staceyDateAgreed:
+            $ crossfade("audio/music/SweetRedBeans.ogg")
+        else:
+            $ crossfade("audio/music/Hallowbean_Nature.ogg")
+
         # You both live!
         narrate "You're amazed that Stacey knows how to disarm a bear trap."
         show beans blush
@@ -275,6 +292,8 @@ label endings_forestShed:
         return
 
     label .ending_killerCaughtInWoods:
+        $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
         # You both die
         narrate "You have made a terrible decision."
         narrate "The enormous masked figure appears from the trees, impossibly fast."

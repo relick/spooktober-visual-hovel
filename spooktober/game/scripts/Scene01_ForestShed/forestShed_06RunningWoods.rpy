@@ -103,7 +103,10 @@ label forestShed_runIntoWoods:
                 narrate "The springs contract, allowing the jaws to come apart"
                 narrate "And Stacey is free!"
                 
-                $ crossfade("audio/music/SweetRedBeans.ogg")
+                if staceyDateAgreed:
+                    $ crossfade("audio/music/SweetRedBeans.ogg")
+                else:
+                    $ crossfade("audio/music/Hallowbean_Nature.ogg")
 
                 show stacey laugh
                 stacey "Yes!!"
