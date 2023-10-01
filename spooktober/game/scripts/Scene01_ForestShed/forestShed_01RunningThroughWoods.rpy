@@ -209,7 +209,7 @@ label after_treeroot:
         hide beans
         scene bg forest
         call screen panel("shed") with dissolve
-        show stacey disappointed
+        show stacey sigh # note: was disappointed
 
         stacey "Ugh. It's obviously abandoned."
         think "It looks pretty small for a house, too"

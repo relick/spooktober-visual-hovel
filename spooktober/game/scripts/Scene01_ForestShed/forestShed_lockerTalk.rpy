@@ -270,7 +270,7 @@ label forestShed_lockerTalk:
                 hide beans
                 stacey "Ugh, he was."
 
-                show stacey neutral
+                show stacey sigh # note: was neutral
                 stacey "He wasn't even really my boyfriend. We just kinda... dated a bit."
                 stacey "You know. Went to the movies and whatever."
 
