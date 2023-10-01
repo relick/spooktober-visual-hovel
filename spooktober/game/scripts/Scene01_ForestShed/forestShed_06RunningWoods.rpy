@@ -1,4 +1,6 @@
 label forestShed_runIntoWoods:
+    $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
     if "Lantern" in beans.equipped:
         narrate "You and Stacey venture further into the woods."
         narrate "The lantern lights your path - without it, the forest would be pitch black."
@@ -7,6 +9,8 @@ label forestShed_runIntoWoods:
         stacey "Beans! Watch out!"
         
         narrate "Concealed under some leaves, you spy a vicious-looking set of metal teeth."
+
+        $ crossfade("audio/music/Hallowbean_Stingers.ogg")
 
         show beans shout
         beans "A bear trap?!"
@@ -85,6 +89,9 @@ label forestShed_runIntoWoods:
                 narrate "You push down as hard as you can."
                 narrate "The springs contract, allowing the jaws to come apart"
                 narrate "And Stacey is free!"
+                
+                $ crossfade("audio/music/SweetRedBeans.ogg")
+
                 show stacey laugh
                 stacey "Yes!!"
                 stacey "I could KISS you Beans!"
@@ -170,6 +177,8 @@ label forestShed_runIntoWoods:
                 narrate "But now is not the time for kissing!"
                 jump endings_forestShed.ending_staceyFreedFromBearTrap
             "No way.":
+                $ crossfade("audio/music/Hallowbean_Nature.ogg")
+
                 show beans serious
                 beans "No way."
                 hide beans
@@ -231,6 +240,8 @@ label forestShed_runIntoWoods:
             stacey "Voila!"
             hide stacey
             narrate "Somehow, Stacey jimmies the trap open and frees you."
+
+            $ crossfade("audio/music/Hallowbean_Drone.ogg")
 
             show stacey determined
             stacey "Now let's get out of here!"
@@ -335,6 +346,8 @@ label forestShed_runIntoWoods:
                 jump endings_forestShed.ending_beansStuckInBearTrap
                 # the killer catches up to you
             else:
+                $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
                 # stacey tries to help you but it's no use
                 show stacey upset 
                 stacey "It's not WORKING!"
@@ -379,6 +392,8 @@ label forestShed_runIntoWoods:
          
 
     label .dodgedBearTrap:
+        $ crossfade("audio/music/Hallowbean_Nature.ogg")
+
         # If being chased by killer - you get away
         if killerDistance <= 0:
             if staceyDateAgreed:

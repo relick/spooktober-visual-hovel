@@ -178,7 +178,9 @@ label after_treeroot:
     show stacey excited
     stacey "Wait!" with vpunch
 
-    call screen panel("shedSillhouette") with dissolve
+    $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
+    call screen panel("shedShadow") with dissolve
     show beans shout
     think "Is that... a house?"
     hide beans

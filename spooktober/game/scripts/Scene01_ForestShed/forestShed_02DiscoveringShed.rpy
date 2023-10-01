@@ -13,6 +13,8 @@ label forestShed_discoveringShed:
     scene bg forest
     centered "What you have found is a shed."
 
+    $ crossfade("audio/music/Hallowbean_Nature.ogg")
+
     hide beans
     think "Cute, a forest clearing."
     think "Gross, it's full of junk."

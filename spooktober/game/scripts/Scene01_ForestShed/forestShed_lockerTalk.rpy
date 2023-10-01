@@ -106,6 +106,8 @@ label forestShed_lockerTalk:
                 jump .lockerTalk_maybeWeCouldHang
 
     label .lockerTalk_maybeWeCouldHang:
+        $ crossfade("audio/music/SweetRedBeans.ogg")
+
         show beans blush
         beans "Maybe when we get out of here we could... hang out sometime?"
         hide beans
@@ -432,6 +434,8 @@ label forestShed_lockerTalk:
         jump .lockerTalk_hereComesKiller
 
     label .lockerTalk_hereComesKiller:
+        $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
+
         show stacey scared
         stacey "Ssh!" with vpunch
         narrate "Stacey abruptly shushes you."

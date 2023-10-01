@@ -15,6 +15,8 @@ label forestShed_killerArrives:
     show stacey scared
     stacey "Beans... can you hear that?"
     
+    $ crossfade("audio/music/Hallowbean_Pads.ogg")
+
     think "She's frozen in place"
     think "I can hear rustling leaves, the hooting of an owl..."
     think "...and the heavy thud of approaching footsteps."
@@ -37,6 +39,8 @@ label forestShed_killerArrives:
         "{i}Run further into the woods{/i}":
             jump forestShed_runIntoWoods
     label .hideInLockers:
+        $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
+
         if "Lantern" in beans.equipped:
             if beans.proactivePassive <= 0:
                 narrate "Stacey grabs your arm and pulls you over to the lockers."
@@ -77,6 +81,8 @@ label forestShed_killerArrives:
 
         
     label .hideInOilDrum:
+        $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
+
         if searchedDrums:
             stacey "Don't go near the gnarly drum!"
             show beans sad
@@ -274,6 +280,8 @@ label forestShed_killerArrives:
                     jump endings_forestShed.ending_oilDrums_terribad
             
     label .hideInTheShed:
+        $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
+
         think "The shed is tiny"
         if cutHand:
             narrate "Enormous weatherproof boots stomp slowly into view."
