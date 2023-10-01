@@ -1661,8 +1661,8 @@ transform game_over_centred:
 screen game_over(cgimage):
     zorder 50 # above beans + dialogue, below other UI
     add ("gameover " + cgimage + ".png") at game_over_centred
-    on "hide" action Jump('exit')
-    button xsize 1.0 ysize 1.0 action Return()
+    on "hide" action MainMenu(confirm=True,save=False)
+    button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
 
 transform panel_smaller:
     zoom 0.75
