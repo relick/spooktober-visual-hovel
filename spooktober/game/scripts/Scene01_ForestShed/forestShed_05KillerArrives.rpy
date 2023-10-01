@@ -24,13 +24,13 @@ label forestShed_killerArrives:
 
 
     menu:
-        "Hide in the lockers" if foundLockers:
+        "{i}Hide in the lockers{/i}" if foundLockers:
             jump .hideInLockers
-        "Hide in an empty oil drum":
+        "{i}Hide in an empty oil drum{/i}":
             jump .hideInOilDrum
-        "Hide in the shed":
+        "{i}Hide in the shed{/i}":
             jump .hideInTheShed
-        "Run further into the woods":
+        "{i}Run further into the woods{/i}":
             jump .runIntoTheWoods
     label .hideInLockers:
         if "Lantern" in beans.equipped:
@@ -126,8 +126,14 @@ label forestShed_killerArrives:
 
             menu:
                 "Pull yourself together!":
+                    show beans serious2
+                    beans "Pull yourself together!"
+
                     jump .pullYourselfTogether
                 "Did you death-stomp a raccoon??":
+                    show beans shout
+                    beans "Did you death-stomp a raccoon??"
+                    hide beans 
                     jump .raccoonStomp    
 
         label .pullYourselfTogether:
@@ -189,10 +195,6 @@ label forestShed_killerArrives:
             label .giveUp:
                 jump endings_forestShed.ending_oilDrums_terribad
         label .raccoonStomp:
-            show beans shout
-            beans "Did you death-stomp a raccoon??"
-            hide beans 
-
             show stacey shout
             stacey "It was already dead!"
             
@@ -236,6 +238,8 @@ label forestShed_killerArrives:
 
             menu:
                 "I'm so sorry":
+                    show beans blush
+                    beans "I'm so sorry"
                     show stacey scared
                     stacey "Me too-"
                     if stacey.approval > 3:
@@ -243,11 +247,19 @@ label forestShed_killerArrives:
                     else:
                         jump endings_forestShed.ending_oilDrums_terribad
                 "I love you":
+                    show beans confess
+                    beans "I love you."
+                    
                     show stacey scared
                     stacey "Beans-"
                     hide stacey
+                    hide beans
                     jump endings_forestShed.ending_oilDrums_terribad_hands
                 "I'll see you in hell":
+                    show beans meanbean
+                    beans "I'll see you in hell"
+                    hide beans
+
                     show stacey scared
                     stacey "Fuck you, Beans"           
                     hide stacey
@@ -256,6 +268,7 @@ label forestShed_killerArrives:
 
 
     label .hideInTheShed:
+        think "The shed is tiny"
         if cutHand:
             narrate "Enormous weatherproof boots stomp slowly into view."
             narrate "You clamp your hands over your mouth."
@@ -273,12 +286,13 @@ label forestShed_killerArrives:
 
             jump endings_forestShed.ending_underTable_cutHand
         elif "Boots" in beans.backpack:
+            
             narrate "The boots make your bag too bulky to fit under the table with you"
             menu:
-                "Throw your bag out of the shed":
+                "{i}Throw your bag out of the shed{/i}":
                     narrate "You throw your bag out into the darkness and scramble under the table - not a moment too soon."
                     jump .underTabletalk
-                "Keep the bag but try and stay hidden":
+                "{i}Keep the bag but try and stay hidden{/i}":
                     jump endings_forestShed.ending_underTable_bootsInBag
         else:
             jump .underTabletalk

@@ -87,6 +87,11 @@ label endings_forestShed:
         think "I can't break free..."
         menu:
             "Stacey, run!":
+                show beans earnest
+                beans "Stacey, run!"
+                hide beans
+
+
                 stacey "..."
                 narrate "Her eyes are wide, terrified beyond belief."
                 narrate "She already knows it's too late."
@@ -94,6 +99,10 @@ label endings_forestShed:
                 narrate "Your fates are sealed."
 
             "Let me go!":
+                show beans shout
+                "Let me go!"
+                hide beans
+                
                 narrate "The figure gives no indication that it's heard you."
                 narrate "The expressionless mask doesn't change."
 
@@ -141,6 +150,12 @@ label endings_forestShed:
 
     label .ending_beansStuckInBearTrap:
         narrate "TODO: With your leg absolutely destroyed by the bear trap, there's no way you can get away from the killer, even with Stacey's help"
+        narrate "Unfortunately you're a goner"
+        call screen game_over("shark") with dissolve
+        return
+
+    label .ending_beansStuckInBearTrap_noKiller:
+        narrate "TODO: The bear trap injury is deep, and you"
         narrate "Unfortunately you're a goner"
         call screen game_over("shark") with dissolve
         return

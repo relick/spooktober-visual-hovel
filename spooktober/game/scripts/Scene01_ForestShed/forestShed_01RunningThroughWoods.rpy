@@ -109,6 +109,10 @@ label after_treeroot:
 
     menu:
         "I'm sorry...":
+            show beans sad
+            beans "I'm sorry..."
+            hide beans
+
             $ stacey.approval += 1
             show stacey sigh
             stacey "{i}Sigh{/i}"
@@ -118,6 +122,10 @@ label after_treeroot:
             stacey "I don't want anyone else to wind up dead."
             stacey "It would look {i}real{/i} bad on my record as class president."
         "It wasn't my fault, I can't see where I'm going in this dumb forest.":
+            show beans stressed
+            beans "It wasn't my fault, I can't see where I'm going in this dumb forest."
+            hide beans
+
             show stacey sigh
             stacey "Ugh, Beans..."
 
@@ -131,6 +139,10 @@ label after_treeroot:
 
             show stacey determined
         "Can it, Stacey":
+            show beans meanbean
+            beans "Can it, Stacey."
+            hide beans
+
             $ stacey.approval -= 1
             show stacey angry
             stacey "Don't tell me to can it!"
@@ -170,8 +182,14 @@ label after_treeroot:
 
     menu:
         "We're saved!":
+            show beans earnest
+            beans "We're saved!"
+            hide beans 
             jump .saved
         "Careful - we don't know if we can trust them":
+            show beans earnest
+            beans "Careful - we don't know if we can trust them"
+            hide beans 
             jump .careful
 
     # "We're saved!"

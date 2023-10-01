@@ -13,8 +13,13 @@ label forestShed_lockerTalk:
             jump .lockerTalk_nextSteps
         "{i}Press up closer against her{/i}":
             stacey "Um..."
+
+            jump .lockerTalk_pressCloser
         "What do we do now?":
-            narrate "You whisper as quietly as you can, hoping not to attrack the killer's attention."
+            narrate "You whisper as quietly as you can, hoping not to attract the killer's attention."
+            show beans stressed
+            beans "What do we do now?"
+            hide beans
             jump .lockerTalk_nextSteps
 
     label .util_updateStaceyApproval(delta = 0):
@@ -31,7 +36,9 @@ label forestShed_lockerTalk:
         # If above a certain threshold she confesses? maybe
        
     label .lockerTalk_pressCloser:
-
+        debug "TODO: You press up close to Stacey"
+        debug "She gently pushes you away"
+        jump .lockerTalk_nextSteps
     label .lockerTalk_nextSteps:
         stacey "Okay, here's the plan."
         stacey "We wait until we're sure the coast is clear - and then we run."
@@ -42,8 +49,14 @@ label forestShed_lockerTalk:
 
         menu:
             "Got it. I'll follow your lead.":
+                show beans earnest
+                beans "Got it. I'll follow your lead."
+                hide beans
                 call scene_forestShed.util_updateProactivePassive(-1)
             "Got it. You can follow my lead.":
+                show beans kewlpewpew
+                beans "Got it. You can follow my lead."
+                hide beans
                 call scene_forestShed.util_updateProactivePassive(1)
         
         stacey "..."
@@ -53,16 +66,25 @@ label forestShed_lockerTalk:
 
         menu:
             "Well you're great at this, Stacey!":
+                show beans earnest
+                beans "Well you're great at this, Stacey!"
+                hide beans
                 call .util_updateStaceyApproval(1)
-                show stacey blush
+                show stacey blush2
                 think "I know storage lockers aren't very romantic but..."
                 think "Maybe this could be my chance to impress her...?"
                 jump .lockerTalk_maybeWeCouldHang
             "Well {i}one{/i} of us has to be competent if we're going to live.":
+                show beans meanbean
+                beans "Well {i}one{/i} of us has to be competent if we're going to live."
                 call .util_updateStaceyApproval(-1)
             "It's teamwork that makes the dream work!":
+                show beans kewl
+                "It's teamwork that makes the dream work!"
+                show beans kewlpewpew
                 call .util_updateStaceyApproval(1)
                 narrate "Stacey laughs quietly"
+                hide beans
                 show stacey happy
                 stacey "Yeah we've done alright at this, I guess."
                 jump .lockerTalk_maybeWeCouldHang
@@ -79,17 +101,26 @@ label forestShed_lockerTalk:
         stacey "Oh yeah? And do what?"
 
         menu: 
-            # TODO: Beans should have an idea of a date
-            # Options should be more obvious in their difference
-
             "We could go to the movies!":
+                show beans confess
+                beans "We could go to the movies!"
+                hide beans
                 jump .lockerTalk_iLikeMovies
             "We could go to a museum!":
+                show beans confess
+                "We could go to a museum!"
+                hide beans
                 call .util_updateStaceyApproval(1)
                 jump .lockerTalk_iLikeMuseums
             "I dunno, what's your idea of a good time?":
+                show beans blush
+                beans "I dunno, what's your idea of a good time?"
+                hide beans
                 jump .lockerTalk_iLikeMuseums
             "I'm gonna take you on the date of your dreams, baby.":
+                show beans kewlpewpew
+                beans "I'm gonna take you on the date of your dreams, baby."
+                hide beans
                 if stacey.approval >= staceyRomanceApprovalThreshold:
                     show stacey blush
                     jump .lockerTalk_iLikeMuseums
@@ -99,20 +130,39 @@ label forestShed_lockerTalk:
                     stacey "I have a boyfriend Beans..."
                     menu:
                         "Oh...":
+                            show beans meanbean
+                            beans "Oh..."                            
                             think "This is so awkward..."
                             think "Even though it's dark I can tell she'd avoiding looking at me"
+                            hide beans 
                             jump .lockerTalk_hereComesKiller
                         "{i}(lie){/i} Haha... me too... haha...":
+                            show beans kewl
+                            "Haha... me too... haha..."                            
                             think "This is so awkward..."
                             think "Even though it's dark I can tell she'd avoiding looking at me"
+                            hide beans
                             jump .lockerTalk_hereComesKiller
                         "I'm just kidding Stacey, god. Don't be so conceited.":
+                            show beans meanbean
+                            beans "I'm just kidding Stacey, god. Don't be so conceited."
+                            hide beans
                             call .util_updateStaceyApproval(-1)
                             jump .lockerTalk_stuckHereWithYou
                         "Doesn't that just make it more exciting?":
+                            show beans kewlpewpew
+                            beans "Doesn't that just make it more exciting?"
+                            hide beans
                             show stacey angry
                             stacey "No it just makes it more messed up!"
+                            stacey "Just forget about it."
+                            stacey "You're so weird."
+                            call .util_updateStaceyApproval(-1)
+                            jump .lockerTalk_stuckHereWithYou                          
             "Just kidding. I'd rather lick a dead raccoon than spend more time with you.":
+                show beans meanbean
+                "Just kidding. I'd rather lick a dead raccoon than spend more time with you.":
+                hide beans
                 call .util_updateStaceyApproval(-1)
                 jump .lockerTalk_stuckHereWithYou 
 
@@ -145,14 +195,23 @@ label forestShed_lockerTalk:
 
         menu:
             "Let's do it!":
+                show beans confess
+                beans "Let's do it!"
+                hide beans
                 stacey "Sounds great!"
                 show stacey excited
                 stacey "Finally, someone who's willing to come to weird museums with me!"
                 stacey "Svenjamin wouldn't be caught dead in a museum."
             "It's a date!":
+                show beans confess
+                beans "It's a date!"
+                hide beans                
                 stacey "A date, huh?"
                 stacey "Well, it's got to be better than the ones Svenjamin took me on..."
             "You're right, that is dumb.":
+                show beans serious
+                beans "You're right, that is dumb."
+                hide beans
                 call .util_updateStaceyApproval(-1)
                 show stacey angry
                 stacey "Ugh... you sound just like Svenjamin."
@@ -174,6 +233,9 @@ label forestShed_lockerTalk:
 
         menu:
             "Why did you even go out with him?":
+                show beans serious
+                beans "Why did you even go out with him?"
+                hide beans
                 stacey "I dunno... he's like, the quarterback, you know?"
                 stacey "And I'm the head cheerleader"
                 stacey "It just seemed right"
@@ -186,6 +248,9 @@ label forestShed_lockerTalk:
 
                 jump .lockerTalk_staceyCanDoBetter
             "He sounds like a terrible boyfriend":
+                show beans serious2
+                beans "He sounds like a terrible boyfriend"
+                hide beans
                 stacey "Ugh, he was."
 
                 show stacey neutral
@@ -196,15 +261,25 @@ label forestShed_lockerTalk:
                 stacey "I liked having someone to do all that stuff with, though."
                 jump .lockerTalk_staceyCanDoBetter
             "I don't care about your lame issues, Stacey.":
+                show beans meanbean
+                beans "I don't care about your lame issues, Stacey."
+                hide beans
                 call .util_updateStaceyApproval(-1)
                 jump .lockerTalk_stuckHereWithYou
 
     label .lockerTalk_staceyCanDoBetter:
         menu:
             "You can do way better, Stacey":
+                show beans earnest
+                beans "You can do way better, Stacey"
+                hide beans
+                call .util_updateStaceyApproval(1)
                 show stacey happy
                 stacey "You really think so?"
             "Give up on romance. You're basically unlovable.":
+                show beans meanbean
+                beans "Give up on romance. You're basically unlovable."
+                hide beans
                 call .util_updateStaceyApproval(-1)
                 jump .lockerTalk_stuckHereWithYou
 
@@ -212,8 +287,15 @@ label forestShed_lockerTalk:
         menu:
             set relationshipAdvice_menuset
             "I can think of someone better who's right in front of you":
+                show beans blush2
+                beans "I can think of someone better who's right in front of you"
+                hide beans
                 jump .staceyCanDoBetter_rightInFrontOfYou
             "How about Kevin?":
+                show beans kewl
+                beans  "How about Kevin?"
+                hide beans
+
                 show stacey doubt
                 stacey "Kevin?"
                 stacey "He is extremely cool but... I dunno..."
@@ -222,6 +304,9 @@ label forestShed_lockerTalk:
                 stacey "For listening to me."
                 jump .lockerTalk_hereComesKiller
             "Nah. Svenjamin's probably the best you'll ever get.":
+                show beans serious
+                beans "Nah. Svenjamin's probably the best you'll ever get."
+                hide beans
                 show stacey sad
                 stacey "That's what I'm worried about"
                 stacey "What if this is like... the peak?"
@@ -231,15 +316,24 @@ label forestShed_lockerTalk:
 
                 menu: 
                     "You've got your whole life ahead of you, Stacey!":
+                        show beans earnest
+                        beans "You've got your whole life ahead of you, Stacey!"
+                        hide beans
                         stacey "{i}Sigh{/i}"
                         stacey "I know you're right..."
                         stacey "I just... what if you're not? What if this is-"
 
                     "You can't think like that Stacey":
+                        show beans earnest
+                        beans "You can't think like that Stacey"
+                        hide beans
                         stacey "{i}Sigh{/i}"
                         stacey "Sorry"
                         stacey "I'll pull myself together"
                     "Jesus Christ Stacey, way to bring the mood down.":
+                        show beans meanbean
+                        beans "Jesus Christ Stacey, way to bring the mood down."
+                        hide beans
                         stacey "Sorry"
                         stacey "I'll pull myself together"
 
@@ -261,12 +355,22 @@ label forestShed_lockerTalk:
                 stacey "What are you trying to say, Beans?"
                 menu:
                     "I like you, Stacey":
+                        show beans confess
+                        beans "I like you, Stacey"
+                        hide beans
                         jump .staceyCanDoBetter_iLikeYou
                     "Nevermind, it was stupid. Forget it.":
+                        show beans blush
+                        beans "Nevermind, it was stupid. Forget it."
+                        hide beans
+
                         show stacey sad
                         stacey "...oh."
                         jump .lockerTalk_hereComesKiller
                     "Nothing, Stacey. You're embarassing yourself.":
+                        show beans meanbean
+                        beans "Nothing, Stacey. You're embarassing yourself."
+                        hide beans
                         call .util_updateStaceyApproval(-1)
                         jump .lockerTalk_stuckHereWithYou             
 
@@ -276,9 +380,15 @@ label forestShed_lockerTalk:
             stacey "I thought so! You're so obvious."
             menu:
                 "Do you... like me too?":
+                    show beans blush 
+                    beans "Do you... like me too?"
+                    hide beans
                     show stacey blush
                     stacey "You're cute, Beans"
                 "Sorry, I just made this weird.":
+                    show beans blush
+                    beans "Sorry, I just made this weird."
+                    hide beans
                     stacey "You don't have to be so awkward, Beans."
                     stacey "{i}Sigh{/i}"
             
@@ -318,8 +428,14 @@ label forestShed_lockerTalk:
 
         menu: 
             "Go now!":
+                show beans shout
+                beans "Go now!"
+                hide beans
                 jump .lockerTalk_goEarly
             "Wait a little longer":
+                show beans serious
+                beans "Wait a little longer."
+                hide beans
                 jump .lockerTalk_waitForTime
 
     label .lockerTalk_goEarly:
