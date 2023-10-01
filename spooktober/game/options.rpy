@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("spooktober")
+define config.name = _("Bury Your Gays")
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -30,6 +30,15 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+Froiza
+
+Jenny Yang (@notthisdeath)
+
+Music - Julia Christensson
+
+kasha (https://kasha.dev/)
+
+Voidwave
 """)
 
 
@@ -37,7 +46,7 @@ define gui.about = _p("""
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "spooktober"
+define build.name = "bury-your-gays"
 
 
 ## Sounds and music ############################################################

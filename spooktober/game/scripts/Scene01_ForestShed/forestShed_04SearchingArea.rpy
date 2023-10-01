@@ -106,7 +106,7 @@ label forestShed_searchingArea:
                     jump .findBoots
                 "Ask Stacey to open the oil drum":
                     show beans blush # apologetic
-                    beans "Um Stacey, could you - uh - get the lid? "
+                    beans "Um Stacey, could you - uh - get the lid?"
                     hide beans
                     
                     show stacey annoyed
@@ -200,7 +200,6 @@ label forestShed_searchingArea:
         
         # Search shed without lantern
         label .searchShed_noLantern:
-            call scene_forestShed.util_updateKillerDistance(-1)
             if smashedLantern:
                 stacey "Maybe there's another like, backup lantern."
                 stacey "You know. Because you freakazoided out and the last one broke."
@@ -231,11 +230,11 @@ label forestShed_searchingArea:
             hide beans
 
             show stacey shocked
-            stacey "Your hand! "
+            stacey "Your hand!"
 
             narrate "You realise there's a dull ache in your hand."
-            think "Is that... blood? "
-            stacey "You must have caught it on that bandsaw. You need to be more careful!"
+            think "Is that... blood?"
+            stacey "You must have caught it on that chopsaw. You need to be more careful!"
             stacey "How bad is it?"
             show beans stressed
             beans "I dunno... there's a bit of blood..."
@@ -244,7 +243,7 @@ label forestShed_searchingArea:
             stacey "Ugh, that needs cleaning {i}stat{/i}."
             stacey "I've gotta bandage it until we find actual first aid."
 
-            narrate "She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it."
+            narrate "She pulls a spare neon pink scrunchie out of her pocket and attempts to bind your hand with it."
             narrate "It immediately soaks through with a dark bloodstain."
             narrate "At least you're no longer dripping on the floor."
 
@@ -256,11 +255,9 @@ label forestShed_searchingArea:
                 "Thank Stacey for her help":
                     $ stacey.approval += 1
                     show stacey blush
-                    stacey "Yeah, well, don't mention it. "    
-                    "TODO: Jump where?"
+                    stacey "Yeah, well, don't mention it."
                 "Kiss Stacey":
                     $ stacey.approval -= 5
-                    call scene_forestShed.util_updateKillerDistance(-1)
                     stacey "BEANS! EW!"
                     show stacey angry
                     show beans blush
@@ -271,7 +268,7 @@ label forestShed_searchingArea:
                     stacey "Ew. Not even. Don't even try it."
 
                     stacey "Let's just forget this ever happened, okay?"
-                    "TODO: Jump where?"
+                    call scene_forestShed.util_updateKillerDistance(-1)
                 "Say nothing":
                     $ stacey.approval -= 1
                     show stacey uncomfortable
@@ -280,11 +277,11 @@ label forestShed_searchingArea:
                     hide beans
                     stacey "..."
                     think "Well, that was awkward."
-                    "TODO: Jump where?"
             
             show stacey sigh
             stacey "So much for finding another flashlight."
-
+            call scene_forestShed.util_updateKillerDistance(-1)
+            jump forestShed_searchingArea
 
     # Search around the shed
     label .searchAroundShed:

@@ -20,6 +20,7 @@ define proactiveThreshold = 3
 define passiveThreshold = -3
 
 define staceyRunApprovalThreshold = -2
+define staceyKissApprovalThreshold = 3
 
 # Narrative state variables
 default beansSearchedShed = False
@@ -37,8 +38,9 @@ label scene_forestShed:
 # Utility labels not associated with a specific point in the narrative
 label .util_updateProactivePassive(delta = 0):
     $ beans.proactivePassive += delta
-    debug "TODO: Beans' proactivePassive score is [beans.proactivePassive]"
 
+    python:
+        """
     if not stacey.respondedProactivePassive:
         if beans.proactivePassive < passiveThreshold:
             $ stacey.respondedProactivePassive = True
@@ -46,11 +48,12 @@ label .util_updateProactivePassive(delta = 0):
         elif beans.proactivePassive > proactiveThreshold:
             $ stacey.respondedProactivePassive = True
             stacey "TODO: You are very proactive."
+        """
     return
 
 label .util_updateKillerDistance(delta = 0):
     $ killerDistance += delta
-    debug "TODO: Killer distance is [killerDistance]"
+    # debug "TODO: Killer distance is [killerDistance]"
 
     if killerDistance <= 0:
         jump .e_killerArrives
@@ -125,32 +128,4 @@ label .lockerTalk:
 
 label .runIntoTheWoods:
     jump forestShed_runIntoWoods
-
-label .staceyBearTrap:
-    narrate "TODO: Stacey steps on a bear trap and falls over, shrieking"
-    menu:
-        "Try and free her":
-            narrate "TODO: It's useless, the jaws are stuck tight and you're weak and pathetic."
-            menu:
-                "Keep trying to free her":
-                    narrate "You both die"
-                    narrate "RIP"
-                    jump endings_forestShed.ending_staceyStuckInBearTrap
-                "Give up and save yourself":
-                    jump .runningFromBearTrap
-        "Leave her and run":
-            jump .runningFromBearTrap
-    
-    label .runningFromBearTrap:
-        if "Boots" in beans.equipped:
-            narrate "You trip and fall on account of the stupid old boots"
-            narrate "You both die. RIP"
-            jump endings_forestShed.ending_runFromBearTrap_boots
-        else:
-            narrate "You get away, leaving Stacey to her fate"
-            narrate "RIP Stacey"
-            jump endings_forestShed.ending_runFromBearTrap_noBoots
-
-label .underTabletalk:
-    narrate "TODO: Under table talk"
     

@@ -10,15 +10,19 @@
 # stacey scared
 
 label forestShed_killerArrives:
+    hide stacey
+    narrate "Suddenly, Stacey stops and goes completely rigid."
     show stacey scared
     stacey "Beans... can you hear that?"
     
-    think "She's frozen in place,"
+    think "She's frozen in place"
     think "I can hear rustling leaves, the hooting of an owl..."
     think "...and the heavy thud of approaching footsteps."
 
     show beans shout
     beans "{i}Oh my god{/i}"
+    beans "It's that weird guy!"
+    beans "He killed Gerald and now he's after us!"
     hide beans
     stacey "We have to hide!"
 
@@ -31,7 +35,7 @@ label forestShed_killerArrives:
         "{i}Hide in the shed{/i}":
             jump .hideInTheShed
         "{i}Run further into the woods{/i}":
-            jump .runIntoTheWoods
+            jump forestShed_runIntoWoods
     label .hideInLockers:
         if "Lantern" in beans.equipped:
             if beans.proactivePassive <= 0:
@@ -69,7 +73,7 @@ label forestShed_killerArrives:
             hide beans
             stacey "Of course he freakin heard it!"
             stacey "As if there's any point in hiding now - we've gotta run."
-            jump .runIntoTheWoods
+            jump forestShed_runIntoWoods
 
         
     label .hideInOilDrum:
@@ -93,7 +97,7 @@ label forestShed_killerArrives:
 
             show stacey determined
             stacey "It's our only hope! Come on, Beans!"
-            jump scene_forestShed.runIntoTheWoods
+            jump forestShed_runIntoWoods
         else:
             beans "We can hide in one of those oil drums!"
 
@@ -233,7 +237,10 @@ label forestShed_killerArrives:
             narrate "you"
 
             show beans meanbean
+            think "Well, this is it."
+            think "I'm about to die."
             beans "Stacey..."
+            
             hide beans
 
             menu:
@@ -246,15 +253,16 @@ label forestShed_killerArrives:
                         jump endings_forestShed.ending_oilDrums_terribad_hands
                     else:
                         jump endings_forestShed.ending_oilDrums_terribad
-                "I love you":
-                    show beans confess
-                    beans "I love you."
                     
-                    show stacey scared
-                    stacey "Beans-"
-                    hide stacey
-                    hide beans
-                    jump endings_forestShed.ending_oilDrums_terribad_hands
+                #"I love you":
+                    #show beans confess
+                    #beans "I love you."
+                    
+                    #show stacey scared
+                    #stacey "Beans-"
+                    #hide stacey
+                    #hide beans
+                    #jump endings_forestShed.ending_oilDrums_terribad_hands
                 "I'll see you in hell":
                     show beans meanbean
                     beans "I'll see you in hell"
@@ -265,14 +273,12 @@ label forestShed_killerArrives:
                     hide stacey
                     jump endings_forestShed.ending_oilDrums_terribad
             
-
-
     label .hideInTheShed:
         think "The shed is tiny"
         if cutHand:
             narrate "Enormous weatherproof boots stomp slowly into view."
             narrate "You clamp your hands over your mouth."
-            think "Mustn't... make... a... sound.."
+            think "Can't... make... a... sound.."
       
             narrate "Stacey is trembling beside you."
             narrate "Your cut hand stings under its makeshift bandage."
@@ -285,14 +291,6 @@ label forestShed_killerArrives:
             narrate "Inspecting the fresh droplets of red."
 
             jump endings_forestShed.ending_underTable_cutHand
-        elif "Boots" in beans.backpack:
-            
-            narrate "The boots make your bag too bulky to fit under the table with you"
-            menu:
-                "{i}Throw your bag out of the shed{/i}":
-                    narrate "You throw your bag out into the darkness and scramble under the table - not a moment too soon."
-                    jump .underTabletalk
-                "{i}Keep the bag but try and stay hidden{/i}":
-                    jump endings_forestShed.ending_underTable_bootsInBag
         else:
-            jump .underTabletalk
+            jump forestShed_underTableTalk
+

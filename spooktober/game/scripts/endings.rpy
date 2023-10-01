@@ -1,9 +1,10 @@
 label endings_forestShed:
     label .ending_oilDrums_mediocre:
+        # Stacey dies, you live
         narrate "The guilt will come later."
         narrate "You slip out of reach, stumbling over tree roots and dried leaves."
         narrate "Behind you comes a scream, cut off by a wet squelch."
-        narrate "You run into the woods as fast as you can. "
+        narrate "You run into the woods as fast as you can."
         narrate "..."
 
         narrate "It seems you and Stacey were not meant to be."
@@ -13,6 +14,7 @@ label endings_forestShed:
         return
     
     label .ending_oilDrums_heroic:
+        # You die, Stacey lives        
         narrate "Stacey vaults over the drums, her cheerleader training paying off in her athleticism."
         narrate "You, however, are not a cheerleader." 
 
@@ -30,6 +32,7 @@ label endings_forestShed:
         return
 
     label .ending_oilDrums_terribad:
+        # You both die
         narrate "The figure looms over you"
         narrate "Expressionless eyes leer at you from the mask"
         narrate "It's impossible to tell whether they take any pleasure in this"
@@ -41,6 +44,7 @@ label endings_forestShed:
         return       
 
     label .ending_oilDrums_terribad_hands:
+        # You both die
         narrate "The figure looms over you"
         narrate "Expressionless eyes leer at you from the mask"
         narrate "It's impossible to tell whether they take any pleasure in this"   
@@ -53,16 +57,12 @@ label endings_forestShed:
         hide stacey
 
         narrate "This is the end."
-        return
-
-    label .ending_staceyRuns_lowApproval:
-        narrate "TODO: Stacey bolts from your hiding place and gets fuckin murdered"
-        narrate "TODO: You live to tell the tale, but at what cost?"
         # weird pixellation
         call screen game_over("shark") with pixellate
         return
 
     label .ending_underTable_bootsInBag:
+        # Not using this one
         narrate "TODO: The killer sees your bag and discovers your hiding place"
         narrate "RIP"
         # basically just a direct fade
@@ -70,6 +70,7 @@ label endings_forestShed:
         return
 
     label .ending_underTable_cutHand:
+        # You both die
         show beans meanbean
         beans "..."
         hide beans
@@ -122,57 +123,170 @@ label endings_forestShed:
         call screen game_over("shark") with fade
         return
 
-    label .ending_runIntoWoods_boots:
-        narrate "TODO: You both run into the woods but you trip over the poorly fitting boots"
-        narrate "Bad end."
-        call screen game_over("shark") with dissolve
-        return
-
-    label .ending_runFromBearTrap_boots:
-        narrate "TODO: You try and run, leaving Stacey in the bear trap"
-        narrate "Unfortunately you trip on the stupid old boots you're wearing. The killer catches you anyway."
-        narrate "Bad end."
-        call screen game_over("shark") with dissolve
-        return
-
+    python:
+        """
+        label .ending_runFromBearTrap_boots:
+            narrate "TODO: You try and run, leaving Stacey in the bear trap"
+            narrate "Unfortunately you trip on the stupid old boots you're wearing. The killer catches you anyway."
+            narrate "Bad end."
+            call screen game_over("shark") with dissolve
+            return
+        """
     label .ending_runFromBearTrap_noBoots:
-        narrate "TODO: You get away, leaving Stacey stuck in the bear trap"
-        narrate "You live, but Stacey does not"
+        # You live, Stacey dies
+        narrate "You hear her scream, cut off by a wet squelch, and scramble into the woods as fast as you can."
+        narrate "You may have made it,"
+        narrate "But Stacey did not"
         call screen game_over("shark") with dissolve
         return
 
     label .ending_staceyStuckInBearTrap:
-        narrate "TODO: You try to free Stacey, but don't manage it."
-        narrate "The killer catches up and kills you both."
+        # You both die
+        narrate "You continue to fumble uselessly with the trap."
+        narrate "Your hands are still uselessly trying to pry it apart when the heavy footsteps catch up to you."
         narrate "Could you have made it if you left her behind?"
         call screen game_over("shark") with dissolve
         return
 
+    label .ending_staceyFreedFromBearTrap:
+        # You both live!
+        narrate "Stacey's leg is mangled by the bear trap."
+
+        show beans stressed
+        beans "Oh man... that's a lot of blood."
+        hide beans
+
+        show stacey determined
+        stacey "Come on beans, we've made it this far."
+        hide stacey
+
+        narrate "You wrap an arm around her waist, and she leans on your shoulder."
+        narrate "Despite the height difference, you manage to act as a sort of crutch for her to hobble along."
+
+        narrate "Although she winces every time you take a step, Stacey doesn't cry out."
+
+        if staceyDateAgreed:
+            jump endings_forestShed.ending_lockerEscape_romance
+        else:
+            jump endings_forestShed.ending_lockerEscape_noRomance
+        return
+
     label .ending_beansStuckInBearTrap:
-        narrate "TODO: With your leg absolutely destroyed by the bear trap, there's no way you can get away from the killer, even with Stacey's help"
-        narrate "Unfortunately you're a goner"
+        # You die, Stacey lives
+        hide stacey
+        narrate "And just like that, Stacey disappears into the forest."
+        narrate "You're lying on a carpet of leaves and blood, alone."
+        narrate "Well, not quite alone."
+        narrate "As you fade away, you can faintly hear heavy footsteps"
+        narrate "Stomping relentlessly towards you in the dark."
         call screen game_over("shark") with dissolve
         return
 
     label .ending_beansStuckInBearTrap_noKiller:
-        narrate "TODO: The bear trap injury is deep, and you"
-        narrate "Unfortunately you're a goner"
+        # You die, Stacey lives
+        hide stacey
+        narrate "Stacey holds your hand as you begin to drift away."
+        narrate "Just as if you were falling asleep."
+        narrate "The forest is quiet."
+        narrate "And you are still."
         call screen game_over("shark") with dissolve
         return
 
     label .ending_savedFromBearTrap:
-        narrate "TODO: Luckily the old leather boots protect your leg from any serious damage."
-        narrate "For some reason Stacey knows how to disarm a bear trap. You just push down on both vertical springs, apparently."
-        narrate "She frees you and you disappear into the forest together, safe - for now."
+        # You both live!
+        narrate "You're amazed that Stacey knows how to disarm a bear trap."
+        show beans blush
+        beans "You're full of surprises Stacey, you know that?"
+        hide beans
+
+        show stacey laugh
+        stacey "Heh, it was nothing!"
+        hide stacey
+
+        if staceyDateAgreed:
+            jump endings_forestShed.ending_lockerEscape_romance
+        else:
+            jump endings_forestShed.ending_lockerEscape_noRomance
         call screen game_over("shark") with dissolve
         return
 
     label .ending_lockerEscape_romance:
-        narrate "TODO: You escape the locker, with a promise of a date on the cards. Yay!"
+        # GOOD ENDING WITH KISS
+        narrate "You disappear safely into the forest."
+        narrate "This has been the longest night of your lives."
+        narrate "It seems like the sun is never going to rise."
+        narrate "And yet..."
+
+        show stacey happy
+        stacey "Beans!"
+
+        show beans tired
+        beans "Uh?"
+
+        show stacey laugh
+        stacey "The sunlight! Through the trees!"
+        narrate "A new day is dawning after all."
+
+        show beans earnest
+        beans "We made it back to the road!"
+
+        show stacey smile
+        stacey "We did it!"
+
+        narrate "You emerge from the woods, hand in hand."
+        narrate "This night has not ended you."
+        
+        show stacey laugh
+        stacey "Now, I believe someone promised me a date?"
+
         call screen game_over("shark") with dissolve
         return
 
     label .ending_lockerEscape_noRomance:
-        narrate "TODO: You escape the locker, as friends. Yay, I guess?"
+        # GOOD ENDING PLATONIC
+        narrate "You run for your lives into the forest"
+        narrate "The paths are winding,"
+        narrate "And with only the vaguest idea of direction you could be getting further into danger each minute."
+        narrate "The night drags on,"
+        narrate "But eventually, every night must end."
+
+        stacey "Beans... Beans!"
+
+        show beans tired
+        beans "I'm going as fast as I can..."
+        beans "I just... need to rest a minute..."
+
+        show stacey happy
+        stacey "No Beans, look!"
+        stacey "We finally made it back to the road!"
+
+        narrate "Golden sunlight glimmers through the trees."
+
+        beans "We... did?"
+
+        show stacey laugh
+        stacey "We did it, Beans!"
+
+        show stacey happy
+        stacey "We're going to live!"
+
+        narrate "You emerge from the trees, exhausted, battered."
+        narrate "But not broken."
+
+        call screen game_over("shark") with dissolve
+        return
+
+    label .ending_killerCaughtInWoods:
+        # You both die
+        narrate "You have made a terrible decision."
+        narrate "The enormous masked figure appears from the trees, impossibly fast."
+
+        narrate "The distance closes between you."
+
+        stacey "Beans! Watch out!"
+
+        narrate "The axe whistles through the air towards you."
+        narrate "You're not going to make it."
+
         call screen game_over("shark") with dissolve
         return

@@ -250,11 +250,12 @@ screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back") action Rollback()
+            textbutton _("Rewind") action Rollback()
             textbutton _("History") action ShowMenu('history')
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
+            textbutton _("Load") action ShowMenu('load')
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
             textbutton _("Prefs") action ShowMenu('preferences')
@@ -297,6 +298,8 @@ screen navigation():
             spacing 55
 
             textbutton _("Start") action Start()
+
+            textbutton _("Load") action ShowMenu("load")
 
             textbutton _("Credits") action ShowMenu("about")
 
@@ -341,6 +344,7 @@ screen navigation():
 
             else:
 
+                textbutton _("Restart Game") action Start()
                 textbutton _("Main Menu") action MainMenu()
 
             textbutton _("Credits") action ShowMenu("about")
@@ -1636,6 +1640,7 @@ transform alpha_dissolve:
     # This is to fade the bar in and out
 
 screen timed_choice(time, timer_jump):
+    zorder -1
     default timer_range = time
     default timer_countdown = time
 
@@ -1656,8 +1661,8 @@ transform game_over_centred:
 screen game_over(cgimage):
     zorder 50 # above beans + dialogue, below other UI
     add ("gameover " + cgimage + ".png") at game_over_centred
-    on "hide" action Jump('exit')
-    button xsize 1.0 ysize 1.0 action Return()
+    on "hide" action MainMenu(confirm=True,save=False)
+    button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
 
 transform panel_smaller:
     zoom 0.75

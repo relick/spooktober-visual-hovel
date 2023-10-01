@@ -50,7 +50,7 @@ label forestShed_runningThroughWoods:
     think "I can barely see where I'm putting my feet!"
     hide beans
     
-    show screen timed_choice(3.0, "fail_choice_trip_treeroot")
+    show screen timed_choice(3.0, "forestShed_runningThroughWoods.fail_choice_trip_treeroot")
     menu:
         "Trip over a tree root!":
             hide screen timed_choice
@@ -69,27 +69,29 @@ label forestShed_runningThroughWoods:
             call .trip("branch")
             jump after_treeroot
 
-label .trip(object = "default"):
-    # AUDIO: Thud
-    show beans shout
-    beans "OOF-" with vpunch
-    think "That [object] came out of nowhere!"
-    hide beans
-    return
+    label .fail_choice_trip_treeroot:
+        call .trip("tree root")
+        jump after_treeroot
 
-label .avoid:
-    show beans kewl
-    think "Sure footed as a mountain goat!"
-    show beans shout # pain
-    beans "OOF-" with vpunch
-    beans "Ohh... should have watched where I was going..."
-    beans "I just ran face first into that tree."
-    hide beans
-    return
+    label .trip(object = "default"):
+        # AUDIO: Thud
+        show beans shout
+        beans "OOF-" with vpunch
+        think "That [object] came out of nowhere!"
+        hide beans
+        return
 
-label fail_choice_trip_treeroot:
-    call after_treeroot.trip("tree root")
-    jump after_treeroot
+    label .avoid:
+        show beans kewl
+        think "Sure footed as a mountain goat!"
+        show beans shout # pain
+        beans "OOF-" with vpunch
+        beans "Ohh..."
+        beans "I was so busy avoiding the branches I just ran face first into that tree."
+        hide beans
+        return
+
+
 
 label after_treeroot:
 
@@ -99,7 +101,6 @@ label after_treeroot:
     # TODO: Some kind of flash indicating the light went out?
     think "Was that... the flashlight?"
     
-    # PETE: the 'Oh no...' might be better vocalised
     show beans shout
     beans "Oh no..."
     hide beans
@@ -218,11 +219,13 @@ label after_treeroot:
         stacey "True."
         stacey "They might be those weird forest people who marry their uncles."
 
-        think "I creep forward, making each footstep as silent as possible."
+        narrate "You creep forward, making each footstep as silent as possible."
 
-        think "The moonlight is glimmering off Stacey's hoop earrings."
-        think "The way it dances across the chemically treated curls of her hair.... "
+        narrate "The moonlight is glimmering off Stacey's hoop earrings."
+        show beans blush
+        think "The way it dances across the chemically treated curls of her hair..."
         think "It's almost magical."
+        hide beans
 
         scene bg forest
         call screen panel("shed") with dissolve
