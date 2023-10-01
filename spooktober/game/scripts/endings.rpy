@@ -1,5 +1,6 @@
 label endings_forestShed:
     label .ending_oilDrums_mediocre:
+        # Stacey dies, you live
         narrate "The guilt will come later."
         narrate "You slip out of reach, stumbling over tree roots and dried leaves."
         narrate "Behind you comes a scream, cut off by a wet squelch."
@@ -13,6 +14,7 @@ label endings_forestShed:
         return
     
     label .ending_oilDrums_heroic:
+        # You die, Stacey lives        
         narrate "Stacey vaults over the drums, her cheerleader training paying off in her athleticism."
         narrate "You, however, are not a cheerleader." 
 
@@ -30,6 +32,7 @@ label endings_forestShed:
         return
 
     label .ending_oilDrums_terribad:
+        # You both die
         narrate "The figure looms over you"
         narrate "Expressionless eyes leer at you from the mask"
         narrate "It's impossible to tell whether they take any pleasure in this"
@@ -41,6 +44,7 @@ label endings_forestShed:
         return       
 
     label .ending_oilDrums_terribad_hands:
+        # You both die
         narrate "The figure looms over you"
         narrate "Expressionless eyes leer at you from the mask"
         narrate "It's impossible to tell whether they take any pleasure in this"   
@@ -58,6 +62,7 @@ label endings_forestShed:
         return
 
     label .ending_underTable_bootsInBag:
+        # Not using this one
         narrate "TODO: The killer sees your bag and discovers your hiding place"
         narrate "RIP"
         # basically just a direct fade
@@ -65,6 +70,7 @@ label endings_forestShed:
         return
 
     label .ending_underTable_cutHand:
+        # You both die
         show beans meanbean
         beans "..."
         hide beans
@@ -127,6 +133,7 @@ label endings_forestShed:
             return
         """
     label .ending_runFromBearTrap_noBoots:
+        # You live, Stacey dies
         narrate "You hear her scream, cut off by a wet squelch, and scramble into the woods as fast as you can."
         narrate "You may have made it,"
         narrate "But Stacey did not"
@@ -134,6 +141,7 @@ label endings_forestShed:
         return
 
     label .ending_staceyStuckInBearTrap:
+        # You both die
         narrate "You continue to fumble uselessly with the trap."
         narrate "Your hands are still uselessly trying to pry it apart when the heavy footsteps catch up to you."
         narrate "Could you have made it if you left her behind?"
@@ -141,6 +149,7 @@ label endings_forestShed:
         return
 
     label .ending_staceyFreedFromBearTrap:
+        # You both live!
         narrate "Stacey's leg is mangled by the bear trap."
 
         show beans stressed
@@ -163,6 +172,7 @@ label endings_forestShed:
         return
 
     label .ending_beansStuckInBearTrap:
+        # You die, Stacey lives
         hide stacey
         narrate "And just like that, Stacey disappears into the forest."
         narrate "You're lying on a carpet of leaves and blood, alone."
@@ -173,6 +183,7 @@ label endings_forestShed:
         return
 
     label .ending_beansStuckInBearTrap_noKiller:
+        # You die, Stacey lives
         hide stacey
         narrate "Stacey holds your hand as you begin to drift away."
         narrate "Just as if you were falling asleep."
@@ -182,6 +193,7 @@ label endings_forestShed:
         return
 
     label .ending_savedFromBearTrap:
+        # You both live!
         narrate "You're amazed that Stacey knows how to disarm a bear trap."
         show beans blush
         beans "You're full of surprises Stacey, you know that?"
@@ -199,6 +211,7 @@ label endings_forestShed:
         return
 
     label .ending_lockerEscape_romance:
+        # GOOD ENDING WITH KISS
         narrate "You disappear safely into the forest."
         narrate "This has been the longest night of your lives."
         narrate "It seems like the sun is never going to rise."
@@ -230,6 +243,7 @@ label endings_forestShed:
         return
 
     label .ending_lockerEscape_noRomance:
+        # GOOD ENDING PLATONIC
         narrate "You run for your lives into the forest"
         narrate "The paths are winding,"
         narrate "And with only the vaguest idea of direction you could be getting further into danger each minute."
@@ -263,6 +277,7 @@ label endings_forestShed:
         return
 
     label .ending_killerCaughtInWoods:
+        # You both die
         narrate "You have made a terrible decision."
         narrate "The enormous masked figure appears from the trees, impossibly fast."
 
