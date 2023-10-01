@@ -244,7 +244,7 @@ label forestShed_searchingArea:
             stacey "Ugh, that needs cleaning {i}stat{/i}."
             stacey "I've gotta bandage it until we find actual first aid."
 
-            narrate "She pulls a spare neon pink headband out of her pocket and deftly binds your hand with it."
+            narrate "She pulls a spare neon pink scrunchie out of her pocket and attempts to bind your hand with it."
             narrate "It immediately soaks through with a dark bloodstain."
             narrate "At least you're no longer dripping on the floor."
 
@@ -260,7 +260,6 @@ label forestShed_searchingArea:
                     "TODO: Jump where?"
                 "Kiss Stacey":
                     $ stacey.approval -= 5
-                    call scene_forestShed.util_updateKillerDistance(-1)
                     stacey "BEANS! EW!"
                     show stacey angry
                     show beans blush
@@ -271,6 +270,7 @@ label forestShed_searchingArea:
                     stacey "Ew. Not even. Don't even try it."
 
                     stacey "Let's just forget this ever happened, okay?"
+                    call scene_forestShed.util_updateKillerDistance(-1)
                     "TODO: Jump where?"
                 "Say nothing":
                     $ stacey.approval -= 1

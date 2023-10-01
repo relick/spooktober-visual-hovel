@@ -40,8 +40,8 @@ label forestShed_lockerTalk:
         # If above a certain threshold she confesses? maybe
        
     label .lockerTalk_pressCloser:
-        debug "TODO: You press up close to Stacey"
-        debug "She gently pushes you away"
+        narrate "You press up close to Stacey"
+        narrate "She gently pushes you away"
         jump .lockerTalk_nextSteps
     label .lockerTalk_nextSteps:
         stacey "Okay, here's the plan."
@@ -71,7 +71,7 @@ label forestShed_lockerTalk:
         menu:
             "You're {i}amazing{/i}, Stacey!":
                 show beans earnest
-                beans "Well you're great at this, Stacey!"
+                beans "You're {i}amazing{/i}, Stacey!"
                 think "Maybe this could be my chance to impress her...?"
                 hide beans
                 call .util_updateStaceyApproval(1)
@@ -107,6 +107,8 @@ label forestShed_lockerTalk:
         show beans blush
         beans "Maybe when we get out of here we could... hang out sometime?"
         hide beans
+
+        show stacey smile
         stacey "Oh yeah? And do what?"
 
         menu: 
@@ -117,7 +119,7 @@ label forestShed_lockerTalk:
                 jump .lockerTalk_iLikeMovies
             "We could go to a museum!":
                 show beans confess
-                "We could go to a museum!"
+                beans "We could go to a museum!"
                 hide beans
                 call .util_updateStaceyApproval(1)
                 jump .lockerTalk_iLikeMuseums
@@ -191,10 +193,10 @@ label forestShed_lockerTalk:
         show stacey blush
         stacey "Okay, you're going to think this is really dumb..."
         stacey "But you know those like, weird museum places that spring up by the road?"
-        stacey "\"World's largest ball of String\", \"Museum of slightly small hats\" and whatever"
+        stacey "{color=#f6ba00}\"World's largest ball of String\"{/colour}, {color=#f6ba00}\"Museum of slightly small hats\" {/colour}and whatever"
         
         show stacey excited
-        stacey "I love those!"
+        stacey "I love those!" with vpunch
         
         think "Wow, she actually seems really excited!"
 
@@ -246,6 +248,8 @@ label forestShed_lockerTalk:
                 show beans serious
                 beans "Why did you even go out with him?"
                 hide beans
+
+                show stacey sigh
                 stacey "I dunno... he's like, the quarterback, you know?"
                 stacey "And I'm the head cheerleader"
                 stacey "It just seemed right"
@@ -470,7 +474,7 @@ label forestShed_lockerTalk:
             narrate "You follow right behind"
 
         stacey "Beans! He's right behind us!"
-        jump scene_forestShed.runIntoTheWoods
+        jump forestShed_runIntoWoods
 
     label .lockerTalk_waitForTime:
         narrate "TODO: You wait and somewhere in the distance hear the snap of a bear trap's jaws and a scream"

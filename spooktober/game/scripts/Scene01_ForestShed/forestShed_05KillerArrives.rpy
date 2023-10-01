@@ -31,7 +31,7 @@ label forestShed_killerArrives:
         "{i}Hide in the shed{/i}":
             jump .hideInTheShed
         "{i}Run further into the woods{/i}":
-            jump .runIntoTheWoods
+            jump forestShed_runIntoWoods
     label .hideInLockers:
         if "Lantern" in beans.equipped:
             if beans.proactivePassive <= 0:
@@ -69,7 +69,7 @@ label forestShed_killerArrives:
             hide beans
             stacey "Of course he freakin heard it!"
             stacey "As if there's any point in hiding now - we've gotta run."
-            jump .runIntoTheWoods
+            jump forestShed_runIntoWoods
 
         
     label .hideInOilDrum:
@@ -93,7 +93,7 @@ label forestShed_killerArrives:
 
             show stacey determined
             stacey "It's our only hope! Come on, Beans!"
-            jump scene_forestShed.runIntoTheWoods
+            jump forestShed_runIntoWoods
         else:
             beans "We can hide in one of those oil drums!"
 
@@ -272,7 +272,7 @@ label forestShed_killerArrives:
         if cutHand:
             narrate "Enormous weatherproof boots stomp slowly into view."
             narrate "You clamp your hands over your mouth."
-            think "Mustn't... make... a... sound.."
+            think "Can't... make... a... sound.."
       
             narrate "Stacey is trembling beside you."
             narrate "Your cut hand stings under its makeshift bandage."
@@ -285,6 +285,7 @@ label forestShed_killerArrives:
             narrate "Inspecting the fresh droplets of red."
 
             jump endings_forestShed.ending_underTable_cutHand
+
         elif "Boots" in beans.backpack:
             
             narrate "The boots make your bag too bulky to fit under the table with you"
@@ -295,4 +296,5 @@ label forestShed_killerArrives:
                 "{i}Keep the bag but try and stay hidden{/i}":
                     jump endings_forestShed.ending_underTable_bootsInBag
         else:
-            jump .underTabletalk
+            
+            #jump .underTabletalk
