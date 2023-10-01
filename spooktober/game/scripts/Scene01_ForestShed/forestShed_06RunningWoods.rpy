@@ -1,4 +1,5 @@
 label forestShed_runIntoWoods:
+    scene bg forest
     if "Lantern" in beans.equipped:
         narrate "You and Stacey venture further into the woods."
         narrate "The lantern lights your path - without it, the forest would be pitch black."
@@ -44,6 +45,13 @@ label forestShed_runIntoWoods:
             think "One step in front of the other..."
 
             narrate "{i}SNAP{/i}" with vpunch
+
+            show beans meanbean
+            beans "Aaaaaaagh!"
+            hide beans
+
+            narrate "Completely invisible under the carpet of leaves..."
+            narrate "You've stepped right onto the spiked teeth of a bear trap."
             jump .beansBearTrap
 
     label .staceyBearTrap:
