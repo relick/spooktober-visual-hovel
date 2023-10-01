@@ -69,6 +69,10 @@ label forestShed_runningThroughWoods:
             call .trip("branch")
             jump after_treeroot
 
+label fail_choice_trip_treeroot:
+    call .trip("tree root")
+    jump after_treeroot
+
 label .trip(object = "default"):
     # AUDIO: Thud
     show beans shout
@@ -87,9 +91,7 @@ label .avoid:
     hide beans
     return
 
-label fail_choice_trip_treeroot:
-    call after_treeroot.trip("tree root")
-    jump after_treeroot
+
 
 label after_treeroot:
 
