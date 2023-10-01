@@ -3,7 +3,7 @@ label endings_forestShed:
         narrate "The guilt will come later."
         narrate "You slip out of reach, stumbling over tree roots and dried leaves."
         narrate "Behind you comes a scream, cut off by a wet squelch."
-        narrate "You run into the woods as fast as you can. "
+        narrate "You run into the woods as fast as you can."
         narrate "..."
 
         narrate "It seems you and Stacey were not meant to be."

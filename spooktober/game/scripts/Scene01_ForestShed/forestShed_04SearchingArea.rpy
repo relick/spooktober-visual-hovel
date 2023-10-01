@@ -106,7 +106,7 @@ label forestShed_searchingArea:
                     jump .findBoots
                 "Ask Stacey to open the oil drum":
                     show beans blush # apologetic
-                    beans "Um Stacey, could you - uh - get the lid? "
+                    beans "Um Stacey, could you - uh - get the lid?"
                     hide beans
                     
                     show stacey annoyed
@@ -231,10 +231,10 @@ label forestShed_searchingArea:
             hide beans
 
             show stacey shocked
-            stacey "Your hand! "
+            stacey "Your hand!"
 
             narrate "You realise there's a dull ache in your hand."
-            think "Is that... blood? "
+            think "Is that... blood?"
             stacey "You must have caught it on that bandsaw. You need to be more careful!"
             stacey "How bad is it?"
             show beans stressed
@@ -256,7 +256,7 @@ label forestShed_searchingArea:
                 "Thank Stacey for her help":
                     $ stacey.approval += 1
                     show stacey blush
-                    stacey "Yeah, well, don't mention it. "    
+                    stacey "Yeah, well, don't mention it."
                 "Kiss Stacey":
                     $ stacey.approval -= 5
                     stacey "BEANS! EW!"

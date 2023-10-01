@@ -257,7 +257,7 @@ label forestShed_runIntoWoods:
             think "Oh boy, that's a lot of blood."
 
             show beans stressed
-            beans "Stacey... "
+            beans "Stacey..."
 
             menu:
                 "Get me out of here!":

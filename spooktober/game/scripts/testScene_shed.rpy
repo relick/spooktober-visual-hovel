@@ -89,7 +89,7 @@ label careful:
 
     centered "You creep forward, making each footstep as silent as possible."
 
-    centered "The light of the moon glimmers off Stacey's hoop earrings, and dances across the chemically treated curls of her hair. "
+    centered "The light of the moon glimmers off Stacey's hoop earrings, and dances across the chemically treated curls of her hair."
 
     show stacey angry
     stacey "Ugh."
