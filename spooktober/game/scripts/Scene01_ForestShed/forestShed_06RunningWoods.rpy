@@ -1,6 +1,7 @@
 label forestShed_runIntoWoods:
     $ crossfade("audio/music/Hallowbean_Drone.ogg")
 
+    scene bg forest
     if "Lantern" in beans.equipped:
         narrate "You and Stacey venture further into the woods."
         narrate "The lantern lights your path - without it, the forest would be pitch black."
@@ -42,7 +43,19 @@ label forestShed_runIntoWoods:
 
             jump .staceyBearTrap
         else:
-            narrate "You go first and step on a bear trap, which you can't see on account of not having a lantern."
+            narrate "Stacey follows you into the trees."
+
+            think "Oh man... I can't see a thing..."
+            think "One step in front of the other..."
+
+            narrate "{i}SNAP{/i}" with vpunch
+
+            show beans meanbean
+            beans "Aaaaaaagh!"
+            hide beans
+
+            narrate "Completely invisible under the carpet of leaves..."
+            narrate "You've stepped right onto the spiked teeth of a bear trap."
             jump .beansBearTrap
 
     label .staceyBearTrap:
