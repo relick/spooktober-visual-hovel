@@ -1,6 +1,8 @@
 default lockerTalkLocation = "Locker"
 
 label forestShed_lockerTalk:
+    $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
     define staceyLockerRunApprovalThreshold = -4
     define staceyRomanceApprovalThreshold = 3
 
