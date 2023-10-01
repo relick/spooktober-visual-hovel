@@ -19,6 +19,9 @@
 
 label forestShed_runningThroughWoods:
     scene bg forest
+
+    play music "audio/music/Hallowbean_Nature.ogg" fadein 2.0 loop
+
     # AUDIO: Panting?
 
     # PETE: I added beans portraits eveywhere that beans speaks
