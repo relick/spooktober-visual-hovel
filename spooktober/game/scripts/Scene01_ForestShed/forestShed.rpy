@@ -128,29 +128,4 @@ label .lockerTalk:
 
 label .runIntoTheWoods:
     jump forestShed_runIntoWoods
-
-label .staceyBearTrap:
-    narrate "TODO: Stacey steps on a bear trap and falls over, shrieking"
-    menu:
-        "Try and free her":
-            narrate "TODO: It's useless, the jaws are stuck tight and you're weak and pathetic."
-            menu:
-                "Keep trying to free her":
-                    narrate "You both die"
-                    narrate "RIP"
-                    jump endings_forestShed.ending_staceyStuckInBearTrap
-                "Give up and save yourself":
-                    jump .runningFromBearTrap
-        "Leave her and run":
-            jump .runningFromBearTrap
-    
-    label .runningFromBearTrap:
-        if "Boots" in beans.equipped:
-            narrate "You trip and fall on account of the stupid old boots"
-            narrate "You both die. RIP"
-            jump endings_forestShed.ending_runFromBearTrap_boots
-        else:
-            narrate "You get away, leaving Stacey to her fate"
-            narrate "RIP Stacey"
-            jump endings_forestShed.ending_runFromBearTrap_noBoots
     

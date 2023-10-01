@@ -182,14 +182,30 @@ label forestShed_runIntoWoods:
                 jump endings_forestShed.ending_staceyFreedFromBearTrap
 
     label .runningFromBearTrap:
-        if "Boots" in beans.equipped:
-            narrate "You trip and fall on account of the stupid old boots"
-            narrate "You both die. RIP"
-            jump endings_forestShed.ending_runFromBearTrap_boots
-        else:
-            narrate "You get away, leaving Stacey to her fate"
-            narrate "RIP Stacey"
-            jump endings_forestShed.ending_runFromBearTrap_noBoots
+        show beans stressed
+        beans "I'm- I'm so sorry Stacey"
+        beans "Please forgive me"
+
+        # TODO: Pained sprite
+        show stacey shout
+        stacey "Beans, no! Don't leave me!"
+        hide stacey
+
+        narrate "This could be your only change to escape."
+        narrate "You leave Stacey in the trap and run."
+        narrate "Heavy footsteps close in on her, but you don't turn around to look."
+        python:
+            """
+            if "Boots" in beans.equipped:
+                narrate "You trip and fall on account of the stupid old boots"
+                narrate "You both die. RIP"
+                jump endings_forestShed.ending_runFromBearTrap_boots
+            else:
+                narrate "You get away, leaving Stacey to her fate"
+                narrate "RIP Stacey"
+                jump endings_forestShed.ending_runFromBearTrap_noBoots
+            """
+        jump endings_forestShed.ending_runFromBearTrap_noBoots
 
     label .beansBearTrap:
         narrate "The trap snaps shut on your leg."
@@ -206,7 +222,7 @@ label forestShed_runIntoWoods:
             think "The boots!"
             narrate "The metal jaws of the trap are sunk into the thick leather of the old boots you're wearing."
             narrate "They've still lodged themselves firmly in your leg, and it's not comfortable"
-            narrate "But you'd hate to think what it would look like if you didn't havethe boots to protect you."
+            narrate "But you'd hate to think what it would look like if you didn't have the boots to protect you."
             
             show stacey determined
             stacey "Hold still. My dad's a hunter, he told me how to disarm these things."
@@ -365,10 +381,6 @@ label forestShed_runIntoWoods:
     label .dodgedBearTrap:
         # If being chased by killer - you get away
         if killerDistance <= 0:
-            if "Boots" in beans.equipped:
-                debug "TODO: You stumble on your stupid badly fitting boots"
-                debug "Stacey pulls you up"
-            
             if staceyDateAgreed:
                 jump endings_forestShed.ending_lockerEscape_romance
             else:
