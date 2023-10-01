@@ -344,7 +344,6 @@ screen navigation():
 
             else:
 
-                textbutton _("Restart Game") action Start()
                 textbutton _("Main Menu") action MainMenu()
 
             textbutton _("Credits") action ShowMenu("about")
