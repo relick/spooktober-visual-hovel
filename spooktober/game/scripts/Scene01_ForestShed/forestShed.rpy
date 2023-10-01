@@ -20,6 +20,7 @@ define proactiveThreshold = 3
 define passiveThreshold = -3
 
 define staceyRunApprovalThreshold = -2
+define staceyKissApprovalThreshold = 3
 
 # Narrative state variables
 default beansSearchedShed = False

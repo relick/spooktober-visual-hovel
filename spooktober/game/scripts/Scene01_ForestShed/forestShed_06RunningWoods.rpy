@@ -150,10 +150,80 @@ label forestShed_runIntoWoods:
             if killerDistance <= 0:
                 # stacey has to leave you and run
                 narrate "All the while, the heavy footsteps of your pursuer get closer."
+
+                show stacey upsetshadow
+                stacey "Beans..."
+                stacey "I can't do it..."
+
+                menu:
+                    "Run! Save yourself!":
+                        show beans confess
+                        beans "Run..."
+                        hide beans
+                        stacey "I'm so sorry Beans."
+                        if stacey.approval > staceyKissApprovalThreshold:
+                            narrate "She gives you a gentle kiss on the forehead."
+                            show stacey upset
+                            stacey "I'm so, so sorry."
+                            hide stacey
+                        else:
+                            narrate "Her eyes flick between you and her only route of escape-"
+                            narrate "through the forest."                      
+                    "Don't leave me!":
+                        show beans stressed
+                        beans "Don't... leave..."
+                        hide beans
+                        show stacey upset
+                        stacey "You're not going to make it, Beans."
+                        stacey "I..."
+                        stacey "I have to run."
+                        hide stacey 
+
+                        narrate "She gives you hand one last squeeze."
+                # TODO IF TIME
+                # If your approval is high enough maybe she saves you
                 jump endings_forestShed.ending_beansStuckInBearTrap
                 # the killer catches up to you
             else:
                 # stacey tries to help you but it's no use
+                show stacey upset 
+                stacey "It's not WORKING!"
+                narrate "She wipes the tears angrily from her eyes."
+                stacey "This isn't fair."
+                if staceyDateAgreed:
+                    stacey "You were meant to take me to the UFO museum."
+                    think "Our date..."
+                elif stacey.approval <= 0:
+                    stacey "I know we weren't friends but..."
+                    stacey "I didn't want you to {i}die{/i}"
+                elif stacey.approval < staceyKissApprovalThreshold:
+                    stacey "I didn't want to let anyone else die."
+                    show stacey upsetshadow
+                    stacey "Why does everyone keep dying?"
+                else:
+                    stacey "I never got to tell you that..."
+                    show stacey upset2
+                    stacey "I like you beans"
+                    stacey "And now it's too late."
+
+                    think "Score!"
+                    show beans confess
+                    beans "..."
+                    narrate "Stacey gives you a gentle peck on the forehead."
+
+                menu:
+                    "I'm cold.":
+                        beans "Cold..."
+                        narrate "Stacey takes her jacket off and gently drapes it over you."
+                        narrate "She's shivering slightly."
+                        narrate "It's not clear whether from the cold, or her quiet sobbing."
+                        
+                    "I'm tired.":
+                        beans "Tired..."
+                        stacey "I know, Beans."
+                        stacey "Just rest now."
+                    "{i}Die{/i}":
+                        narrate "You close your eyes."
                 jump endings_forestShed.ending_beansStuckInBearTrap_noKiller
 
          

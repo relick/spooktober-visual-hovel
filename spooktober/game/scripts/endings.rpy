@@ -149,14 +149,21 @@ label endings_forestShed:
         return
 
     label .ending_beansStuckInBearTrap:
-        narrate "TODO: With your leg absolutely destroyed by the bear trap, there's no way you can get away from the killer, even with Stacey's help"
-        narrate "Unfortunately you're a goner"
+        hide stacey
+        narrate "And just like that, Stacey disappears into the forest."
+        narrate "You're lying on a carpet of leaves and blood, alone."
+        narrate "Well, not quite alone."
+        narrate "As you fade away, you can faintly hear heavy footsteps"
+        narrate "Stomping relentlessly towards you in the dark."
         call screen game_over("shark") with dissolve
         return
 
     label .ending_beansStuckInBearTrap_noKiller:
-        narrate "TODO: The bear trap injury is deep, and you"
-        narrate "Unfortunately you're a goner"
+        hide stacey
+        narrate "Stacey holds your hand as you begin to drift away."
+        narrate "Just as if you were falling asleep."
+        narrate "The forest is quiet."
+        narrate "And you are still."
         call screen game_over("shark") with dissolve
         return
 

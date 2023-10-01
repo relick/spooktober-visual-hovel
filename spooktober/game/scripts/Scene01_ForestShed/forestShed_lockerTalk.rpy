@@ -161,7 +161,7 @@ label forestShed_lockerTalk:
                             jump .lockerTalk_stuckHereWithYou                          
             "Just kidding. I'd rather lick a dead raccoon than spend more time with you.":
                 show beans meanbean
-                "Just kidding. I'd rather lick a dead raccoon than spend more time with you.":
+                "Just kidding. I'd rather lick a dead raccoon than spend more time with you."
                 hide beans
                 call .util_updateStaceyApproval(-1)
                 jump .lockerTalk_stuckHereWithYou 

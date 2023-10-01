@@ -218,9 +218,9 @@ label after_treeroot:
         stacey "True."
         stacey "They might be those weird forest people who marry their uncles."
 
-        think "I creep forward, making each footstep as silent as possible."
+        narrate "You creep forward, making each footstep as silent as possible."
 
-        think "The moonlight is glimmering off Stacey's hoop earrings."
+        narrate "The moonlight is glimmering off Stacey's hoop earrings."
         think "The way it dances across the chemically treated curls of her hair.... "
         think "It's almost magical."
 
