@@ -57,13 +57,6 @@ label endings_forestShed:
         call screen game_over("shark") with pixellate
         return
 
-    label .ending_staceyRuns_lowApproval:
-        narrate "TODO: Stacey bolts from your hiding place and gets fuckin murdered"
-        narrate "TODO: You live to tell the tale, but at what cost?"
-        # weird pixellation
-        call screen game_over("shark") with pixellate
-        return
-
     label .ending_underTable_bootsInBag:
         narrate "TODO: The killer sees your bag and discovers your hiding place"
         narrate "RIP"
@@ -182,12 +175,66 @@ label endings_forestShed:
         return
 
     label .ending_lockerEscape_romance:
-        narrate "TODO: You escape the locker, with a promise of a date on the cards. Yay!"
+        narrate "You slip away from your hiding place, disappearing safely into the forest."
+        narrate "This has been the longest night of your lives."
+        narrate "It seems like the sun is never going to rise."
+        narrate "And yet..."
+
+        show stacey happy
+        stacey "Beans!"
+
+        show beans tired
+        beans "Uh?"
+
+        show stacey laugh
+        stacey "The sunlight! Through the trees!"
+        narrate "A new day is dawning after all."
+
+        show beans earnest
+        beans "We made it back to the road!"
+
+        show stacey smile
+        stacey "We did it!"
+
+        narrate "You emerge from the woods, hand in hand."
+        narrate "This night has not ended you."
+        
+        show stacey laugh
+        stacey "Now, I believe someone promised me a date?"
+
         call screen game_over("shark") with dissolve
         return
 
     label .ending_lockerEscape_noRomance:
-        narrate "TODO: You escape the locker, as friends. Yay, I guess?"
+        narrate "You run for your lives into the forest"
+        narrate "The paths are winding,"
+        narrate "And with only the vaguest idea of direction you could be getting further into danger each minute."
+        narrate "The night drags on,"
+        narrate "But eventually, every night must end."
+
+        stacey "Beans... Beans!"
+
+        show beans tired
+        beans "I'm going as fast as I can..."
+        beans "I just... need to rest a minute..."
+
+        show stacey happy
+        stacey "No Beans, look!"
+        stacey "We finally made it back to the road!"
+
+        narrate "Golden sunlight glimmers through the trees."
+
+        beans "We... did?"
+
+        show stacey laugh
+        stacey "We did it, Beans!"
+
+        show stacey happy
+        stacey "We're going to live!"
+
+        narrate "You emerge from the trees, exhausted, battered."
+        narrate "But not broken."
+
         call screen game_over("shark") with dissolve
         return
 
