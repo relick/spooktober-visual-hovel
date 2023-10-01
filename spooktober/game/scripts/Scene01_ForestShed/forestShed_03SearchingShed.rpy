@@ -52,7 +52,7 @@ label forestShed_searchingShed:
                 think "Stacey smokes?"
 
                 show stacey worried
-                stacey "Um. Don't tell my mum about this."
+                stacey "Um. Don't tell my mom about this."
 
                 narrate "The lantern lights easily."
 
