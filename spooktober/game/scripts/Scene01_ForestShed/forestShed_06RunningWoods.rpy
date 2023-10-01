@@ -105,6 +105,8 @@ label forestShed_runIntoWoods:
                 
                 if staceyDateAgreed:
                     $ crossfade("audio/music/SweetRedBeans.ogg")
+                elif stacey.approval > staceyKissApprovalThreshold:
+                    $ crossfade("audio/music/SweetRedBeans.ogg")
                 else:
                     $ crossfade("audio/music/Hallowbean_Nature.ogg")
 
