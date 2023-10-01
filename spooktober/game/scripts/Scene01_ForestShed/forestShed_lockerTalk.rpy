@@ -202,7 +202,7 @@ label forestShed_lockerTalk:
         
         think "Wow, she actually seems really excited!"
         hide beans
-        
+
         show stacey happy
         stacey "You know, there's a UFO museum that's opened just outside of town"
         stacey "I've been really wanting to go there - what do you say?"
@@ -440,7 +440,11 @@ label forestShed_lockerTalk:
         beans "Eeep!"
 
         # AUDIO: Killer footsteps audio
-        think "I can hear his gross huge boots stomping across the clearing"
+        if lockerTalkLocation == "Tree":
+            think "I can hear him stomping through the trees"
+            think "Is he... sniffing? Like an animal?"
+        else:
+            think "I can hear his gross huge boots stomping across the clearing"
         think "My heart is beating out of my chest"
         
         # AUDIO: Killer footsteps fade out
@@ -448,6 +452,8 @@ label forestShed_lockerTalk:
             stacey "He's gone into the shed... "
         elif lockerTalkLocation == "UnderTable":
             stacey "He's gone round the back of the shed..."
+        elif lockerTalkLocation == "Tree":
+            stacey "He's heading back towards the clearing..."
         stacey "But he's still close"
 
         think "Should we risk making a break for it?"
@@ -492,14 +498,31 @@ label forestShed_lockerTalk:
             narrate "You follow right behind"
 
         stacey "Beans! He's right behind us!"
-        jump forestShed_runIntoWoods
+
+        if lockerTalkLocation == "Tree":
+            # TODO: He catches you and you die
+            jump endings_forestShed.ending_killerCaughtInWoods
+        else:
+            jump forestShed_runIntoWoods
 
 
 
     label .lockerTalk_waitForTime:
-        narrate "TODO: You wait and somewhere in the distance hear the snap of a bear trap's jaws and a scream"
-        narrate "The killer stomps off in that direction"
-        narrate "You and stacey slip out undetected - to freedom!"
+        narrate "You wait."
+        narrate "You're starting to think the perfect time will never come."
+        narrate "But then, in the distance-"
+
+        narrate "{i}Snap{/i}"
+
+        narrate "You hear a pained scream"
+
+        show stacey worried
+        stacey "Is that... Theodora??"
+        hide stacey
+
+        narrate "Whoever the unlucky person is - they've piqued your pursuer's interest"
+        narrate "You hear the familiar heavy footsteps disappearing quickly away from you"
+        narrate "Pursuing their new prey."
         if staceyDateAgreed:
             jump endings_forestShed.ending_lockerEscape_romance
         else:

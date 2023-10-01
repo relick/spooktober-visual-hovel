@@ -101,7 +101,6 @@ label after_treeroot:
     # TODO: Some kind of flash indicating the light went out?
     think "Was that... the flashlight?"
     
-    # PETE: the 'Oh no...' might be better vocalised
     show beans shout
     beans "Oh no..."
     hide beans

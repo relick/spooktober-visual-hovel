@@ -257,7 +257,6 @@ label forestShed_searchingArea:
                     $ stacey.approval += 1
                     show stacey blush
                     stacey "Yeah, well, don't mention it. "    
-                    "TODO: Jump where?"
                 "Kiss Stacey":
                     $ stacey.approval -= 5
                     stacey "BEANS! EW!"
@@ -271,7 +270,6 @@ label forestShed_searchingArea:
 
                     stacey "Let's just forget this ever happened, okay?"
                     call scene_forestShed.util_updateKillerDistance(-1)
-                    "TODO: Jump where?"
                 "Say nothing":
                     $ stacey.approval -= 1
                     show stacey uncomfortable
@@ -280,11 +278,10 @@ label forestShed_searchingArea:
                     hide beans
                     stacey "..."
                     think "Well, that was awkward."
-                    "TODO: Jump where?"
             
             show stacey sigh
             stacey "So much for finding another flashlight."
-
+            jump forestShed_searchingArea
 
     # Search around the shed
     label .searchAroundShed:

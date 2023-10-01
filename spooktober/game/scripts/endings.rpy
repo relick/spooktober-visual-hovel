@@ -190,3 +190,8 @@ label endings_forestShed:
         narrate "TODO: You escape the locker, as friends. Yay, I guess?"
         call screen game_over("shark") with dissolve
         return
+
+    label .ending_killerCaughtInWoods:
+        narrate "TODO: You run into the woods but the killer grabs you"
+        call screen game_over("shark") with dissolve
+        return
