@@ -449,7 +449,7 @@ label forestShed_lockerTalk:
         
         # AUDIO: Killer footsteps fade out
         if lockerTalkLocation == "Locker":
-            stacey "He's gone into the shed... "
+            stacey "He's gone into the shed..."
         elif lockerTalkLocation == "UnderTable":
             stacey "He's gone round the back of the shed..."
         elif lockerTalkLocation == "Tree":

@@ -86,7 +86,7 @@ label forestShed_runningThroughWoods:
         think "Sure footed as a mountain goat!"
         show beans shout # pain
         beans "OOF-" with vpunch
-        beans "Ohh... "
+        beans "Ohh..."
         beans "I was so busy avoiding the branches I just ran face first into that tree."
         hide beans
         return
@@ -223,7 +223,7 @@ label after_treeroot:
 
         narrate "The moonlight is glimmering off Stacey's hoop earrings."
         show beans blush
-        think "The way it dances across the chemically treated curls of her hair.... "
+        think "The way it dances across the chemically treated curls of her hair..."
         think "It's almost magical."
         hide beans
 
