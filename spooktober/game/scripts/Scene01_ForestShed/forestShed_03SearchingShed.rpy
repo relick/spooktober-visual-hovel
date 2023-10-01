@@ -31,7 +31,8 @@ label forestShed_searchingShed:
         
         scene bg shedinterior
         show stacey upsetshadow
-        stacey "Ugh, can you say {i}dank{/i}?"
+        stacey "Ugh, this place is {i}dank{/i}."
+        stacey "It feel like my lungs are rotting."
 
         show stacey determined
         stacey "Okay, look around for a flashlight or something."
@@ -81,6 +82,9 @@ label forestShed_searchingShed:
                 stacey "Well that {i}was{/i} a lantern."
                 $ smashedLantern = True
                 $ stacey.approval -= 1
+
+                think "That could have ended much worse!"
+                think "I'd better be more careful, I don't want to hurt myself."
         call scene_forestShed.util_updateKillerDistance(-1)
         jump scene_forestShed.d_areaSearch
 

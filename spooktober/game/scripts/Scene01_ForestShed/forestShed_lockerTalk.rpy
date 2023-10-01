@@ -22,7 +22,7 @@ label forestShed_lockerTalk:
 
             jump .lockerTalk_pressCloser
         "What do we do now?":
-            narrate "You whisper as quietly as you can, hoping not to attract the killer's attention."
+            narrate "You whisper as quietly as you can."
             show beans stressed
             beans "What do we do now?"
             hide beans
@@ -512,7 +512,7 @@ label forestShed_lockerTalk:
         narrate "You're starting to think the perfect time will never come."
         narrate "But then, in the distance-"
 
-        narrate "{i}Snap{/i}"
+        narrate "{i}SNAP!{/i}"
 
         narrate "You hear a pained scream"
 
@@ -521,7 +521,7 @@ label forestShed_lockerTalk:
         hide stacey
 
         narrate "Whoever the unlucky person is - they've piqued your pursuer's interest"
-        narrate "You hear the familiar heavy footsteps disappearing quickly away from you"
+        narrate "You hear the familiar heavy footsteps disappearing away from you"
         narrate "Pursuing their new prey."
         if staceyDateAgreed:
             jump endings_forestShed.ending_lockerEscape_romance
