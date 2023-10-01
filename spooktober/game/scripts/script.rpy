@@ -44,8 +44,13 @@ init -1 python:
 
 init -1:
     transform portrait:
-        align (0.07,0.95)
-        zoom 0.4
+        # hovering next to text
+        # align (0.07,0.95)
+        # zoom 0.4
+
+        # aligned in bottom left
+        align (0.0,1.0)
+        zoom 0.5
 
     transform other_person:
         align (0.5, 1.0)
