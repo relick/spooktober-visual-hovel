@@ -160,7 +160,7 @@ label forestShed_searchingArea:
                         hide beans
                         narrate "You retrieve the dusty old boots from the drum and put them on."
                         
-                        show stacey disgusted
+                        show stacey nauseous # note: was disgusted
                         stacey "BEANS."
                         stacey "What. Is. Wrong. With. You."
 
@@ -259,7 +259,7 @@ label forestShed_searchingArea:
                 "Kiss Stacey":
                     $ stacey.approval -= 5
                     stacey "BEANS! EW!"
-                    show stacey angry
+                    show stacey annoyed # note: was angry
                     show beans blush
                     beans "{i}Oof{/i}"
                     hide beans
