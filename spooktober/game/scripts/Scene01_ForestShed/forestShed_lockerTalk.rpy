@@ -166,7 +166,7 @@ label forestShed_lockerTalk:
                             show beans kewlpewpew
                             beans "Doesn't that just make it more exciting?"
                             hide beans
-                            show stacey angry
+                            show stacey annoyed # note: was angry
                             stacey "No it just makes it more messed up!"
                             stacey "Just forget about it."
                             stacey "You're so weird."
@@ -227,7 +227,7 @@ label forestShed_lockerTalk:
                 beans "You're right, that is dumb."
                 hide beans
                 call .util_updateStaceyApproval(-1)
-                show stacey angry
+                show stacey annoyed # note: was angry
                 stacey "Ugh... you sound just like Svenjamin."
 
         jump .lockerTalk_svenjamin
@@ -243,7 +243,7 @@ label forestShed_lockerTalk:
         show stacey sigh
         stacey "{i}Sigh{/i}"
         stacey "I'm so glad we're not dating anymore..."       
-        show stacey angry
+        show stacey annoyed # note: was angry
         stacey "What an ass!"
 
         menu:
@@ -260,7 +260,7 @@ label forestShed_lockerTalk:
                 show stacey sad
                 stacey "I mean... {i}I{/i} thought we were dating..."
 
-                show stacey angry
+                show stacey annoyed # note: was angry
                 stacey "Apparently he didn't think we were {i}exclusive{/i} or whatever."
 
                 jump .lockerTalk_staceyCanDoBetter
@@ -426,7 +426,7 @@ label forestShed_lockerTalk:
             jump .lockerTalk_hereComesKiller
 
     label .lockerTalk_stuckHereWithYou:
-        show stacey angry
+        show stacey annoyed # note: was angry
         stacey "Where do you get off on being such an {i}ass{/i}, Beans?"
         think "I'm starting to think Stacey doesn't like me"
         jump .lockerTalk_hereComesKiller

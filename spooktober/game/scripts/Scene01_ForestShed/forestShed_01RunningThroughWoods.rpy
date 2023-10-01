@@ -19,6 +19,9 @@
 
 label forestShed_runningThroughWoods:
     scene bg forest
+
+    play music "audio/music/Hallowbean_Nature.ogg" fadein 2.0 loop
+
     # AUDIO: Panting?
 
     # PETE: I added beans portraits eveywhere that beans speaks
@@ -105,7 +108,7 @@ label after_treeroot:
     beans "Oh no..."
     hide beans
 
-    show stacey angry
+    show stacey annoyed # note: was angry
     stacey "Beans! Please tell me you did not just break our ONLY flashlight."
 
     menu:
@@ -145,14 +148,14 @@ label after_treeroot:
             hide beans
 
             $ stacey.approval -= 1
-            show stacey angry
+            show stacey annoyed # note: was angry
             stacey "Don't tell me to can it!"
             stacey "This day is {i}literally{/i} the worst."
 
             stacey "First the crash, then what happened to Gerald."
             stacey "THEN you break our flashlight, and NOW you tell me to can it!"
 
-            show stacey angry
+            show stacey annoyed # note: was angry
             stacey "Ugh! You are making me so mad right now!"
             hide stacey
             show beans sad
@@ -229,7 +232,7 @@ label after_treeroot:
 
         scene bg forest
         call screen panel("shed") with dissolve
-        show stacey disgusted
+        show stacey sad # note: was disgusted
         stacey "Ugh."
         stacey "Man, is this place {i}grody{/i}."
         jump scene_forestShed.b_discoveringShed

@@ -344,7 +344,6 @@ screen navigation():
 
             else:
 
-                textbutton _("Restart Game") action Start()
                 textbutton _("Main Menu") action MainMenu()
 
             textbutton _("Credits") action ShowMenu("about")
@@ -1658,9 +1657,54 @@ screen timed_choice(time, timer_jump):
 transform game_over_centred:
     align (0.5,0.5)
 
-screen game_over(cgimage):
+transform game_over_centred_slow_zoom:
+    align (0.5,0.5)
+    zoom 0.75
+    linear 3.0 zoom 1.0
+
+screen good_ending(cgimage):
     zorder 50 # above beans + dialogue, below other UI
-    add ("gameover " + cgimage + ".png") at game_over_centred
+    add ("cg " + cgimage + ".png") at game_over_centred
+    on "hide" action MainMenu(confirm=True,save=False)
+    button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
+
+screen splatter_1():
+    zorder 51
+    add "gameover/bg splat1Layer.png" at game_over_centred
+
+screen splatter_2():
+    zorder 52
+    add "gameover/bg splat2Layer.png" at game_over_centred
+
+screen splatter_3():
+    zorder 53
+    add "gameover/bg splat3Layer.png" at game_over_centred
+
+screen splatter_youdied():
+    zorder 54
+    add "gameover/bg youdiedRed.png" at game_over_centred_slow_zoom
+
+screen splatter_gameover():
+    zorder 54
+    add "gameover/bg gameoverWhite.png" at game_over_centred_slow_zoom
+
+screen you_died():
+    zorder 50 # above beans + dialogue, below other UI
+    add "bg black.png" at game_over_centred
+    timer 0.5 action ShowTransient("splatter_1")
+    timer 1.1 action ShowTransient("splatter_2")
+    timer 1.4 action ShowTransient("splatter_3")
+    timer 2.0 action ShowTransient("splatter_youdied", Dissolve(1.0))
+    on "hide" action MainMenu(confirm=True,save=False)
+    button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
+
+screen game_over():
+    zorder 50 # above beans + dialogue, below other UI
+    add "bg black.png" at game_over_centred
+    timer 0.5 action ShowTransient("splatter_1")
+    timer 1.1 action ShowTransient("splatter_2")
+    timer 1.4 action ShowTransient("splatter_3")
+    timer 2.0 action ShowTransient("splatter_gameover", Dissolve(1.0))
     on "hide" action MainMenu(confirm=True,save=False)
     button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
 
