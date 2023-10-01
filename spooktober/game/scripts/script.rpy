@@ -35,6 +35,9 @@ init -1 python:
         if not renpy.music.is_playing("music"):
             x_fade_track = "music"
             curr_track = "music2"
+        if renpy.music.get_playing(curr_track) == track_new:
+            return
+        
         renpy.music.stop(curr_track,fadeout=curr_time)
         renpy.music.play(track_new,channel=x_fade_track,fadein=new_time,loop=do_loop)
         if not do_loop:
