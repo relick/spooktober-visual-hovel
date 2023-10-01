@@ -233,8 +233,13 @@ label forestShed_killerArrives:
             narrate "you"
 
             show beans meanbean
+            think "Well, this is it."
+            think "I'm about to die."
             beans "Stacey..."
+            
             hide beans
+
+
 
             menu:
                 "I'm so sorry":
@@ -246,15 +251,16 @@ label forestShed_killerArrives:
                         jump endings_forestShed.ending_oilDrums_terribad_hands
                     else:
                         jump endings_forestShed.ending_oilDrums_terribad
-                "I love you":
-                    show beans confess
-                    beans "I love you."
                     
-                    show stacey scared
-                    stacey "Beans-"
-                    hide stacey
-                    hide beans
-                    jump endings_forestShed.ending_oilDrums_terribad_hands
+                #"I love you":
+                    #show beans confess
+                    #beans "I love you."
+                    
+                    #show stacey scared
+                    #stacey "Beans-"
+                    #hide stacey
+                    #hide beans
+                    #jump endings_forestShed.ending_oilDrums_terribad_hands
                 "I'll see you in hell":
                     show beans meanbean
                     beans "I'll see you in hell"
@@ -285,16 +291,18 @@ label forestShed_killerArrives:
             narrate "Inspecting the fresh droplets of red."
 
             jump endings_forestShed.ending_underTable_cutHand
-
+        else:
+            jump forestShed_underTableTalk
+        python:
+            """
         elif "Boots" in beans.backpack:
-            
-            narrate "The boots make your bag too bulky to fit under the table with you"
+            narrate "The enormous boots make your bag bulky"
+            narrate "It's far too conspicious, sticking out from under the table"
             menu:
                 "{i}Throw your bag out of the shed{/i}":
                     narrate "You throw your bag out into the darkness and scramble under the table - not a moment too soon."
-                    jump .underTabletalk
+                    jump forestShed_underTableTalk
                 "{i}Keep the bag but try and stay hidden{/i}":
+                    narrate "You try and "
                     jump endings_forestShed.ending_underTable_bootsInBag
-        else:
-            
-            #jump .underTabletalk
+            """       

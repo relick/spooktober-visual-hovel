@@ -151,7 +151,4 @@ label .staceyBearTrap:
             narrate "You get away, leaving Stacey to her fate"
             narrate "RIP Stacey"
             jump endings_forestShed.ending_runFromBearTrap_noBoots
-
-label .underTabletalk:
-    narrate "TODO: Under table talk"
     

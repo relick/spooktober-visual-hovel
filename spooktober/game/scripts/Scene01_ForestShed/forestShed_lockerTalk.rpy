@@ -1,3 +1,5 @@
+default lockerTalkLocation = "Locker"
+
 label forestShed_lockerTalk:
     define staceyLockerRunApprovalThreshold = -4
     define staceyRomanceApprovalThreshold = 3
@@ -108,7 +110,7 @@ label forestShed_lockerTalk:
         beans "Maybe when we get out of here we could... hang out sometime?"
         hide beans
 
-        show stacey smile
+        show stacey happy
         stacey "Oh yeah? And do what?"
 
         menu: 
@@ -199,7 +201,8 @@ label forestShed_lockerTalk:
         stacey "I love those!" with vpunch
         
         think "Wow, she actually seems really excited!"
-
+        hide beans
+        
         show stacey happy
         stacey "You know, there's a UFO museum that's opened just outside of town"
         stacey "I've been really wanting to go there - what do you say?"
@@ -441,8 +444,10 @@ label forestShed_lockerTalk:
         think "My heart is beating out of my chest"
         
         # AUDIO: Killer footsteps fade out
-
-        stacey "He's gone into the shed... "
+        if lockerTalkLocation == "Locker":
+            stacey "He's gone into the shed... "
+        elif lockerTalkLocation == "UnderTable":
+            stacey "He's gone round the back of the shed..."
         stacey "But he's still close"
 
         think "Should we risk making a break for it?"
@@ -467,14 +472,29 @@ label forestShed_lockerTalk:
         hide beans
 
         if beans.proactivePassive > 0:
-            narrate "You throw the locker open and run"
+            if lockerTalkLocation == "Locker":
+                narrate "You throw the locker open and run"
+            elif lockerTalkLocation == "UnderTable":
+                narrate "You scramble out from under the workbench and run"
+            elif lockerTalkLocation == "Tree":
+                narrate "You don't even check the coast is clear - you just run"
             narrate "Stacey follows right behind you"
+   
         else:
-            narrate "Stacey throws the locker open and runs"
+            if lockerTalkLocation == "Locker":
+                narrate "Stacey throws the locker open and runs"
+            elif lockerTalkLocation == "UnderTable":
+                narrate "Stacey scrambles out from under the workbench and runs"
+            elif lockerTalkLocation == "Tree":
+                narrate "Stacey doesn't even check the coast is clear - she just runs"
+                # TODO: How do we get here? We've probably already run.
+
             narrate "You follow right behind"
 
         stacey "Beans! He's right behind us!"
         jump forestShed_runIntoWoods
+
+
 
     label .lockerTalk_waitForTime:
         narrate "TODO: You wait and somewhere in the distance hear the snap of a bear trap's jaws and a scream"

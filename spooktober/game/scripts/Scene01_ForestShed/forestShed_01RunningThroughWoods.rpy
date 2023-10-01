@@ -50,7 +50,7 @@ label forestShed_runningThroughWoods:
     think "I can barely see where I'm putting my feet!"
     hide beans
     
-    show screen timed_choice(3.0, "fail_choice_trip_treeroot")
+    show screen timed_choice(3.0, "forestShed_runningThroughWoods.fail_choice_trip_treeroot")
     menu:
         "Trip over a tree root!":
             hide screen timed_choice
@@ -69,27 +69,27 @@ label forestShed_runningThroughWoods:
             call .trip("branch")
             jump after_treeroot
 
-label fail_choice_trip_treeroot:
-    call .trip("tree root")
-    jump after_treeroot
+    label .fail_choice_trip_treeroot:
+        call .trip("tree root")
+        jump after_treeroot
 
-label .trip(object = "default"):
-    # AUDIO: Thud
-    show beans shout
-    beans "OOF-" with vpunch
-    think "That [object] came out of nowhere!"
-    hide beans
-    return
+    label .trip(object = "default"):
+        # AUDIO: Thud
+        show beans shout
+        beans "OOF-" with vpunch
+        think "That [object] came out of nowhere!"
+        hide beans
+        return
 
-label .avoid:
-    show beans kewl
-    think "Sure footed as a mountain goat!"
-    show beans shout # pain
-    beans "OOF-" with vpunch
-    beans "Ohh... "
-    beans "I was so busy avoiding the branches I just ran face first into that tree."
-    hide beans
-    return
+    label .avoid:
+        show beans kewl
+        think "Sure footed as a mountain goat!"
+        show beans shout # pain
+        beans "OOF-" with vpunch
+        beans "Ohh... "
+        beans "I was so busy avoiding the branches I just ran face first into that tree."
+        hide beans
+        return
 
 
 
