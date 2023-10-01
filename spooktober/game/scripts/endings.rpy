@@ -157,9 +157,9 @@ label endings_forestShed:
         narrate "Although she winces every time you take a step, Stacey doesn't cry out."
 
         if staceyDateAgreed:
-                jump endings_forestShed.ending_lockerEscape_romance
-            else:
-                jump endings_forestShed.ending_lockerEscape_noRomance
+            jump endings_forestShed.ending_lockerEscape_romance
+        else:
+            jump endings_forestShed.ending_lockerEscape_noRomance
         return
 
     label .ending_beansStuckInBearTrap:
@@ -192,9 +192,9 @@ label endings_forestShed:
         hide stacey
 
         if staceyDateAgreed:
-                jump endings_forestShed.ending_lockerEscape_romance
-            else:
-                jump endings_forestShed.ending_lockerEscape_noRomance
+            jump endings_forestShed.ending_lockerEscape_romance
+        else:
+            jump endings_forestShed.ending_lockerEscape_noRomance
         call screen game_over("shark") with dissolve
         return
 
