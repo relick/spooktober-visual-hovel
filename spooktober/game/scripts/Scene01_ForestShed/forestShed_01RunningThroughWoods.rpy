@@ -24,12 +24,11 @@ label forestShed_runningThroughWoods:
 
     # AUDIO: Panting?
 
-    # PETE: I added beans portraits eveywhere that beans speaks
-    # but we should probably add them for all the thinking sections too
-    hide beans
+    show beans tired # PETE: added this
     think "I'm so tired... and my feet hurt..."
     #  think "This tin of beans is so heavy..."
     think "It's getting dark so fast..."
+    show beans shout # PETE: added this
     think "Glad I grabbed that flashlight from Gerald's survival kit"
 
     show beans sad
