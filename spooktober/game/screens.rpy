@@ -1668,11 +1668,35 @@ transform game_over_centred_slow_zoom:
     zoom 0.75
     linear 3.0 zoom 1.0
 
-screen good_ending(cgimage):
+screen good_end_cg1():
     zorder 50 # above beans + dialogue, below other UI
-    add ("cg " + cgimage + ".png") at game_over_centred
+    add ("cg goodEnd.png") at game_over_centred
+
+screen good_end_cg2():
+    zorder 51 # above beans + dialogue, below other UI
+    add ("cg goodEndKiss.png") at game_over_centred
+
+screen good_end_cg3():
+    zorder 52 # above beans + dialogue, below other UI
+    add ("bg black.png") at game_over_centred
+    vbox:
+        xalign 0.5
+        yalign 0.5
+        text "Bury Your Gays"
+        text "A Spooktober 2023 game by"
+        text ""
+        text gui.about
     on "hide" action MainMenu(confirm=True,save=False)
     button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
+
+screen good_ending():
+    use good_end_cg1
+    timer 5.0 action ShowTransient("good_end_cg3", Dissolve(1.0))
+
+screen good_ending_kiss():
+    use good_end_cg1
+    timer 5.0 action ShowTransient("good_end_cg2", Dissolve(1.0))
+    timer 10.0 action ShowTransient("good_end_cg3", Dissolve(1.0))
 
 screen splatter_1():
     zorder 51
@@ -1711,8 +1735,8 @@ screen you_died():
 screen game_over():
     zorder 50 # above beans + dialogue, below other UI
     add "bg black.png" at game_over_centred
-    timer 0.1 action ShowTransient("splatter_static", Dissolve(0.5))
-    timer 1.1 action ShowTransient("splatter_gameover", Dissolve(1.0))
+    timer 0.01 action ShowTransient("splatter_static", Dissolve(1.0))
+    timer 0.8 action ShowTransient("splatter_gameover", Dissolve(1.0))
     on "hide" action MainMenu(confirm=True,save=False)
     button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
 

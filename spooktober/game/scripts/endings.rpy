@@ -264,7 +264,7 @@ label endings_forestShed:
         show stacey laugh
         stacey "Now, I believe someone promised me a date?"
 
-        call screen good_ending("goodEndKiss") with dissolve
+        call screen good_ending_kiss() with dissolve
         return
 
     label .ending_lockerEscape_noRomance:
@@ -298,7 +298,7 @@ label endings_forestShed:
         narrate "You emerge from the trees, exhausted, battered."
         narrate "But not broken."
 
-        call screen good_ending("goodEnd") with dissolve
+        call screen good_ending() with dissolve
         return
 
     label .ending_killerCaughtInWoods:
