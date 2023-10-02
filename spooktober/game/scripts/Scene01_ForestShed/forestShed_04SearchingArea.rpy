@@ -186,7 +186,6 @@ label forestShed_searchingArea:
 
                         stacey "You know I'm joking, right?"
                         stacey "What use could we possibly have for decaying footwear that's clearly five sizes too big for either of us."
-                        return
                 jump forestShed_searchingArea
     
     label .areaSearch_noLantern:
