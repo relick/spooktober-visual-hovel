@@ -71,7 +71,7 @@ label forestShed_killerArrives:
             beans "Oh nooooooo-"
             hide beans
             
-            show stacey surprised
+            show stacey worried # note: was surprised
             stacey "BEANS!"
             show beans sad
             beans "Do you think he heard that?"

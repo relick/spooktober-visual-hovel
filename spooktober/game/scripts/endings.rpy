@@ -255,7 +255,7 @@ label endings_forestShed:
         show beans earnest
         beans "We made it back to the road!"
 
-        show stacey smile
+        show stacey laugh # note: was smile
         stacey "We did it!"
 
         narrate "You emerge from the woods, hand in hand."

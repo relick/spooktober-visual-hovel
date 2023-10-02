@@ -321,7 +321,7 @@ label forestShed_lockerTalk:
                 beans  "How about Kevin?"
                 hide beans
 
-                show stacey doubt
+                show stacey sad2 # note: was doubt
                 stacey "Kevin?"
                 stacey "He is extremely cool but... I dunno..."
                 stacey "{i}Sigh{/i}"
@@ -365,7 +365,7 @@ label forestShed_lockerTalk:
                 jump .lockerTalk_hereComesKiller
 
         label .staceyCanDoBetter_rightInFrontOfYou:
-            show stacey surprised
+            show stacey laugh # note: was surprised
             stacey "You?"
             if stacey.approval < staceyRomanceApprovalThreshold:
                 narrate "Stacey laughs."
@@ -477,7 +477,7 @@ label forestShed_lockerTalk:
                 jump .lockerTalk_waitForTime
 
     label .lockerTalk_goEarly:
-        show stacey surprised
+        show stacey determined # note: was surprised
         stacey "Beans what-"
         show beans earnest
         beans "Now! Let's go!"

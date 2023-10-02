@@ -6,7 +6,7 @@ label forestShed_runIntoWoods:
         narrate "You and Stacey venture further into the woods."
         narrate "The lantern lights your path - without it, the forest would be pitch black."
 
-        show stacey surprised
+        show stacey shout # note: was surprised
         stacey "Beans! Watch out!"
         
         narrate "Concealed under some leaves, you spy a vicious-looking set of metal teeth."
@@ -62,7 +62,7 @@ label forestShed_runIntoWoods:
         $ crossfade("audio/music/Hallowbean_Stingers.ogg")
 
         narrate "Stacey lets out a blood-curdling scream"
-        show stacey shout
+        show stacey pain
         stacey "Get it off! Get it off!!"
         hide stacey
 
@@ -123,7 +123,7 @@ label forestShed_runIntoWoods:
                         beans "Go on then."
                         hide beans
                         if stacey.approval > staceyKissApprovalThreshold:
-                            show stacey smile
+                            show stacey laugh # note: was smile
                             stacey "Don't call my bluff, Beans."
                             jump .smoochByBearTrap
                         else:

@@ -142,7 +142,7 @@ label forestShed_searchingArea:
                     jump forestShed_searchingArea
 
             label .findBoots:
-                show stacey bored
+                show stacey sigh # note: was bored
                 stacey "Wow. Gross old boots. This will save us."
                 show beans kewl
                 beans "Is that sarcasm?"
@@ -222,14 +222,14 @@ label forestShed_searchingArea:
 
             narrate "RRRRRRRRIP"
 
-            show stacey surprised
+            show stacey worried # note: was surprised
             stacey "Beans! What was that?"
 
             show beans shout
             beans "Um, it was just my sleeve-"
             hide beans
 
-            show stacey shocked
+            show stacey determined mouthclosed # note: was shocked
             stacey "Your hand!"
 
             narrate "You realise there's a dull ache in your hand."
@@ -271,7 +271,7 @@ label forestShed_searchingArea:
                     call scene_forestShed.util_updateKillerDistance(-1)
                 "Say nothing":
                     $ stacey.approval -= 1
-                    show stacey uncomfortable
+                    show stacey determined mouthclosed # note: was uncomfortable
                     show beans blush2
                     beans "..."
                     hide beans
