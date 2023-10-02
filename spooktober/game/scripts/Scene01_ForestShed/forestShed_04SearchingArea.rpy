@@ -25,6 +25,7 @@ label forestShed_searchingArea:
     # Searching with a lantern
     label .areaSearch_withLantern:
         scene bg forest
+        play sound "audio/stingers/shiver.wav"
         call screen panel("shed") with dissolve
         narrate "The lantern throws a reassuring glow around you."
         narrate "This should make it easier to search."
@@ -56,6 +57,7 @@ label forestShed_searchingArea:
                     stacey "Beans that is {i}nasty!{/i}"
                     stacey "Uh-uh. No way. No even. I'm gonna hurl."
 
+                    play sound "audio/stingers/omen.wav"
                     call screen panel("raccoon") with dissolve
 
                     think "That thing used to be a raccoon."
@@ -144,8 +146,6 @@ label forestShed_searchingArea:
                     jump forestShed_searchingArea
 
             label .findBoots:
-                call screen panel("boots") with dissolve
-
                 show stacey sigh # note: was bored
                 stacey "Wow. Gross old boots. This will save us."
                 show beans kewl
@@ -153,6 +153,7 @@ label forestShed_searchingArea:
                 hide beans
                 stacey "{i}Duh.{/i}"
                 
+                play sound "audio/stingers/smile.wav"
                 call screen panel("boots") with dissolve
                 narrate "It's true. You have found gross old boots."
                 think "Leather, steel toecaps... now that's some practical footwear."

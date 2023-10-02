@@ -180,6 +180,7 @@ label after_treeroot:
 
     $ crossfade("audio/music/Hallowbean_Drone.ogg")
 
+    play sound "audio/stingers/lonely.wav"
     call screen panel("shedShadow") with dissolve
     show beans shout
     think "Is that... a house?"
@@ -210,6 +211,7 @@ label after_treeroot:
         beans "Huff... huff..."
         hide beans
         scene bg forest
+        play sound "audio/stingers/shiver.wav"
         call screen panel("shed") with dissolve
         show stacey sigh # note: was disappointed
 
@@ -232,6 +234,7 @@ label after_treeroot:
         hide beans
 
         scene bg forest
+        play sound "audio/stingers/shiver.wav"
         call screen panel("shed") with dissolve
         show stacey sad # note: was disgusted
         stacey "Ugh."
