@@ -258,7 +258,7 @@ screen quick_menu():
             textbutton _("Load") action ShowMenu('load')
             textbutton _("Q.Save") action QuickSave()
             textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('preferences')
+            textbutton _("Settings") action ShowMenu('preferences')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -319,7 +319,7 @@ screen navigation():
                 ## Help isn't necessary or relevant to mobile devices.
                 textbutton _("?") action ShowMenu("help") text_textalign 0.5
             
-            textbutton _("Prefs") action ShowMenu("preferences") text_textalign 0.5
+            textbutton _("Settings") action ShowMenu("preferences") text_textalign 0.5
 
     else:
         vbox:
@@ -336,7 +336,7 @@ screen navigation():
 
             textbutton _("Load") action ShowMenu("load")
 
-            textbutton _("Preferences") action ShowMenu("preferences")
+            textbutton _("Settings") action ShowMenu("preferences")
 
             if _in_replay:
 
@@ -755,7 +755,7 @@ screen preferences():
 
     tag menu
 
-    use game_menu(_("Preferences"), scroll="viewport"):
+    use game_menu(_("Settings"), scroll="viewport"):
 
         vbox:
 
