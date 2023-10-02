@@ -378,8 +378,8 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 transform spooktober_image:
-    align(0.0,0.0)
-    zoom(0.06)
+    align(0.1,0.1)
+    zoom(0.05)
 
 screen main_menu():
 
