@@ -43,6 +43,17 @@ label forestShed_searchingShed:
             "Search carefully":
                 $ beansSearchedShed = True
                 narrate "You carefully search the shelves, disturbing as little as possible."
+                show stacey happy
+                stacey "Hey Beans, get a load of these movie tapes. They're like, ancient."
+                show stacey worried
+                stacey "{color=#f6ba00}\"Gay of the Dead\"{/color}, {color=#f6ba00}\"The Lesborcist\"{/color}... {color=#f6ba00}\"Hallowbean - The Night She Came Out!\"{/color}"
+                show beans serious2
+                beans "{color=#f6ba00}\"Friday the Thirbeanth\"{/color}...? That's not even a word."
+                stacey "Are these, like, knock-offs? Who would even watch this?"
+                show beans kewlpewpew
+                think "I would."
+                show beans earnest
+                beans "...Oh! What's this?"
                 narrate "You spy a bulbous glass shape, hiding under a thick layer of dust, and gently wipe the grime away."
                 show stacey happy
                 stacey "A lantern! Great find, Beans."
