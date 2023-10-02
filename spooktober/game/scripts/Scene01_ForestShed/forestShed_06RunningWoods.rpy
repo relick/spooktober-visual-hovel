@@ -69,7 +69,7 @@ label forestShed_runIntoWoods:
         play sound "audio/stingers/scream.wav"
         call screen panel("bearTrapSnap") with dissolve
 
-        show stacey pain
+        show stacey scared
         stacey "Get it off! Get it off!!"
         hide stacey
 
