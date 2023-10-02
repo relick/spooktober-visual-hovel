@@ -1695,10 +1695,12 @@ screen good_end_cg3():
     button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)
 
 screen good_ending():
+    zorder 50 # above beans + dialogue, below other UI
     use good_end_cg1
     timer 5.0 action ShowTransient("good_end_cg3", Dissolve(1.0))
 
 screen good_ending_kiss():
+    zorder 50 # above beans + dialogue, below other UI
     use good_end_cg1
     timer 5.0 action ShowTransient("good_end_cg2", Dissolve(1.0))
     timer 10.0 action ShowTransient("good_end_cg3", Dissolve(1.0))
