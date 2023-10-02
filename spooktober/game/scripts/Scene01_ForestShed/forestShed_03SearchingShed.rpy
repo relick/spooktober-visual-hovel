@@ -55,6 +55,7 @@ label forestShed_searchingShed:
                 show beans earnest
                 beans "...Oh! What's this?"
                 narrate "You spy a bulbous glass shape, hiding under a thick layer of dust, and gently wipe the grime away."
+
                 show stacey happy
                 stacey "A lantern! Great find, Beans."
                 $ stacey.approval += 1
@@ -67,6 +68,8 @@ label forestShed_searchingShed:
                 stacey "Um. Don't tell my mom about this."
 
                 narrate "The lantern lights easily."
+
+                call screen panel("lantern") with dissolve
 
                 # Audio: Match striking? 
                 # VFX: Glow of light to represent lantern lighting?
@@ -116,6 +119,7 @@ label forestShed_searchingShed:
                 show stacey happy
                 stacey "Ah ha!"
                 stacey "Still some paraffin left in this lantern"
+                
                 narrate "She pulls a lighter from her pocket."
 
                 show beans earnest
@@ -126,6 +130,8 @@ label forestShed_searchingShed:
                 stacey "What are you, my mom?"
 
                 narrate "The glass lantern sputters to life"
+
+                call screen panel("lantern") with dissolve
 
                 show stacey happy
                 stacey "Is that a good find or what?"
@@ -169,6 +175,8 @@ label forestShed_searchingShed:
                 show beans meanbean
                 beans "Is that... a raccoon?"
                 hide beans
+
+                call screen panel("raccoon") with dissolve
 
                 show stacey nauseous
                 stacey "Well it's... half of one."

@@ -56,6 +56,8 @@ label forestShed_searchingArea:
                     stacey "Beans that is {i}nasty!{/i}"
                     stacey "Uh-uh. No way. No even. I'm gonna hurl."
 
+                    call screen panel("raccoon") with dissolve
+
                     think "That thing used to be a raccoon."
                     think "I can make out its cute little face under the maggots - well, it was cute once."
                     think "Those empty eye sockets are staring into my soul..."
@@ -142,6 +144,8 @@ label forestShed_searchingArea:
                     jump forestShed_searchingArea
 
             label .findBoots:
+                call screen panel("boots") with dissolve
+
                 show stacey sigh # note: was bored
                 stacey "Wow. Gross old boots. This will save us."
                 show beans kewl

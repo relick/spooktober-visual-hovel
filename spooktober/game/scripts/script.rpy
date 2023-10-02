@@ -83,6 +83,9 @@ init -1:
     define gui.dialogue_text_font = "LinLibertine_R.ttf"
     define gui.dialogue_text_size = 33
 
+    image cg killerIsHere = "images/cg killerIsHere.png"
+    image cg killerIsHereBlurred = "images/cg killerIsHereBlurred.png"
+
 transform in_locker:
     zoom 1.4
     align (0.5, 1.0)
