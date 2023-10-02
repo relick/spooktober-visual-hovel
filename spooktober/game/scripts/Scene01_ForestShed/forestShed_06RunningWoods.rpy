@@ -105,12 +105,7 @@ label forestShed_runIntoWoods:
                 narrate "The springs contract, allowing the jaws to come apart"
                 narrate "And Stacey is free!"
                 
-                if staceyDateAgreed:
-                    $ crossfade("audio/music/SweetRedBeans.ogg")
-                elif stacey.approval > staceyKissApprovalThreshold:
-                    $ crossfade("audio/music/SweetRedBeans.ogg")
-                else:
-                    $ crossfade("audio/music/Hallowbean_Nature.ogg")
+                $ crossfade("audio/music/SweetRedBeans.ogg")
 
                 show stacey laugh
                 stacey "Yes!!"
