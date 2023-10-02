@@ -13,6 +13,8 @@ label forestShed_runIntoWoods:
 
         $ crossfade("audio/music/Hallowbean_Stingers.ogg")
 
+        call screen panel("bearTrap") with dissolve
+
         show beans shout
         beans "A bear trap?!"
         hide beans
@@ -62,6 +64,9 @@ label forestShed_runIntoWoods:
         $ crossfade("audio/music/Hallowbean_Stingers.ogg")
 
         narrate "Stacey lets out a blood-curdling scream"
+        
+        call screen panel("bearTrapSnap") with dissolve
+
         show stacey pain
         stacey "Get it off! Get it off!!"
         hide stacey
@@ -232,9 +237,11 @@ label forestShed_runIntoWoods:
         jump endings_forestShed.ending_runFromBearTrap_noBoots
 
     label .beansBearTrap:
+
         $ crossfade("audio/music/Hallowbean_Stingers.ogg")
 
         narrate "The trap snaps shut on your leg."
+
         if "Boots" in beans.equipped:
             narrate "You close your eyes, expecting searing pain-"
             narrate "But it's... not as bad as you expected?"
@@ -265,6 +272,7 @@ label forestShed_runIntoWoods:
             hide stacey
             jump endings_forestShed.ending_savedFromBearTrap
         else:
+            call screen panel("bearTrapSnap") with dissolve
             narrate "Your socks and loafers offer no resistance at all."
 
             show beans shout
