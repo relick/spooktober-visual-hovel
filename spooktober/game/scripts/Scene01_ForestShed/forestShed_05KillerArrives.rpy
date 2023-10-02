@@ -39,6 +39,7 @@ label forestShed_killerArrives:
         "{i}Run further into the woods{/i}":
             jump forestShed_runIntoWoods
     label .hideInLockers:
+        scene bg locker
         $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
 
         if "Lantern" in beans.equipped:
@@ -81,6 +82,7 @@ label forestShed_killerArrives:
 
         
     label .hideInOilDrum:
+        scene bg oildrums
         $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
 
         if searchedDrums:
@@ -280,6 +282,7 @@ label forestShed_killerArrives:
                     jump endings_forestShed.ending_oilDrums_terribad
             
     label .hideInTheShed:
+        scene bg shedinterior
         $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
 
         think "The shed is tiny"
