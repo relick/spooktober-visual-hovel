@@ -26,6 +26,8 @@ init -1 python:
     
     renpy.music.register_channel("music2", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True)
 
+    renpy.music.register_channel("heartbeat", mixer="music", loop=True, stop_on_mute=True, tight=False, file_prefix='', file_suffix='', buffer_queue=True)
+
     def crossfade(track_new, track_new_loop=None, curr_time=2.0,new_time=2.0):
         curr_track = "music"
         x_fade_track = "music2"
@@ -37,7 +39,7 @@ init -1 python:
             curr_track = "music2"
         if renpy.music.get_playing(curr_track) == track_new:
             return
-        
+
         renpy.music.stop(curr_track,fadeout=curr_time)
         renpy.music.play(track_new,channel=x_fade_track,fadein=new_time,loop=do_loop)
         if not do_loop:

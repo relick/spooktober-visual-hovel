@@ -170,6 +170,9 @@ label forestShed_killerArrives:
                     jump .giveUp
 
             label .distract:
+                $ crossfade("audio/music/SweetRedBeans.ogg")
+                play heartbeat "audio/music/Hallowbean_HeartbeatOnly.ogg" loop fadein 2.0
+
                 show beans meanbean
                 beans "Stacey, {i}go{/i}."
                 hide beans 
