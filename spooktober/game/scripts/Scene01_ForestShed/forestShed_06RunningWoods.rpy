@@ -368,7 +368,8 @@ label forestShed_runIntoWoods:
                 jump endings_forestShed.ending_beansStuckInBearTrap
                 # the killer catches up to you
             else:
-                $ crossfade("audio/music/Hallowbean_Drone.ogg")
+                stop music
+                stop music2
 
                 # stacey tries to help you but it's no use
                 show stacey upset 

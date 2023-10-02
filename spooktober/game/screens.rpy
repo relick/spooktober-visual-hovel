@@ -1692,7 +1692,7 @@ screen splatter_youdied():
 
 screen splatter_static():
     zorder 51
-    add "gameover/bg static.png" at game_over_centred
+    add "bg static.png" at game_over_centred
 
 screen splatter_gameover():
     zorder 54
@@ -1711,7 +1711,7 @@ screen you_died():
 screen game_over():
     zorder 50 # above beans + dialogue, below other UI
     add "bg black.png" at game_over_centred
-    timer 0.0 action ShowTransient("splatter_static", Dissolve(0.5))
+    timer 0.1 action ShowTransient("splatter_static", Dissolve(0.5))
     timer 1.1 action ShowTransient("splatter_gameover", Dissolve(1.0))
     on "hide" action MainMenu(confirm=True,save=False)
     button xsize 1.0 ysize 1.0 action MainMenu(confirm=True,save=False)

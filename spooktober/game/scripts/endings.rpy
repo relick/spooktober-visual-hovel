@@ -10,6 +10,7 @@ label endings_forestShed:
         narrate "It seems you and Stacey were not meant to be."
         
         # vertical columns
+        play sound "audio/stingers/scream.wav"
         call screen game_over()
         return
     
@@ -28,6 +29,7 @@ label endings_forestShed:
         narrate "This is your time."
         
         # ..squares
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
 
@@ -40,6 +42,7 @@ label endings_forestShed:
         narrate "This is the end."
 
         # ..squares
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return       
 
@@ -60,6 +63,7 @@ label endings_forestShed:
 
         narrate "This is the end."
         # weird pixellation
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
 
@@ -68,6 +72,7 @@ label endings_forestShed:
         narrate "TODO: The killer sees your bag and discovers your hiding place"
         narrate "RIP"
         # basically just a direct fade
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
 
@@ -123,6 +128,7 @@ label endings_forestShed:
                 narrate "you cling to it."
                 narrate "But it does not help you."
         
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
 
@@ -142,6 +148,7 @@ label endings_forestShed:
         narrate "You hear her scream, cut off by a wet squelch, and scramble into the woods as fast as you can."
         narrate "You may have made it,"
         narrate "But Stacey did not"
+        play sound "audio/stingers/scream.wav"
         call screen game_over()
         return
 
@@ -152,6 +159,7 @@ label endings_forestShed:
         narrate "You continue to fumble uselessly with the trap."
         narrate "Your hands are still uselessly trying to pry it apart when the heavy footsteps catch up to you."
         narrate "Could you have made it if you left her behind?"
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
 
@@ -188,6 +196,7 @@ label endings_forestShed:
         narrate "Well, not quite alone."
         narrate "As you fade away, you can faintly hear heavy footsteps"
         narrate "Stomping relentlessly towards you in the dark."
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
 
@@ -200,6 +209,7 @@ label endings_forestShed:
         narrate "Just as if you were falling asleep."
         narrate "The forest is quiet."
         narrate "And you are still."
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
 
@@ -305,5 +315,6 @@ label endings_forestShed:
         narrate "The axe whistles through the air towards you."
         narrate "You're not going to make it."
 
+        play sound "audio/stingers/dread.wav"
         call screen you_died()
         return
