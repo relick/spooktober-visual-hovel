@@ -103,7 +103,7 @@ label forestShed_runIntoWoods:
                 jump .runningFromBearTrap
     
     label .pushSprings:
-        think "One... two.. three"       
+        think "One... two... three"       
         show screen timed_choice(1.0, "endings_forestShed.ending_staceyStuckInBearTrap")
         menu:
             "{i}Push!{/i}":
@@ -301,7 +301,7 @@ label forestShed_runIntoWoods:
             menu:
                 "Get me out of here!":
                     show beans blush2 #beans be woozy
-                    beans "Get... ge.. get me..."
+                    beans "Get... ge... get me..."
                     think "I don't feel so good..."
                     hide beans
 
@@ -310,7 +310,7 @@ label forestShed_runIntoWoods:
                     narrate "You're fading."
                 "For god's sake Stacey, get me out of here!":
                     show beans blush2 #beans be woozy
-                    beans "For god's... god.. Stace..."
+                    beans "For god's... god... Stace..."
                     think "I don't feel so good..."
                     hide beans
 
@@ -327,7 +327,7 @@ label forestShed_runIntoWoods:
 
             show stacey upsetshadow
             stacey "No no no...."
-            stacey "Come on Beans.. I can do this..."
+            stacey "Come on Beans... I can do this..."
             narrate "You're faintly aware of Stacey struggling to prise the jaws of the trap open."
             
             show stacey upset

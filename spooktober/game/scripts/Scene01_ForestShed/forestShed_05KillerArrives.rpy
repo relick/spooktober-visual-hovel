@@ -193,7 +193,7 @@ label forestShed_killerArrives:
                 beans "Catch me if you can!"
                 jump endings_forestShed.ending_oilDrums_heroic
             label .escape:
-                think "I.."
+                think "I..."
 
                 show beans meanbean
                 think "I want to live!"
@@ -292,7 +292,7 @@ label forestShed_killerArrives:
         if cutHand:
             narrate "Enormous weatherproof boots stomp slowly into view."
             narrate "You clamp your hands over your mouth."
-            think "Can't... make... a... sound.."
+            think "Can't... make... a... sound..."
       
             narrate "Stacey is trembling beside you."
             narrate "Your cut hand stings under its makeshift bandage."

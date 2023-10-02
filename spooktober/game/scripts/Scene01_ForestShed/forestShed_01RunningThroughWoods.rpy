@@ -208,7 +208,7 @@ label after_treeroot:
         think "How is she so fast??"
 
         show beans tired
-        beans "Huff.. huff.."
+        beans "Huff... huff..."
         hide beans
         scene bg forest
         play sound "audio/stingers/shiver.wav"

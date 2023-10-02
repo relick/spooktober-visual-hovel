@@ -26,7 +26,7 @@ label endings_forestShed:
         show cg killerIsHere at fit_screen
         with dissolve
 
-        narrate "An enormous hand lifts you off the ground by the back of your shirt." 
+        narrate "An enormous hand lifts you off the ground by the back of your sweater vest." 
         narrate "The air stinks of rotten meat and sweet, metallic blood." 
         narrate "A blade whistles through the air."
 
