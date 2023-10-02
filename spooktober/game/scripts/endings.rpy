@@ -99,7 +99,7 @@ label endings_forestShed:
         show cg killerIsHere at fit_screen
         with dissolve
 
-        narrate "An enormous gloved hand shoots out and grabs you by the ankle."
+        narrate "An enormous gloved hand shoots out and grabs you by the ankle." with vpunch
 
         show beans shout
         beans "Aaagh!"
@@ -112,7 +112,7 @@ label endings_forestShed:
         menu:
             "Stacey, run!":
                 show beans earnest
-                beans "Stacey, run!"
+                beans "Stacey, run!" with vpunch
                 hide beans
 
 
@@ -124,18 +124,22 @@ label endings_forestShed:
 
             "Let me go!":
                 show beans shout
-                "Let me go!"
+                "Let me go!" with vpunch
                 hide beans
                 
                 narrate "The figure gives no indication that it's heard you."
                 narrate "The expressionless mask doesn't change."
 
+                show beans shout
                 beans "Please..."
+                hide beans
 
                 narrate "You search for a glimpse of humanity in those hollow, empty eyes."
                 narrate "There is nothing."
                 
+                show beans meanbean
                 beans "..."
+                hide beans
                 narrate "You cling to your hope."
                 narrate "Until that last moment,"
                 narrate "as you struggle weakly against their grip, and the heavy axe blade whistles through the air,"

@@ -181,7 +181,7 @@ label forestShed_killerArrives:
                 stacey "Beans..."
 
                 show beans shout
-                beans "GO!"
+                beans "GO!" with vpunch
                 hide beans
 
                 hide stacey
@@ -200,7 +200,7 @@ label forestShed_killerArrives:
                 hide beans 
 
                 narrate "Pure adrenaline spikes in your veins-"
-                narrate "You push Stacey aside, scrambling over the rusted oil drums-"
+                narrate "You push Stacey aside, scrambling over the rusted oil drums-" with vpunch
                 narrate "There's no thoughts in your head, only survival."
 
                 stacey "Beans, what-"

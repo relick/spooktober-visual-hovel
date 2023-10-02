@@ -224,7 +224,7 @@ label forestShed_searchingArea:
             narrate "You squint through your glasses to make out the objects in front of you."
             narrate "As you reach across the bench to the next shelf, your arm encounters resistance-"
 
-            narrate "RRRRRRRRIP"
+            narrate "RRRRRRRRIP" with vpunch
 
             show stacey worried # note: was surprised
             stacey "Beans! What was that?"
@@ -262,7 +262,7 @@ label forestShed_searchingArea:
                     stacey "Yeah, well, don't mention it."
                 "Kiss Stacey":
                     $ stacey.approval -= 5
-                    stacey "BEANS! EW!"
+                    stacey "BEANS! EW!" with vpunch
                     show stacey annoyed # note: was angry
                     show beans blush
                     beans "{i}Oof{/i}"
@@ -292,7 +292,9 @@ label forestShed_searchingArea:
         $ foundLockers = True
         narrate "Around the side of the shed are two tall storage lockers."
 
+        show stacey excited
         stacey "You could fit a whole body in one of those."
+        show stacey worried
         stacey "What?"
         stacey "Don't tell me you weren't thinking it too."
         call scene_forestShed.util_updateKillerDistance(-1)

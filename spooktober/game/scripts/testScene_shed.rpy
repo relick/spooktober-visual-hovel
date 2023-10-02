@@ -158,7 +158,9 @@ label outside_shed:
     $ found_locker = True
     centered "Around the side of the shed are two tall storage lockers."
 
+    show stacey excited
     stacey "You could fit a whole body in one of those."
+    show stacey worried
     stacey "What?"
     stacey "Don't tell me you weren't thinking it too."
     return

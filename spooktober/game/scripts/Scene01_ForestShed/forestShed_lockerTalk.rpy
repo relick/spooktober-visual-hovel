@@ -28,6 +28,7 @@ label forestShed_lockerTalk:
             call scene_forestShed.util_updateProactivePassive(-1)
             jump .lockerTalk_nextSteps
         "{i}Press up closer against her{/i}":
+            show stacey sad2
             stacey "Um..."
 
             jump .lockerTalk_pressCloser
@@ -56,6 +57,7 @@ label forestShed_lockerTalk:
         narrate "She gently pushes you away."
         jump .lockerTalk_nextSteps
     label .lockerTalk_nextSteps:
+        show stacey worried
         stacey "Okay, here's the plan."
         stacey "We wait until we're sure the coast is clear - and then we run."
         show stacey determined
@@ -342,8 +344,10 @@ label forestShed_lockerTalk:
                 hide beans
                 show stacey sad
                 stacey "That's what I'm worried about..."
+                show stacey upset
                 stacey "What if this is like... the peak?"
                 stacey "High school, I mean."
+                show stacey upsetshadow
                 stacey "What if this is the best it gets?"
                 stacey "And I've only got one year left of it."
 
@@ -352,7 +356,9 @@ label forestShed_lockerTalk:
                         show beans earnest
                         beans "You've got your whole life ahead of you, Stacey!"
                         hide beans
+                        show stacey sigh
                         stacey "{i}Sigh{/i}"
+                        show stacey upset
                         stacey "I know you're right..."
                         stacey "I just... what if you're not? What if this is-"
 
@@ -360,14 +366,18 @@ label forestShed_lockerTalk:
                         show beans earnest
                         beans "You can't think like that, Stacey!"
                         hide beans
+                        show stacey sigh
                         stacey "{i}Sigh{/i}"
                         stacey "Sorry..."
+                        show stacey determined
                         stacey "I'll pull myself together."
                     "Jesus Christ Stacey, way to bring the mood down.":
                         show beans meanbean
                         beans "Jesus Christ Stacey, way to bring the mood down."
                         hide beans
+                        show stacey sigh
                         stacey "Sorry..."
+                        show stacey determined
                         stacey "I'll pull myself together."
 
                 jump .lockerTalk_hereComesKiller

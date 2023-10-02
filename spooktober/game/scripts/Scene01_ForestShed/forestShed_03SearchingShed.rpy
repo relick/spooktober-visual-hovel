@@ -84,10 +84,10 @@ label forestShed_searchingShed:
             "Search quickly":
                 think "Screw being careful - I want to be out of here as quickly as possible."
                 narrate "You begin rummaging haphazardly through the shelves."
-                narrate "As you reach across the workbench your sleeve snags on the teeth of rusted rotary saw."
+                narrate "As you reach across the workbench your sleeve snags on the teeth of a rusted rotary saw."
                 # Audio: Cloth ripping
                 show beans stressed
-                beans "Ugh!"
+                beans "Ugh!" with vpunch
                 hide beans
 
                 narrate "You rip your arm free a little too vigorously and your hand collides with the shelf above."
@@ -141,8 +141,11 @@ label forestShed_searchingShed:
             "Sit on one of the rusty oil drums while she searches":
                 think "Ugh, my feet are killing me... I'll just take a load off on one of these oil drums."
                 hide stacey
+                show stacey excited
                 stacey "Beans! I've found a lantern!"
+                show stacey happy
                 stacey "Looks like there's some fuel left in it, too."
+                hide stacey
 
                 think "This drum looks like it's a gazillion years old."
                 think "And something smells absolutely rank..."

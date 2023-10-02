@@ -55,8 +55,9 @@ label forestShed_underTableTalk:
             hide beans
 
             $ stacey.approval -= 1
+            show stacey worried
             stacey "Oh - sorry Beans."
-            show stacey laugh
+            show stacey sad
             stacey "I don't know what came over me."
 
     $ lockerTalkLocation = "UnderTable"

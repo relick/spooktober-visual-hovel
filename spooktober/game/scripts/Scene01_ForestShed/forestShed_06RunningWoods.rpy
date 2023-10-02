@@ -302,6 +302,7 @@ label forestShed_runIntoWoods:
                 "Get me out of here!":
                     show beans blush2 #beans be woozy
                     beans "Get... ge... get me..."
+                    show beans meanbean
                     think "I don't feel so good..."
                     hide beans
 
@@ -311,6 +312,7 @@ label forestShed_runIntoWoods:
                 "For god's sake Stacey, get me out of here!":
                     show beans blush2 #beans be woozy
                     beans "For god's... god... Stace..."
+                    show beans meanbean
                     think "I don't feel so good..."
                     hide beans
 
@@ -318,9 +320,11 @@ label forestShed_runIntoWoods:
                     narrate "The words stumble and slur on your tongue."
                     narrate "You're fading."                  
                 "AAAAAAAAAAAAAAAAA":
+                    show beans meanbean
                     think "That screaming..."
                     think "It's ear splitting."
                     think "Is that... me?"
+                    hide beans
                     narrate "As the blood leaves your body, a heavy fog settles in your brain."
                     narrate "The sound of your own scream seems far away."
                     narrate "You're fading."
@@ -343,7 +347,7 @@ label forestShed_runIntoWoods:
 
                 menu:
                     "Run! Save yourself!":
-                        show beans blush
+                        show beans meanbean
                         beans "Run..."
                         hide beans
                         stacey "I'm so sorry Beans."
@@ -356,7 +360,7 @@ label forestShed_runIntoWoods:
                             narrate "Her eyes flick between you and her only route of escape-"
                             narrate "through the forest."                      
                     "Don't leave me!":
-                        show beans stressed
+                        show beans meanbean
                         beans "Don't... leave..."
                         hide beans
                         show stacey upset
@@ -405,17 +409,23 @@ label forestShed_runIntoWoods:
 
                 menu:
                     "I'm cold.":
+                        show beans meanbean
                         beans "Cold..."
+                        hide beans
                         narrate "Stacey takes her jacket off and gently drapes it over you."
                         narrate "She's shivering slightly."
                         narrate "It's not clear whether from the cold, or her quiet sobbing."
                         
                     "I'm tired.":
+                        show beans meanbean
                         beans "Tired..."
+                        hide beans
                         stacey "I know, Beans."
                         stacey "Just rest now."
-                    "{i}Die{/i}":
+                    "{i}(Die.){/i}":
+                        show beans meanbean
                         narrate "You close your eyes."
+                        hide beans
                 jump endings_forestShed.ending_beansStuckInBearTrap_noKiller
 
          
