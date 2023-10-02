@@ -25,7 +25,7 @@ label forestShed_searchingShed:
 
     # 3a Beans searches the shed herself
     label .beansSearch:
-        call scene_forestShed.util_updateProactivePassive(1)
+        call scene_forestShed.util_updateProactivePassive(1) from _call_scene_forestShed_util_updateProactivePassive
 
         think "I can show Stacey I'm not totally useless!"
         
@@ -55,6 +55,7 @@ label forestShed_searchingShed:
                 show beans earnest
                 beans "...Oh! What's this?"
                 narrate "You spy a bulbous glass shape, hiding under a thick layer of dust, and gently wipe the grime away."
+                hide beans
 
                 show stacey happy
                 stacey "A lantern! Great find, Beans."
@@ -78,8 +79,8 @@ label forestShed_searchingShed:
                 stacey "Let there be light!" # TODO: Not sure this fits the character
 
                 show stacey happy
-                call scene_forestShed.util_equipItem("Lantern")
-                call scene_forestShed.util_updateKillerDistance(-1)                
+                call scene_forestShed.util_equipItem("Lantern") from _call_scene_forestShed_util_equipItem
+                call scene_forestShed.util_updateKillerDistance(-1) from _call_scene_forestShed_util_updateKillerDistance                
                 hide stacey
             "Search quickly":
                 think "Screw being careful - I want to be out of here as quickly as possible."
@@ -100,15 +101,15 @@ label forestShed_searchingShed:
 
                 think "That could have ended much worse!"
                 think "I'd better be more careful, I don't want to hurt myself."
-        call scene_forestShed.util_updateKillerDistance(-1)
+        call scene_forestShed.util_updateKillerDistance(-1) from _call_scene_forestShed_util_updateKillerDistance_1
         jump scene_forestShed.d_areaSearch
 
     # 3b Beans watches as Stacey searches the shed
     label .staceySearch:
         think "I'd better leave Stacey to it."
         think "I don't want to make things worse {i}again{/i}"
-        call scene_forestShed.util_updateProactivePassive(-1)
-        call scene_forestShed.util_updateKillerDistance(-1)
+        call scene_forestShed.util_updateProactivePassive(-1) from _call_scene_forestShed_util_updateProactivePassive_1
+        call scene_forestShed.util_updateKillerDistance(-1) from _call_scene_forestShed_util_updateKillerDistance_2
         stacey "Wait right there. Don't move a muscle, okay?"
         menu:
             "Wait anxiously for Stacey to finish searching":
@@ -137,7 +138,7 @@ label forestShed_searchingShed:
 
                 show stacey happy
                 stacey "Is that a good find or what?"
-                call scene_forestShed.util_equipItem("Lantern")
+                call scene_forestShed.util_equipItem("Lantern") from _call_scene_forestShed_util_equipItem_1
             "Sit on one of the rusty oil drums while she searches":
                 think "Ugh, my feet are killing me... I'll just take a load off on one of these oil drums."
                 hide stacey

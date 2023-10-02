@@ -43,7 +43,7 @@ label forestShed_searchingArea:
             beans "Let's check out those oil drums."
             hide beans
             stacey "Sure, I guess."
-            scene bg oilDrums
+            scene bg oildrums
             narrate "The three oil drums are ancient, grimy and coated in rust."
             stacey "Oh man, something smells {i}gnarly{/i}"
             think "Something absolutely rank is in one of those drums..."
