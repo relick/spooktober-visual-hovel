@@ -78,7 +78,7 @@ label forestShed_searchingArea:
                     $ stacey.approval += 1
 
             think "Two drums left."
-            stacey "Let's see if there's anything in these bad boys"
+            stacey "Let's see if there's anything in these bad boys."
             narrate "CLANG"
             stacey "Empty!"
             show beans blush3 # idk, is kicking things hot? maybe
@@ -103,7 +103,7 @@ label forestShed_searchingArea:
                     hide beans
 
                     think "This lid {i}really{/i} doesn't want to come off, but I'll show it who's boss."
-                    narrate "With a rusty screech, the lid of the drum comes free"
+                    narrate "With a rusty screech, the lid of the drum comes free."
                     narrate "You and Stacey peer at your spoils."
                     jump .findBoots
                 "Ask Stacey to open the oil drum":

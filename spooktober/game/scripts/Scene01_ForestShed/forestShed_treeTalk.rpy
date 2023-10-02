@@ -9,7 +9,7 @@ label forestShed_treeTalk:
     stacey "Come on Beans - we have to keep going."
     stacey "Maybe we'll find the road, or help, or..."
     show stacey sigh
-    stacey "Or something"
+    stacey "Or something."
     stacey "I just want this night to end."
     hide stacey
 

@@ -52,14 +52,14 @@ label forestShed_lockerTalk:
         # If above a certain threshold she confesses? maybe
        
     label .lockerTalk_pressCloser:
-        narrate "You press up close to Stacey"
-        narrate "She gently pushes you away"
+        narrate "You press up close to Stacey."
+        narrate "She gently pushes you away."
         jump .lockerTalk_nextSteps
     label .lockerTalk_nextSteps:
         stacey "Okay, here's the plan."
         stacey "We wait until we're sure the coast is clear - and then we run."
         show stacey determined
-        stacey "We have to make ABSOLUTELY SURE he's not right behind us"
+        stacey "We have to make ABSOLUTELY SURE he's not right behind us."
         show stacey sigh
         stacey "Because no offense, Beans, but I don't think you could outrun a dead badger."
 
@@ -105,7 +105,7 @@ label forestShed_lockerTalk:
                 show beans kewlpewpew
                 call .util_updateStaceyApproval(1)
                 show stacey laugh
-                narrate "Stacey laughs quietly"
+                narrate "Stacey laughs quietly."
                 hide beans
                 show stacey happy
                 stacey "Yeah, we're doing okay."
@@ -150,7 +150,7 @@ label forestShed_lockerTalk:
                     show stacey blush
                     jump .lockerTalk_iLikeMuseums
                 else:
-                    narrate "Stacey laughs nervously"
+                    narrate "Stacey laughs nervously."
                     stacey "Um... a date?"
                     stacey "I have a boyfriend Beans..."
                     menu:
@@ -158,14 +158,14 @@ label forestShed_lockerTalk:
                             show beans meanbean
                             beans "Oh..."                            
                             think "This is so awkward..."
-                            think "Even though it's dark I can tell she'd avoiding looking at me"
+                            think "Even though it's dark I can tell she's avoiding looking at me."
                             hide beans 
                             jump .lockerTalk_hereComesKiller
                         "{i}(lie){/i} Haha... me too... haha...":
                             show beans kewl
                             "Haha... me too... haha..."                            
                             think "This is so awkward..."
-                            think "Even though it's dark I can tell she'd avoiding looking at me"
+                            think "Even though it's dark I can tell she's avoiding looking at me."
                             hide beans
                             jump .lockerTalk_hereComesKiller
                         "I'm just kidding Stacey, god. Don't be so conceited.":
@@ -216,7 +216,7 @@ label forestShed_lockerTalk:
         hide beans
 
         show stacey happy
-        stacey "You know, there's a UFO museum that's opened just outside of town"
+        stacey "You know, there's a UFO museum that's opened just outside of town!"
         stacey "I've been really wanting to go there - what do you say?"
 
         menu:
@@ -248,7 +248,7 @@ label forestShed_lockerTalk:
         show beans serious
         think "Oh yeah, Svenjamin..."
         show beans meanbean
-        think "He's the football team quarterback but also a TOTAL ass"
+        think "He's the football team quarterback, but also a TOTAL ass."
         show beans serious
         think "So are they dating, or...?" 
 
@@ -266,8 +266,8 @@ label forestShed_lockerTalk:
 
                 show stacey sigh
                 stacey "I dunno... he's like, the quarterback, you know?"
-                stacey "And I'm the head cheerleader"
-                stacey "It just seemed right"
+                stacey "And I'm the head cheerleader..."
+                stacey "It just seemed right."
 
                 show stacey sad
                 stacey "I mean... {i}I{/i} thought we were dating..."
@@ -278,7 +278,7 @@ label forestShed_lockerTalk:
                 jump .lockerTalk_staceyCanDoBetter
             "He sounds like a terrible boyfriend":
                 show beans serious2
-                beans "He sounds like a terrible boyfriend"
+                beans "He sounds like a terrible boyfriend."
                 hide beans
                 stacey "Ugh, he was."
 
@@ -300,7 +300,7 @@ label forestShed_lockerTalk:
         menu:
             "You can do way better, Stacey":
                 show beans earnest
-                beans "You can do way better, Stacey"
+                beans "You can do way better, Stacey!"
                 hide beans
                 call .util_updateStaceyApproval(1)
                 show stacey happy
@@ -341,7 +341,7 @@ label forestShed_lockerTalk:
                 beans "Actually nevermind. Svenjamin's probably the best you'll ever get."
                 hide beans
                 show stacey sad
-                stacey "That's what I'm worried about"
+                stacey "That's what I'm worried about..."
                 stacey "What if this is like... the peak?"
                 stacey "High school, I mean."
                 stacey "What if this is the best it gets?"
@@ -356,19 +356,19 @@ label forestShed_lockerTalk:
                         stacey "I know you're right..."
                         stacey "I just... what if you're not? What if this is-"
 
-                    "You can't think like that Stacey":
+                    "You can't think like that, Stacey":
                         show beans earnest
-                        beans "You can't think like that Stacey"
+                        beans "You can't think like that, Stacey!"
                         hide beans
                         stacey "{i}Sigh{/i}"
-                        stacey "Sorry"
-                        stacey "I'll pull myself together"
+                        stacey "Sorry..."
+                        stacey "I'll pull myself together."
                     "Jesus Christ Stacey, way to bring the mood down.":
                         show beans meanbean
                         beans "Jesus Christ Stacey, way to bring the mood down."
                         hide beans
-                        stacey "Sorry"
-                        stacey "I'll pull myself together"
+                        stacey "Sorry..."
+                        stacey "I'll pull myself together."
 
                 jump .lockerTalk_hereComesKiller
 
@@ -377,9 +377,9 @@ label forestShed_lockerTalk:
             stacey "You?"
             if stacey.approval < staceyRomanceApprovalThreshold:
                 narrate "Stacey laughs."
-                stacey "You're such a goof, Beans"
-                stacey "Svenjamin isn't {i}that{/i} bad"
-                stacey "Thanks for trying to cheer me up though"
+                stacey "You're such a goof, Beans!"
+                stacey "Svenjamin isn't {i}that{/i} bad."
+                stacey "Thanks for trying to cheer me up though."
                 think "Oof..."
                 think "Maybe if she liked me more that would have worked."
                 jump .lockerTalk_hereComesKiller
@@ -389,7 +389,7 @@ label forestShed_lockerTalk:
                 menu:
                     "I like you, Stacey":
                         show beans confess
-                        beans "I like you, Stacey"
+                        beans "I like you, Stacey."
                         hide beans
                         jump .staceyCanDoBetter_iLikeYou
                     "Nevermind, it was stupid. Forget it.":
@@ -397,7 +397,7 @@ label forestShed_lockerTalk:
                         beans "Nevermind, it was stupid. Forget it."
                         hide beans
 
-                        show stacey sad
+                        show stacey sad2
                         stacey "...oh."
                         jump .lockerTalk_hereComesKiller
                     "Nothing, Stacey. You're embarassing yourself.":
@@ -417,7 +417,7 @@ label forestShed_lockerTalk:
                     beans "Do you... like me too?"
                     hide beans
                     show stacey blush
-                    stacey "You're cute, Beans"
+                    stacey "You're cute, Beans."
                 "Sorry, I just made this weird.":
                     show beans blush
                     beans "Sorry, I just made this weird."
@@ -455,11 +455,11 @@ label forestShed_lockerTalk:
 
         # AUDIO: Killer footsteps audio
         if lockerTalkLocation == "Tree":
-            think "I can hear him stomping through the trees"
+            think "I can hear him stomping through the trees."
             think "Is he... sniffing? Like an animal?"
         else:
-            think "I can hear his gross huge boots stomping across the clearing"
-        think "My heart is beating out of my chest"
+            think "I can hear his gross huge boots stomping across the clearing."
+        think "My heart is beating out of my chest."
         
         # AUDIO: Killer footsteps fade out
         if lockerTalkLocation == "Locker":
@@ -468,7 +468,7 @@ label forestShed_lockerTalk:
             stacey "He's gone round the back of the shed..."
         elif lockerTalkLocation == "Tree":
             stacey "He's heading back towards the clearing..."
-        stacey "But he's still close"
+        stacey "But he's still close..."
 
         think "Should we risk making a break for it?"
 
@@ -493,23 +493,23 @@ label forestShed_lockerTalk:
 
         if beans.proactivePassive > 0:
             if lockerTalkLocation == "Locker":
-                narrate "You throw the locker open and run"
+                narrate "You throw the locker open and run."
             elif lockerTalkLocation == "UnderTable":
-                narrate "You scramble out from under the workbench and run"
+                narrate "You scramble out from under the workbench and run."
             elif lockerTalkLocation == "Tree":
-                narrate "You don't even check the coast is clear - you just run"
-            narrate "Stacey follows right behind you"
+                narrate "You don't even check the coast is clear - you just run."
+            narrate "Stacey follows right behind you."
    
         else:
             if lockerTalkLocation == "Locker":
-                narrate "Stacey throws the locker open and runs"
+                narrate "Stacey throws the locker open and runs."
             elif lockerTalkLocation == "UnderTable":
-                narrate "Stacey scrambles out from under the workbench and runs"
+                narrate "Stacey scrambles out from under the workbench and runs."
             elif lockerTalkLocation == "Tree":
-                narrate "Stacey doesn't even check the coast is clear - she just runs"
+                narrate "Stacey doesn't even check the coast is clear - she just runs."
                 # TODO: How do we get here? We've probably already run.
 
-            narrate "You follow right behind"
+            narrate "You follow right behind."
 
         stacey "Beans! He's right behind us!"
 
@@ -528,14 +528,14 @@ label forestShed_lockerTalk:
 
         narrate "{i}SNAP!{/i}"
 
-        narrate "You hear a pained scream"
+        narrate "You hear a pained scream."
 
         show stacey worried
-        stacey "Is that... Theodora??"
+        stacey "Is that... Gerald's girlfriend? Theodora??"
         hide stacey
 
-        narrate "Whoever the unlucky person is - they've piqued your pursuer's interest"
-        narrate "You hear the familiar heavy footsteps disappearing away from you"
+        narrate "Whoever the unlucky person is - they've piqued your pursuer's interest."
+        narrate "You hear the familiar heavy footsteps disappearing away from you..."
         narrate "Pursuing their new prey."
         if staceyDateAgreed:
             jump endings_forestShed.ending_lockerEscape_romance

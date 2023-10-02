@@ -89,7 +89,7 @@ label forestShed_searchingShed:
                 beans "Ugh!"
                 hide beans
 
-                narrate "You rip your arm free a little too vigorously and your hand collides with the shelf above"
+                narrate "You rip your arm free a little too vigorously and your hand collides with the shelf above."
                 narrate "Something glass and dust-covered falls off,  and shatters into pieces on the bench."
 
                 show stacey annoyed
@@ -118,7 +118,7 @@ label forestShed_searchingShed:
 
                 show stacey happy
                 stacey "Ah ha!"
-                stacey "Still some paraffin left in this lantern"
+                stacey "Still some paraffin left in this lantern."
                 
                 narrate "She pulls a lighter from her pocket."
 
@@ -129,7 +129,7 @@ label forestShed_searchingShed:
                 show stacey sigh
                 stacey "What are you, my mom?"
 
-                narrate "The glass lantern sputters to life"
+                narrate "The glass lantern sputters to life."
 
                 call screen panel("lantern") with dissolve
 
@@ -140,7 +140,7 @@ label forestShed_searchingShed:
                 think "Ugh, my feet are killing me... I'll just take a load off on one of these oil drums."
                 hide stacey
                 stacey "Beans! I've found a lantern!"
-                stacey "Looks like there's some fuel left in it, too"
+                stacey "Looks like there's some fuel left in it, too."
 
                 think "This drum looks like it's a gazillion years old."
                 think "And something smells absolutely rank..."
@@ -170,7 +170,7 @@ label forestShed_searchingShed:
                 # PETE: this line's halfway between think and narrate - should probably be one or the other
                 # maybe something like: think "She's pointing inside the oil drum, which smells rancid..."
                 think "She's pointing inside the oil drum."
-                think "It smells absolutely rancid"
+                think "It smells absolutely rancid."
 
                 show beans meanbean
                 beans "Is that... a raccoon?"
@@ -187,7 +187,7 @@ label forestShed_searchingShed:
 
                 think "The smell is so strong..."
 
-                stacey "Oh man... that's so nasty"
+                stacey "Oh man... that's so nasty..."
                 stacey "I think I'm gonna ralph."
 
                 $ stacey.approval -= 1

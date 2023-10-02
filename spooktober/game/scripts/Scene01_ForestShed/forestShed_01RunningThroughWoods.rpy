@@ -29,7 +29,7 @@ label forestShed_runningThroughWoods:
     #  think "This tin of beans is so heavy..."
     think "It's getting dark so fast..."
     show beans shout # PETE: added this
-    think "Glad I grabbed that flashlight from Gerald's survival kit"
+    think "Glad I grabbed that flashlight from Gerald's survival kit."
 
     show beans sad
     beans "Poor Gerald..."
@@ -160,7 +160,7 @@ label after_treeroot:
             show beans sad
             think "She's stormed off!"
             show beans stressed
-            think "I'd better follow if I don't want to get even more lost"
+            think "I'd better follow if I don't want to get even more lost."
 
     show beans serious2
     think "Come on Beans. No more running into things."
@@ -193,7 +193,7 @@ label after_treeroot:
             jump .saved
         "Careful - we don't know if we can trust them":
             show beans earnest
-            beans "Careful - we don't know if we can trust them"
+            beans "Careful - we don't know if we can trust them."
             hide beans 
             jump .careful
 
@@ -214,7 +214,7 @@ label after_treeroot:
         show stacey sigh # note: was disappointed
 
         stacey "Ugh. It's obviously abandoned."
-        think "It looks pretty small for a house, too"
+        think "It looks pretty small for a house, too."
 
         jump scene_forestShed.b_discoveringShed
 

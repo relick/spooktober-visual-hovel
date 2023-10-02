@@ -130,24 +130,24 @@ label investigate_shed:
     scene bg shed_interior
     $ searched_shed = True
 
-    "Oh man this shed is TINY"
-    "There's barely room for the workbench in here"
+    "Oh man, this shed is TINY."
+    "There's barely room for the workbench in here."
 
     show stacey disgusted
-    stacey "Ugh look at this dust."
+    stacey "Ugh! Look at this dust."
     stacey "Don't touch any of those tools, you'll get tetanus."  
 
     menu:
         "Pick up a rusted saw from the bench.":
             show stacey annoyed
             stacey "What did I JUST say?"
-            stacey "You're literally hopeless"
+            stacey "You're literally hopeless."
             $ stacey.approval -= 1
 
             "Well... this might come in handy."
             jump outside_shed
         "Leave the tools alone.":
-            centered "You and Stacey search the shed"
+            centered "You and Stacey search the shed."
 
             "Everything here is so old..."
             "Is there nothing useful at all?"

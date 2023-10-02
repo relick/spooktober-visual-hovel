@@ -20,8 +20,8 @@ label endings_forestShed:
         narrate "You, however, are not a cheerleader." 
 
         narrate "As you run, trying to kite the maniac away from her, your lungs burn and your feet stumble."
-        narrate "With a sinking feeling, you realise"
-        narrate "there's only one way this can end."
+        narrate "With a sinking feeling, you realise..."
+        narrate "There's only one way this can end."
 
         show cg killerIsHere at fit_screen
         with dissolve
@@ -42,9 +42,9 @@ label endings_forestShed:
         show cg killerIsHere at fit_screen
         with dissolve
 
-        narrate "The figure looms over you"
-        narrate "Expressionless eyes leer at you from the mask"
-        narrate "It's impossible to tell whether they take any pleasure in this"
+        narrate "The figure looms over you."
+        narrate "Expressionless eyes leer at you from the mask."
+        narrate "It's impossible to tell whether they take any pleasure in this."
 
         narrate "This is the end."
 
@@ -60,12 +60,12 @@ label endings_forestShed:
         with dissolve
 
         # You both die
-        narrate "The figure looms over you"
-        narrate "Expressionless eyes leer at you from the mask"
-        narrate "It's impossible to tell whether they take any pleasure in this"   
+        narrate "The figure looms over you."
+        narrate "Expressionless eyes leer at you from the mask."
+        narrate "It's impossible to tell whether they take any pleasure in this."   
 
-        narrate "Stacey wordlessly takes your hand in hers"
-        narrate "She squeezes it tightly"
+        narrate "Stacey wordlessly takes your hand in hers."
+        narrate "She squeezes it tightly."
 
         show stacey sad
         stacey "I... wish I'd known you better, Beans."
@@ -138,7 +138,7 @@ label endings_forestShed:
                 beans "..."
                 narrate "You cling to your hope."
                 narrate "Until that last moment,"
-                narrate "As you struggle weakly against their grip, and the heavy axe blade whistles through the air,"
+                narrate "as you struggle weakly against their grip, and the heavy axe blade whistles through the air,"
                 narrate "you cling to it."
                 narrate "But it does not help you."
         
@@ -160,8 +160,8 @@ label endings_forestShed:
 
         # You live, Stacey dies
         narrate "You hear her scream, cut off by a wet squelch, and scramble into the woods as fast as you can."
-        narrate "You may have made it,"
-        narrate "But Stacey did not"
+        narrate "You may have made it..."
+        narrate "But Stacey did not."
         play sound "audio/stingers/scream.wav"
         call screen game_over()
         return
@@ -208,7 +208,7 @@ label endings_forestShed:
         narrate "And just like that, Stacey disappears into the forest."
         narrate "You're lying on a carpet of leaves and blood, alone."
         narrate "Well, not quite alone."
-        narrate "As you fade away, you can faintly hear heavy footsteps"
+        narrate "As you fade away, you can faintly hear heavy footsteps..."
         narrate "Stomping relentlessly towards you in the dark."
         play sound "audio/stingers/dread.wav"
         call screen you_died()
@@ -283,10 +283,10 @@ label endings_forestShed:
 
     label .ending_lockerEscape_noRomance:
         # GOOD ENDING PLATONIC
-        narrate "You run for your lives into the forest"
+        narrate "You run for your lives into the forest."
         narrate "The paths are winding,"
         narrate "And with only the vaguest idea of direction you could be getting further into danger each minute."
-        narrate "The night drags on,"
+        narrate "The night drags on..."
         narrate "But eventually, every night must end."
 
         stacey "Beans... Beans!"

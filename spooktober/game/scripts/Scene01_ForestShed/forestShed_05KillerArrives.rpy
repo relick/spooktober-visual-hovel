@@ -65,7 +65,7 @@ label forestShed_killerArrives:
             narrate "CRASH" with vpunch
 
             narrate "An enormous pile of rusted junk comes crashing down on you."
-            narrate "It makes an enormous racket"
+            narrate "It makes an enormous racket."
 
             show beans tired
             beans "Oh nooooooo-"
@@ -95,7 +95,7 @@ label forestShed_killerArrives:
             think "..."
             think "This looks a lot smaller than I remembered..."
 
-            stacey "Beans I'm not being funny, but like,"
+            stacey "Beans I'm not being funny, but like..."
             show stacey annoyed
             stacey "There is no WAY I'm going to fit into one of these."
 
@@ -112,8 +112,8 @@ label forestShed_killerArrives:
             show stacey worried
             stacey "Oh shit oh shit oh SHIT"
 
-            narrate "Stacey fumbles as she tears the lid off the nearest drum"
-            think "I've never seen her so scared"
+            narrate "Stacey fumbles as she tears the lid off the nearest drum."
+            think "I've never seen her so scared."
             
             show beans stressed
             think "Oh man - what is that SMELL?"
@@ -154,8 +154,8 @@ label forestShed_killerArrives:
             hide beans
 
             stacey "This is SO GROSS!"
-            narrate "Stacey frantically tries to wipe her shoes on the grass"
-            narrate "Suddenly she stops, looking wide-eyed over your shoulder"
+            narrate "Stacey frantically tries to wipe her shoes on the grass."
+            narrate "Suddenly she stops, looking wide-eyed over your shoulder."
 
             narrate "You can hear the heavy thud of footsteps towards you."
             narrate "Your time has run out."
@@ -185,7 +185,7 @@ label forestShed_killerArrives:
                 hide beans
 
                 hide stacey
-                think "Well here goes fucking nothing"
+                think "Well here goes fucking nothing."
 
                 narrate "You turn to face the killer."
 
@@ -199,9 +199,9 @@ label forestShed_killerArrives:
                 think "I want to live!"
                 hide beans 
 
-                narrate "Pure adrenaline spikes in your veins"
-                narrate "You push Stacey aside, scrambling over the rusted oil drums"
-                narrate "There's no thoughts in  your head, only survival"
+                narrate "Pure adrenaline spikes in your veins-"
+                narrate "You push Stacey aside, scrambling over the rusted oil drums-"
+                narrate "There's no thoughts in your head, only survival."
 
                 stacey "Beans, what-"
                 hide stacey
@@ -221,9 +221,9 @@ label forestShed_killerArrives:
             beans "Urggghh..."
             hide beans 
 
-            narrate "Your stomach does a flip as you try not to stare at the scraps of dead raccoon in the drum"
-            narrate "Stacey frantically tries to wipe her shoes on the grass"
-            narrate "Suddenly she stops, standing stock-still"
+            narrate "Your stomach does a flip as you try not to stare at the scraps of dead raccoon in the drum."
+            narrate "Stacey frantically tries to wipe her shoes on the grass."
+            narrate "Suddenly she stops, standing stock-still."
 
             show stacey scared
             stacey "Um, Beans?"
@@ -238,7 +238,7 @@ label forestShed_killerArrives:
             beans "..."
             hide beans
 
-            think "We were too busy freaking out to keep track of him"
+            think "We were too busy freaking out to keep track of him!"
 
             narrate "There's a beat of silence."
             narrate "The silence gives way to heavy breathing."
@@ -257,7 +257,7 @@ label forestShed_killerArrives:
             menu:
                 "I'm so sorry":
                     show beans blush
-                    beans "I'm so sorry"
+                    beans "I'm so sorry."
                     show stacey scared
                     stacey "Me too-"
                     if stacey.approval > 3:
@@ -276,11 +276,11 @@ label forestShed_killerArrives:
                     #jump endings_forestShed.ending_oilDrums_terribad_hands
                 "I'll see you in hell":
                     show beans meanbean
-                    beans "I'll see you in hell"
+                    beans "I'll see you in hell."
                     hide beans
 
                     show stacey scared
-                    stacey "Fuck you, Beans"           
+                    stacey "Fuck you, Beans."           
                     hide stacey
                     jump endings_forestShed.ending_oilDrums_terribad
             
@@ -288,7 +288,7 @@ label forestShed_killerArrives:
         scene bg shedinterior
         $ crossfade("audio/music/Hallowbean_Heartbeat.ogg")
 
-        think "The shed is tiny"
+        think "The shed is tiny...!"
         if cutHand:
             narrate "Enormous weatherproof boots stomp slowly into view."
             narrate "You clamp your hands over your mouth."
@@ -302,7 +302,7 @@ label forestShed_killerArrives:
             narrate "The fresh blood spatters on the flood condemn you."
             narrate "The boots stop in front of them."
             narrate "Time slows down as the figure bends down,"
-            narrate "Inspecting the fresh droplets of red."
+            narrate "inspecting the fresh droplets of red."
 
             jump endings_forestShed.ending_underTable_cutHand
         else:

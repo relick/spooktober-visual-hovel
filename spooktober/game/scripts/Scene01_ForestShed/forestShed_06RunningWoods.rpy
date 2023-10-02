@@ -63,7 +63,7 @@ label forestShed_runIntoWoods:
     label .staceyBearTrap:
         $ crossfade("audio/music/Hallowbean_Stingers.ogg")
 
-        narrate "Stacey lets out a blood-curdling scream"
+        narrate "Stacey lets out a blood-curdling scream."
         
         call screen panel("bearTrapSnap") with dissolve
 
@@ -101,13 +101,13 @@ label forestShed_runIntoWoods:
                 jump .runningFromBearTrap
     
     label .pushSprings:
-        think "One... two... three"       
+        think "One... two... three!"       
         show screen timed_choice(1.0, "endings_forestShed.ending_staceyStuckInBearTrap")
         menu:
             "{i}Push!{/i}":
                 hide screen timed_choice
                 narrate "You push down as hard as you can."
-                narrate "The springs contract, allowing the jaws to come apart"
+                narrate "The springs contract, allowing the jaws to come apart..."
                 narrate "And Stacey is free!"
                 
                 $ crossfade("audio/music/SweetRedBeans.ogg")
@@ -176,8 +176,8 @@ label forestShed_runIntoWoods:
                 beans "Y-yes."
                 hide stacey
                 hide beans
-                narrate "Stacey leans in, her blonde hair brushing your cheek"
-                narrate "She smells like drugstore perfume and hairspray"
+                narrate "Stacey leans in, her blonde hair brushing your cheek."
+                narrate "She smells like drugstore perfume and hairspray."
                 narrate "You lips meet."
                 narrate "She tastes like strawberry lip gloss."
                 narrate "It's a perfect moment."
@@ -212,8 +212,8 @@ label forestShed_runIntoWoods:
 
     label .runningFromBearTrap:
         show beans stressed
-        beans "I'm- I'm so sorry Stacey"
-        beans "Please forgive me"
+        beans "I'm- I'm so sorry, Stacey."
+        beans "Please... forgive me."
 
         # TODO: Pained sprite
         show stacey shout
@@ -230,7 +230,7 @@ label forestShed_runIntoWoods:
                 narrate "You both die. RIP"
                 jump endings_forestShed.ending_runFromBearTrap_boots
             else:
-                narrate "You get away, leaving Stacey to her fate"
+                narrate "You get away, leaving Stacey to her fate."
                 narrate "RIP Stacey"
                 jump endings_forestShed.ending_runFromBearTrap_noBoots
             """
@@ -254,7 +254,7 @@ label forestShed_runIntoWoods:
 
             think "The boots!"
             narrate "The metal jaws of the trap are sunk into the thick leather of the old boots you're wearing."
-            narrate "They've still lodged themselves firmly in your leg, and it's not comfortable"
+            narrate "They've still lodged themselves firmly in your leg, and it's not comfortable..."
             narrate "But you'd hate to think what it would look like if you didn't have the boots to protect you."
             
             show stacey determined
@@ -303,7 +303,7 @@ label forestShed_runIntoWoods:
                     hide beans
 
                     narrate "As the blood leaves your body, a heavy fog settles in your brain."
-                    narrate "The words stumble and slur on your tongue"
+                    narrate "The words stumble and slur on your tongue."
                     narrate "You're fading."
                 "For god's sake Stacey, get me out of here!":
                     show beans blush2 #beans be woozy
@@ -312,7 +312,7 @@ label forestShed_runIntoWoods:
                     hide beans
 
                     narrate "As the blood leaves your body, a heavy fog settles in your brain."
-                    narrate "The words stumble and slur on your tongue"
+                    narrate "The words stumble and slur on your tongue."
                     narrate "You're fading."                  
                 "AAAAAAAAAAAAAAAAA":
                     think "That screaming..."
@@ -362,7 +362,7 @@ label forestShed_runIntoWoods:
                         stacey "I have to run."
                         hide stacey 
 
-                        narrate "She gives you hand one last squeeze."
+                        narrate "She gives your hand one last squeeze."
                 # TODO IF TIME
                 # If your approval is high enough maybe she saves you
                 if staceyDateAgreed:
@@ -392,7 +392,7 @@ label forestShed_runIntoWoods:
                 else:
                     stacey "I never got to tell you that..."
                     show stacey upset2
-                    stacey "I like you beans"
+                    stacey "I like you, Beans."
                     stacey "And now it's too late."
 
                     think "Score!"

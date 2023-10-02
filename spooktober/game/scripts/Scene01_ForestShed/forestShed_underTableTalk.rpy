@@ -19,10 +19,10 @@ label forestShed_underTableTalk:
     think "Is she... holding my hand?"
     hide beans
 
-    narrate "You realise that Stacey has your hand in a vice like grip."
-    narrate "She's staring straight ahead"
+    narrate "You realise that Stacey has your hand in a vice-like grip."
+    narrate "She's staring straight ahead."
 
-    think "I don't think she's even noticed she's doing it"
+    think "I don't think she's even noticed she's doing it."
 
     show beans blush
     beans "Um, Stacey..."
