@@ -13,6 +13,7 @@ label forestShed_runIntoWoods:
 
         $ crossfade("audio/music/Hallowbean_Stingers.ogg")
 
+        play sound "audio/stingers/omen.wav"
         call screen panel("bearTrap") with dissolve
 
         show beans shout
@@ -65,6 +66,7 @@ label forestShed_runIntoWoods:
 
         narrate "Stacey lets out a blood-curdling scream"
         
+        play sound "audio/stingers/scream.wav"
         call screen panel("bearTrapSnap") with dissolve
 
         show stacey pain
@@ -272,6 +274,7 @@ label forestShed_runIntoWoods:
             hide stacey
             jump endings_forestShed.ending_savedFromBearTrap
         else:
+            play sound "audio/stingers/scream.wav"
             call screen panel("bearTrapSnap") with dissolve
             narrate "Your socks and loafers offer no resistance at all."
 

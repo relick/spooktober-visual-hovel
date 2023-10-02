@@ -69,6 +69,7 @@ label forestShed_searchingShed:
 
                 narrate "The lantern lights easily."
 
+                play sound "audio/stingers/smile.wav"
                 call screen panel("lantern") with dissolve
 
                 # Audio: Match striking? 
@@ -131,6 +132,7 @@ label forestShed_searchingShed:
 
                 narrate "The glass lantern sputters to life"
 
+                play sound "audio/stingers/smile.wav"
                 call screen panel("lantern") with dissolve
 
                 show stacey happy
@@ -176,6 +178,7 @@ label forestShed_searchingShed:
                 beans "Is that... a raccoon?"
                 hide beans
 
+                play sound "audio/stingers/omen.wav"
                 call screen panel("raccoon") with dissolve
 
                 show stacey nauseous
