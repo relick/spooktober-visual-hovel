@@ -207,7 +207,7 @@ label after_treeroot:
         think "How is she so fast??"
 
         show beans tired
-        beans "Huff.. huff.."
+        beans "Huff... huff..."
         hide beans
         scene bg forest
         call screen panel("shed") with dissolve
