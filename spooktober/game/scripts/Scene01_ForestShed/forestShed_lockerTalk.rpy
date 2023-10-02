@@ -10,10 +10,18 @@ label forestShed_lockerTalk:
 
     narrate "You're pressed right up against each other."
 
+    if lockerTalkLocation == "Locker":
+        show cg locker at fit_screen
+        with dissolve
+
     show beans kewl
     think "It's kinda... romantic actually."
     think "If it wasn't for the mortal danger."
     hide beans
+
+    if lockerTalkLocation == "Locker":
+        hide cg
+        with dissolve
 
     menu: 
         "{i}Say nothing{/i}":

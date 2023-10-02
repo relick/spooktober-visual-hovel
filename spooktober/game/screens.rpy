@@ -1662,6 +1662,11 @@ screen timed_choice(time, timer_jump):
 
 transform game_over_centred:
     align (0.5,0.5)
+    fit "contain"
+
+transform fit_screen:
+    align (0.5,0.5)
+    fit "contain"
 
 transform game_over_centred_slow_zoom:
     align (0.5,0.5)

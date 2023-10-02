@@ -22,6 +22,10 @@ label endings_forestShed:
         narrate "As you run, trying to kite the maniac away from her, your lungs burn and your feet stumble."
         narrate "With a sinking feeling, you realise"
         narrate "there's only one way this can end."
+
+        show cg killerIsHere at fit_screen
+        with dissolve
+
         narrate "An enormous hand lifts you off the ground by the back of your shirt." 
         narrate "The air stinks of rotten meat and sweet, metallic blood." 
         narrate "A blade whistles through the air."
@@ -35,6 +39,9 @@ label endings_forestShed:
 
     label .ending_oilDrums_terribad:
         # You both die
+        show cg killerIsHere at fit_screen
+        with dissolve
+
         narrate "The figure looms over you"
         narrate "Expressionless eyes leer at you from the mask"
         narrate "It's impossible to tell whether they take any pleasure in this"
@@ -48,6 +55,9 @@ label endings_forestShed:
 
     label .ending_oilDrums_terribad_hands:
         $ crossfade("audio/music/Hallowbean_Drone.ogg")
+
+        show cg killerIsHere at fit_screen
+        with dissolve
 
         # You both die
         narrate "The figure looms over you"
@@ -85,6 +95,10 @@ label endings_forestShed:
         hide beans
 
         think "I'm holding my breath."
+        $ crossfade("audio/music/Hallowbean_Stingers.ogg")
+        show cg killerIsHere at fit_screen
+        with dissolve
+
         narrate "An enormous gloved hand shoots out and grabs you by the ankle."
 
         show beans shout
@@ -307,6 +321,9 @@ label endings_forestShed:
         # You both die
         narrate "You have made a terrible decision."
         narrate "The enormous masked figure appears from the trees, impossibly fast."
+
+        show cg killerIsHereBlurred at fit_screen
+        with dissolve
 
         narrate "The distance closes between you."
 
